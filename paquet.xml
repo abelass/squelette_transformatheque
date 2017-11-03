@@ -6,20 +6,22 @@
 	compatibilite="[3.2.0;3.2.*]"
 	logo="prive/themes/spip/images/transformatheque-64.png"
 	documentation=""
-	schema="1.0.0" 
+	schema="1.0.0"
 >
 	<!--
 		Paquet généré le 2017-11-03 15:25:55
-		(Vous pouvez bien entendu supprimer ces commentaires) 
+		(Vous pouvez bien entendu supprimer ces commentaires)
 	-->
 
 	<nom>Squelette transformathèque</nom>
-	
 
-	<!-- cette balise peut être présente plusieurs fois s'il y a plusieurs auteurs --> 
+
+	<!-- cette balise peut être présente plusieurs fois s'il y a plusieurs auteurs -->
 	<auteur lien='https://websimple.be'>Rainer</auteur>
 
 	<licence>GNU/GPL</licence>
+
+	<necessite nom="theme_jango" compatibilite="[1.0.0;]" />
 
 	<!--
 		Exemple de commandes
@@ -30,18 +32,18 @@
 		* pipelines
 		<pipeline nom="autoriser" inclure="transformatheque_autorisations.php" />
 		<pipeline nom="insert_head" inclure="transformatheque_pipelines.php" />
-		* declarer un pipeline 
+		* declarer un pipeline
 		<pipeline nom="mon_pipeline" action="" />
 		* parents de menus de SPIP :
 				menu_accueil (à éviter), menu_edition, menu_publication,
-				menu_activite, menu_squelette, menu_administration, menu_configuration 
+				menu_activite, menu_squelette, menu_administration, menu_configuration
 		<menu nom="transformatheque" titre="transformatheque:transformatheque_titre" parent="menu_edition"  icone="images/transformatheque-16.png" />
-		* parents d'onglets... configuration, plugins, statistiques, ... 
+		* parents d'onglets... configuration, plugins, statistiques, ...
 		<onglet nom="transformatheque" titre="transformatheque:transformatheque_titre" parent="configuration" icone="images/transformatheque-24.png" />
 	-->
 
 
-	<pipeline nom="autoriser" inclure="transformatheque_autorisations.php" /> 
+	<pipeline nom="autoriser" inclure="transformatheque_autorisations.php" />
 
 
 </paquet>
