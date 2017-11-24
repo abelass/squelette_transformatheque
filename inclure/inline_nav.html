@@ -1,0 +1,33 @@
+<!-- BEGIN: INLINE NAV -->
+#SET{divider,<li class="c-divider"> </li>}
+[(#CONFIG{multilingue/menu_langue}|oui)
+	#SET{select,_select}
+]
+[(#ENV{brand_topbar}|non)#SET{divider,<li class="c-divider">|</li>
+<nav class="c-top-menu c-pull-left">>}
+	<INCLURE{fond=inclure/social_icons} />
+</nav>
+]
+<!-- END: INLINE NAV -->
+<!-- BEGIN: INLINE NAV -->
+<nav class="c-top-menu[ c-pull-right(#ENV{brand_topbar}|non)]">
+	[(#REM)<ul class="c-links c-theme-ul">
+		#GET{divider}
+		<li><a href="#">Contact</a></li>
+		#GET{divider}
+	</ul>]
+	<ul class="c-ext c-theme-ul">
+		[<li class="c-lang dropdown c-last">
+			(#INCLURE{fond=inclure/menu_langues[(#GET{select})],env})
+		</li>]
+		<li class="c-search hide">
+			<!-- BEGIN: QUICK SEARCH -->
+			<form action="#">
+				<input type="text" name="query" placeholder="search..." value="" class="form-control" autocomplete="off">
+				<i class="fa fa-search"></i>
+			</form>
+			<!-- END: QUICK SEARCH -->
+		</li>
+	</ul>
+</nav>
+<!-- END: INLINE NAV -->
