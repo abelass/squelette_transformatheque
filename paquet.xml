@@ -21,7 +21,7 @@
 
 	<licence>GNU/GPL</licence>
 
-	<necessite nom="theme_jango" compatibilite="[1.0.0;]" />
+	<necessite nom="theme_jango" compatibilite="[1.0.2;]" />
 	<necessite nom="wsp_ml" compatibilite="[0.2.7;]" />
 
 	<!--
