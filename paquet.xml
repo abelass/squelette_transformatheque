@@ -23,6 +23,7 @@
 
 	<necessite nom="theme_jango" compatibilite="[1.0.2;]" />
 	<necessite nom="wsp_ml" compatibilite="[0.2.7;]" />
+	<necessite nom="selection_objet" compatibilite="[1.11.3;]" />
 
 	<!--
 		Exemple de commandes

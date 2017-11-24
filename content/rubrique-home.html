@@ -1,0 +1,66 @@
+<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}>
+	<INCLURE{fond=inclure/banner_owl_selection_objets,
+		height=400,
+		items=1,
+		id-carousel=slider_banner,
+		margins=0,
+		lazyLoad=true,
+		dots=false,
+		autoplay=true,
+		autoplayHoverPause=true,
+		type_lien=banner,
+		objet_dest=rubrique,
+		id_objet_dest=#ID_RUBRIQUE,
+		type_lien
+		} />
+	<section>
+		<header class="container">
+			<h1 class="#EDIT{titre} hidden">#TITRE</h1>
+		</header>
+
+		<div class="main container">
+
+		[(#INCLURE{fond=inclure/outils,env})]
+			[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
+			<BOUCLE_a_propos(RUBRIQUES) {id_trad=1}{lang} {tout}>
+				<a class="btn btn-xlg c-btn-fuchsia c-font-bold" href="#URL_RUBRIQUE">
+					<:cnde:decouvrez_cnde:>
+				</a>
+			</BOUCLE_a_propos>
+
+		</div>
+		[(#REM)<aside>
+			<div class="faits_cles section">
+				<div class="container">
+					<h2><:cnde:faits_cles:></h2>
+					<INCLURE{fond=modeles/selection_owl,
+						loop=false,
+						height=200,
+						width=300,
+						items=4,
+						id-carousel=faits_cle,
+						margin=1,
+						lazyLoad=true,
+						dots=false,
+						autoplay=false
+						autoplayHoverPause=true,
+						identifiant=faits_cle_#LANG} />
+				</div>
+			</div>
+			<div class="highlights section">
+				<div class="container">
+					<h2>titre à définir</h2>
+					<INCLURE{fond=inclure/highlights,
+						identifiant=highlights_#LANG,
+						class_item=highlight col-md-4,
+						class_bouton=btn c-btn-uppercase c-btn-white c-btn-bold c-btn-border-1x} />
+				</div>
+			</div>
+		</aside>]
+
+		<footer>
+		[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
+		</footer>
+
+	</section>
+</BOUCLE_content>

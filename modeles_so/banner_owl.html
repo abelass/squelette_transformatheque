@@ -1,0 +1,9 @@
+[(#ENV{caption,oui}|=={oui}|oui)
+<div class="caption[ (#ENV{caption_css})]">[
+	<h3 class="title"><a href="[(#URL|sinon{#ID_OBJET|generer_url_entite{#OBJET}})]">(#TITRE)</a></h3>][
+	<p class="hidden-phone">(#DESCRIPTIF|sinon{#TEXTE}|couper{150,'…'}|textebrut)</p>]
+</div>]
+<img [(#ENV{lazyLoad}|=={true}|oui)class="owl-lazy" data-]src="[(#ENV{logo_objet}
+	|image_passe_partout{#ENV{width,1440},#ENV{height,599}}
+	|image_recadre{#ENV{width,1440},#ENV{height,599}}
+	|extraire_attribut{src})]" alt="[(#TITRE|textebrut)]">
