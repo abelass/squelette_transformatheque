@@ -1,7 +1,9 @@
 @import 'css/variables';
 @import 'css/jango_variables';
 
-.c-layout-header.c-layout-header-6 {
+/* Barre de navigation */
+.c-layout-header.c-layout-header-6,
+.c-page-on-scroll .c-layout-header.c-layout-header-6 {
 	background-color: $couleur_principale;
 }
 
@@ -26,4 +28,10 @@
 	> li:hover > a{
 		background-color: $couleur_secondaire;
 	}
+}
+
+/* Footr */
+
+.c-bg-dark {
+	background-color: $couleur_secondaire !important;
 }
