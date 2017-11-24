@@ -7,11 +7,18 @@
 	background-color: $couleur_principale;
 }
 
-.c-theme-nav > li.c-active > a:not(.btn),
-.c-theme-nav > li:focus > a:not(.btn),
-.c-theme-nav > li:active > a:not(.btn),
-.c-theme-nav > li:hover > a:not(.btn) {
-	color: $couleur_secondaire !important;
+.c-theme-nav {
+	> li.c-active > a:not(.btn),
+	> li:focus > a:not(.btn),
+	> li:active > a:not(.btn),
+	> li:hover > a:not(.btn){
+		color: $couleur_secondaire !important;
+	}
+	li:focus > .c-quick-sidebar-toggler > .c-line,
+	li:active > .c-quick-sidebar-toggler > .c-line,
+	li:hover > .c-quick-sidebar-toggler > .c-line {
+		background-color: $couleur_secondaire !important;
+	}
 }
 
 .c-layout-header .c-navbar .c-mega-menu.c-mega-menu-dark > .nav.navbar-nav > li > .dropdown-menu {
@@ -30,8 +37,25 @@
 	}
 }
 
-/* Footr */
+.c-theme-link:focus, .c-theme-link:active, .c-theme-link:hover {
+	color: $couleur_secondaire !important;
+}
 
+.c-btn-border-1x.c-btn-dark.btn-no-focus:hover,
+.c-btn-border-1x.c-btn-dark:hover,
+.c-btn-border-1x.c-btn-dark.btn-no-focus:active,
+.c-btn-border-1x.c-btn-dark:active,
+.c-btn-border-1x.c-btn-dark.active,
+.open > .c-btn-border-1x.c-btn-dark.dropdown-toggle {
+	background: $couleur_secondaire;
+	border-color: $couleur_secondaire;
+}
+
+/* Footr */
 .c-bg-dark {
 	background-color: $couleur_secondaire !important;
+}
+
+.c-layout-footer a {
+	color: #eeeeee;
 }
