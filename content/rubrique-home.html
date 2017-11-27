@@ -11,7 +11,7 @@
 		type_lien=banner,
 		objet_dest=rubrique,
 		id_objet_dest=#ID_RUBRIQUE,
-		type_lien
+		type_lien=banner
 		} />
 	<section>
 		<header class="container">
@@ -22,15 +22,31 @@
 
 		[(#INCLURE{fond=inclure/outils,env})]
 			[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-			<BOUCLE_a_propos(RUBRIQUES) {id_trad=1}{lang} {tout}>
-				<a class="btn btn-xlg c-btn-fuchsia c-font-bold" href="#URL_RUBRIQUE">
-					<:cnde:decouvrez_cnde:>
-				</a>
-			</BOUCLE_a_propos>
 
+
+		<INCLURE{fond=inclure/activites} />
 		</div>
-		[(#REM)<aside>
-			<div class="faits_cles section">
+
+
+		<aside>
+		<INCLURE{fond=inclure/news} />
+
+		<INCLURE{fond=inclure/temoignages,
+			loop=true,
+			height=70,
+			width=70
+			items=4,
+			id-carousel=temoignages,
+			margin=1,
+			lazyLoad=true,
+			dots=false,
+			autoplay=false
+			autoplayHoverPause=true,
+			type_lien=temoignages} />
+
+
+
+		[(#REM)	<div class="faits_cles section">
 				<div class="container">
 					<h2><:cnde:faits_cles:></h2>
 					<INCLURE{fond=modeles/selection_owl,
@@ -55,8 +71,8 @@
 						class_item=highlight col-md-4,
 						class_bouton=btn c-btn-uppercase c-btn-white c-btn-bold c-btn-border-1x} />
 				</div>
-			</div>
-		</aside>]
+			</div>]
+		</aside>
 
 		<footer>
 		[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
