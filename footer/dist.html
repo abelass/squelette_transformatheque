@@ -1,0 +1,34 @@
+<div class="c-prefooter c-font-white">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 col-sm-5 c-col">
+					[(#LOGO_SITE|image_reduire{300}
+						|inserer_attribut{class,img-responsive}
+						|inserer_attribut{alt,Logo Transformathèque}
+						)]
+			</div>
+			<div class="col-md-4 col-sm-4 c-col">
+				<div class="c-container">
+					<div class="c-content-title-1">
+						<h3 class="c-font-uppercase c-font-white"><:transformatheque:contactez_nous:></h3>
+					</div>
+						<div class="c-line-left hide"> </div>
+						<p class="c-address">
+							Rue du Fort, 7<br>
+							1060 Saint-Gilles / Bruxelles <br>
+							GSM +32 495 10 28 18 <br>
+							Email : [(#VAL{<a href="mailto:contact@transformatheque.be">contact@transformatheque.be</a>}|mailcrypt)]<br>
+						</p>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-3 c-col">
+				<div class="c-container">
+						<p class="COMPTE">
+							Numéro d'entreprise<br>
+							Compte <br>
+						</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

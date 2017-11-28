@@ -11,36 +11,14 @@
 
 	<nom>Squelette transformathèque</nom>
 
-
-	<!-- cette balise peut être présente plusieurs fois s'il y a plusieurs auteurs -->
-	<auteur lien='https://websimple.be'>Rainer</auteur>
+	<auteur lien='https://websimple.be'>Rainer Müller</auteur>
 
 	<licence>GNU/GPL</licence>
 
-	<necessite nom="theme_jango" compatibilite="[1.0.2;]" />
+	<necessite nom="theme_jango" compatibilite="[1.0.4;]" />
 	<necessite nom="wsp_ml" compatibilite="[0.2.7;]" />
 	<necessite nom="selection_objet" compatibilite="[1.11.3;]" />
 	<necessite nom="newsletters" compatibilite="[1.5.3;]" />
-
-	<!--
-		Exemple de commandes
-		* dependances
-		<necessite nom="saisies" compatibilite="[2.4.0;]" />
-		<utilise nom="saisies" compatibilite="[2.4.0;]" />
-		<lib nom="simplehtmldom" lien="http://chemin_vers_archive.zip" />
-		* pipelines
-		<pipeline nom="autoriser" inclure="transformatheque_autorisations.php" />
-		<pipeline nom="insert_head" inclure="transformatheque_pipelines.php" />
-		* declarer un pipeline
-		<pipeline nom="mon_pipeline" action="" />
-		* parents de menus de SPIP :
-				menu_accueil (à éviter), menu_edition, menu_publication,
-				menu_activite, menu_squelette, menu_administration, menu_configuration
-		<menu nom="transformatheque" titre="transformatheque:transformatheque_titre" parent="menu_edition"  icone="images/transformatheque-16.png" />
-		* parents d'onglets... configuration, plugins, statistiques, ...
-		<onglet nom="transformatheque" titre="transformatheque:transformatheque_titre" parent="configuration" icone="images/transformatheque-24.png" />
-	-->
-
 
 	<pipeline nom="autoriser" inclure="transformatheque_autorisations.php" />
 

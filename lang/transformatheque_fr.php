@@ -7,6 +7,10 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
+	// C
+
+	'contactez_nous' => 'Contactez nous',
+
 	// T
 	'transformatheque_titre' => 'Squelette transformathèque',
 );
