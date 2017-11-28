@@ -8,16 +8,34 @@
  * @licence    GNU/GPL
  * @package    SPIP\Transformatheque\Fonctions
  */
-
 if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
 
-
-/*
- * Un fichier de fonctions permet de définir des éléments
- * systématiquement chargés lors du calcul des squelettes.
+/**
+ * Retourne les langues de l'article
  *
- * Il peut par exemple définir des filtres, critères, balises, …
- * 
+ * @param string $id_article
+ * @param mixed $separateur
+ *        	Ce qui entoure le résultat
+ *
  */
+function article_langues($id_article, $separateur = '') {
+	if (is_array($separateur)) {
+		list($sep, $sep_fin) = $separateur;
+		$sep = $separateur[0];
+		$sep_fin = $separateur[1];
+	}
+	else
+		$sep = $separateur;
+
+	if (!$sql = sql_select('lang', 'spip_articles', 'id_trad!=0 AND id_trad=' . $id_article))
+		$sql = sql_select('lang', 'spip_articles', 'id_trad!=0 AND id_article=' . $id_article);
+
+	$langues = '';
+	while ($data = sql_fetch($sql)) {
+		$langues = concat($langues, $sep . $data['lang'] . $sep_fin);
+	}
+
+	return $langues;
+}
