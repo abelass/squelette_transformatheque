@@ -1,3 +1,12 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.11';
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}>
 	<INCLURE{fond=inclure/banner_owl_selection_objets,
 		height=400,
@@ -30,48 +39,39 @@
 
 		<aside>
 		<INCLURE{fond=inclure/news} />
-
-		<INCLURE{fond=inclure/temoignages,
-			loop=true,
-			height=70,
-			width=70
-			items=4,
-			id-carousel=temoignages,
-			margin=1,
-			lazyLoad=true,
-			dots=false,
-			autoplay=false
-			autoplayHoverPause=true,
-			type_lien=temoignages} />
-
-
-
-		[(#REM)	<div class="faits_cles section">
-				<div class="container">
-					<h2><:cnde:faits_cles:></h2>
-					<INCLURE{fond=modeles/selection_owl,
-						loop=false,
-						height=200,
-						width=300,
+		<div class="c-content-box c-size-md c-bg-white">
+			<div class="row">
+				<div class="col-sm-7">
+					<INCLURE{fond=inclure/temoignages,
+						loop=true,
+						height=70,
+						width=70
 						items=4,
-						id-carousel=faits_cle,
+						id-carousel=temoignages,
 						margin=1,
 						lazyLoad=true,
 						dots=false,
 						autoplay=false
 						autoplayHoverPause=true,
-						identifiant=faits_cle_#LANG} />
+					type_lien=temoignages} />
+				</div>
+				<div class="col-sm-5 facebook-container">
+					<div
+						class="fb-page"
+						data-href="https://www.facebook.com/laruteu/"
+						data-tabs="timeline"
+						data-small-header="false"
+						data-adapt-container-width="true"
+						data-hide-cover="false"
+						data-show-facepile="true">
+						<blockquote cite="https://www.facebook.com/laruteu/" class="fb-xfbml-parse-ignore">
+							<a href="https://www.facebook.com/laruteu/">Larut</a>
+						</blockquote>
+					</div>
 				</div>
 			</div>
-			<div class="highlights section">
-				<div class="container">
-					<h2>titre à définir</h2>
-					<INCLURE{fond=inclure/highlights,
-						identifiant=highlights_#LANG,
-						class_item=highlight col-md-4,
-						class_bouton=btn c-btn-uppercase c-btn-white c-btn-bold c-btn-border-1x} />
-				</div>
-			</div>]
+		</div>
+
 		</aside>
 
 		<footer>
