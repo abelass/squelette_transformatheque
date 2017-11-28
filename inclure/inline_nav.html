@@ -11,11 +11,16 @@
 <!-- END: INLINE NAV -->
 <!-- BEGIN: INLINE NAV -->
 <nav class="c-top-menu[ c-pull-right(#ENV{brand_topbar}|non)]">
-	[(#REM)<ul class="c-links c-theme-ul">
-		#GET{divider}
-		<li><a href="#">Contact</a></li>
-		#GET{divider}
-	</ul>]
+	<ul class="c-links c-theme-ul">
+		<li>
+			<a
+				rel="nofollow"
+				target="_blank"
+				onclick="if (jQuery.modalbox) {jQuery.modalbox('[(#URL_PAGE{newsletter_subscription}|parametre_url{var_zajax,content})]');return false;}"
+				href="#URL_PAGE{newsletter_subscription}"
+				title="<:mailsubscriber:label_inscription:> Newsletter">Newsletter</a>
+	</li>
+	</ul>
 	<ul class="c-ext c-theme-ul">
 		[<li class="c-lang dropdown c-last">
 			(#INCLURE{fond=inclure/menu_langues[(#GET{select})],env})
