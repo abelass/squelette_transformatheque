@@ -17,7 +17,7 @@
 
 	<necessite nom="theme_jango" compatibilite="[1.0.4;]" />
 	<necessite nom="wsp_ml" compatibilite="[0.2.7;]" />
-	<necessite nom="selection_objet" compatibilite="[1.11.3;]" />
+	<necessite nom="liaison_objet" compatibilite="[2.0.0;]" />
 	<necessite nom="newsletters" compatibilite="[1.5.3;]" />
 	<necessite nom="agenda" compatibilite="[3.18.6;]" />
 	<necessite nom="fullcalendar_facile" compatibilite="[2.0.0;]" />

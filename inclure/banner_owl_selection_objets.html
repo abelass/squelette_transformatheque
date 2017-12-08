@@ -42,12 +42,12 @@ Insertion du modele <articleX|owl>
 </style>
 [(#REM) <!-- Diaporama -->]
 <div id="#ENV{id-carousel,demo}" class="owl-carousel owl-theme[ (#ENV{items}|=={1}|oui)owl-single]">
-<BOUCLE_selection(SELECTION_OBJETS){par ordre}{statut ?}{id_objet_dest ?} {objet_dest ?}>
-	[<div class="owl-slide" data-hash="#ENV{id-carousel,demo}#ID_SELECTIONS_CONTENU">
-		(#ID_OBJET|generer_modele{#OBJET,modeles_so/banner_owl,#ARRAY{
+<BOUCLE_selection(LIAISONS_OBJETS){par ordre}{statut ?}{id_objet_dest ?} {objet_dest ?}>
+	[<div class="owl-slide" data-hash="#ENV{id-carousel,demo}#ID_LIAISON_OBJET">
+		(#ID_OBJET|generer_modele{#OBJET,modeles_lo/banner_owl,#ARRAY{
 			ordre,#ORDRE,
 			total_boucle,#TOTAL_BOUCLE,
-			id_selection_objet,#ID_SELECTION_OBJET,
+			id_selection_objet,#ID_LIAISON_OBJET,
 			titre,#TITRE,
 			compteur_boucle,#COMPTEUR_BOUCLE,
 			date,#DATE}})</div>]
