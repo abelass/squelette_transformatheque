@@ -1,0 +1,30 @@
+<B_selection>
+<!-- BEGIN: CONTENT/BLOG/RECENT-POSTS -->
+<div class="c-content-box c-size-md c-bg-grey-1">
+	<!-- Begin: Testimonals 1 component -->
+	<div class="c-content-blog-post-card-1-slider" data-slider="owl">
+		<!-- Begin: Title 1 component -->
+		<div class="c-content-title-1">
+			<h3 class="c-center c-font-uppercase c-font-bold">Actualités</h3>
+			<div class="c-line-center c-theme-bg"></div>
+		</div>
+		<!-- End-->
+		<!-- Begin: Owlcarousel -->
+		<div class="owl-carousel owl-theme c-theme c-owl-nav-center" data-items="3" data-slide-speed="8000" data-rtl="false">
+	<BOUCLE_selection(LIAISON_OBJETS){type_lien}{par ordre}{statut ?}{id_objet_dest ?} {objet_dest ?}>#SET{direction,#COMPTEUR_BOUCLE|alterner{right,left}}
+			[(#ID_OBJET|generer_modele{#OBJET,modeles_lo/actualites,#ARRAY{
+				ordre,#ORDRE,
+				total_boucle,#TOTAL_BOUCLE,
+				id_selection_objet,#ID_LIAISON_OBJET,
+				titre,#TITRE,
+				url,#URL,
+				compteur_boucle,#COMPTEUR_BOUCLE,
+				date,#DATE,
+				direction,#GET{direction},
+			}})]
+	</BOUCLE_selection>
+		</div>
+			<!-- End-->
+	</div>
+</div><!-- END: CONTENT/BLOG/RECENT-POSTS -->
+</B_selection>

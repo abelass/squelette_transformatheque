@@ -10,7 +10,7 @@
 		</div>
 		<!-- End-->
 		<ul class="c-list">
-<BOUCLE_selection(LIAISON_OBJETS){par ordre}{statut ?}{id_objet_dest ?} {objet_dest ?}>#SET{direction,#COMPTEUR_BOUCLE|alterner{right,left}}
+<BOUCLE_selection(LIAISON_OBJETS){type_lien}{par ordre}{statut ?}{id_objet_dest ?} {objet_dest ?}>#SET{direction,#COMPTEUR_BOUCLE|alterner{right,left}}
 		[<li>
 			<div class="c-card c-font-[(#GET{direction})] wow animate [(#COMPTEUR_BOUCLE|alterner{fadeInLeft,fadeInRight})]">
 				(#ID_OBJET|generer_modele{#OBJET,modeles_lo/activites,#ARRAY{
