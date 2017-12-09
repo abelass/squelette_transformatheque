@@ -13,16 +13,15 @@
 <BOUCLE_selection(LIAISON_OBJETS){par ordre}{statut ?}{id_objet_dest ?} {objet_dest ?}>#SET{direction,#COMPTEUR_BOUCLE|alterner{right,left}}
 		<li>
 			<div class="c-card c-font-[(#GET{direction})] wow animate [(#COMPTEUR_BOUCLE|alterner{fadeInLeft,fadeInRight})]">
-				<i class="icon-trophy c-font-27 c-theme-font c-float-[(#GET{direction})] c-border c-border-opacity"></i>
-				<div class="c-content c-content-[(#GET{direction})]">
 					[(#ID_OBJET|generer_modele{#OBJET,modeles_lo/activites,#ARRAY{
 						ordre,#ORDRE,
 						total_boucle,#TOTAL_BOUCLE,
 						id_selection_objet,#ID_LIAISON_OBJET,
 						titre,#TITRE,
 						compteur_boucle,#COMPTEUR_BOUCLE,
-			date,#DATE}})]
-				</div>
+						date,#DATE,
+						direction,#GET{direction},
+					}})]
 			</div>
 			<div class="c-border-bottom c-bg-opacity-2"> </div>
 		</li>
