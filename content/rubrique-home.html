@@ -28,32 +28,18 @@
 		</header>
 
 		<div class="main container">
-
-		[(#INCLURE{fond=inclure/outils,env})]
+			[(#INCLURE{fond=inclure/outils,env})]
 			[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-
-
-		<INCLURE{fond=inclure/activites} />
 		</div>
 
 
 		<aside>
+		<INCLURE{fond=inclure/activites,objet_dest=rubrique,id_objet_dest=#ID_RUBRIQUE,type_lien=activites} />
 		<INCLURE{fond=inclure/news} />
 		<div class="c-content-box c-size-md c-bg-white">
 			<div class="row">
 				<div class="col-sm-7">
-					<INCLURE{fond=inclure/temoignages,
-						loop=true,
-						height=70,
-						width=70
-						items=4,
-						id-carousel=temoignages,
-						margin=1,
-						lazyLoad=true,
-						dots=false,
-						autoplay=false
-						autoplayHoverPause=true,
-					type_lien=temoignages} />
+					<INCLURE{fond=inclure/temoignages,type_lien=temoignages,objet_dest=rubrique,id_objet_dest=#ID_RUBRIQUE} />
 				</div>
 				<div class="col-sm-5 facebook-container">
 					<div

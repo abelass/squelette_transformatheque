@@ -22,6 +22,8 @@
 	<necessite nom="agenda" compatibilite="[3.18.6;]" />
 	<necessite nom="fullcalendar_facile" compatibilite="[2.0.0;]" />
 
+	<utilise nom="theme_jango" compatibilite="[1.0.6;]" />
+
 	<pipeline nom="autoriser" inclure="transformatheque_autorisations.php" />
 
 

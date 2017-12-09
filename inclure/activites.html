@@ -1,96 +1,40 @@
+<B_selection>
 <!-- BEGIN: CONTENT/FEATURES/FEATURES-8 -->
 <div class="c-content-box c-size-md c-bg-white">
-	<div class="container">
-		<div class="c-content-feature-10">
-			<!-- Begin: Title 1 component -->
-			<div class="c-content-title-1">
-				<h3 class="c-font-uppercase c-center c-font-bold">Activités</h3>
-				<div class="c-line-center c-theme-bg"></div>
-				<p class="c-font-center">Lorem ipsum dolor consetuer elit adipicing sed diam ticidut erat votpat dolore</p>
-			</div>
-			<!-- End-->
-			<ul class="c-list">
-				<li>
-					<div class="c-card c-font-right wow animate fadeInLeft">
-						<i class="icon-trophy c-font-27 c-theme-font c-float-right c-border c-border-opacity"></i>
-						<div class="c-content c-content-right">
-							<h3 class="c-font-uppercase c-font-bold">25 Totally Unique Homepages</h3>
-							<p>
-								Lorem ipsum dolor consetuer adipicing sed diam ticidut erat votpat dolore
-							</p>
-						</div>
-					</div>
-					<div class="c-border-bottom c-bg-opacity-2"></div>
-				</li>
-				<div class="c-border-middle c-bg-opacity-2"></div>
-				<li>
-					<div class="c-card wow animate fadeInRight">
-						<i class="icon-rocket c-font-27 c-theme-font c-float-left c-border c-border-opacity"></i>
-						<div class="c-content c-content-left">
-							<h3 class="c-font-uppercase c-font-bold">Intuitive Code Structure</h3>
-							<p>
-								Lorem ipsum dolor consetuer adipicing sed diam ticidut erat votpat dolore
-							</p>
-						</div>
-					</div>
-					<div class="c-border-bottom c-bg-opacity-2"></div>
-				</li>
-			</ul>
-			<ul class="c-list">
-				<li>
-					<div class="c-card c-font-right wow animate fadeInLeft">
-						<i class="icon-layers c-font-27 c-theme-font c-float-right c-border c-border-opacity"></i>
-						<div class="c-content c-content-right">
-							<h3 class="c-font-uppercase c-font-bold">10 Exclusive Slideshows</h3>
-							<p>
-								Lorem ipsum dolor consetuer adipicing sed diam ticidut erat votpat dolore
-							</p>
-						</div>
-					</div>
-					<div class="c-border-bottom c-bg-opacity-2"></div>
-				</li>
-				<div class="c-border-middle c-bg-opacity-2"></div>
-				<li class="c-border-grey-1-5">
-					<div class="c-card wow animate fadeInRight">
-						<i class="icon-present c-font-27 c-theme-font c-float-left c-border c-border-opacity"></i>
-						<div class="c-content c-content-left">
-							<h3 class="c-font-uppercase c-font-bold">Huge & Unlimited Updates</h3>
-							<p>
-								Lorem ipsum dolor consetuer adipicing sed diam ticidut erat votpat dolore
-							</p>
-						</div>
-					</div>
-					<div class="c-border-bottom c-bg-opacity-2"></div>
-				</li>
-			</ul>
-			<ul class="c-list">
-				<li>
-					<div class="c-card c-font-right wow animate fadeInLeft">
-						<i class="icon-book-open c-font-27 c-theme-font c-float-right c-border c-border-opacity"></i>
-						<div class="c-content c-content-right">
-							<h3 class="c-font-uppercase c-font-bold">16 Unique Header Designs</h3>
-							<p>
-								Lorem ipsum dolor consetuer adipicing sed diam ticidut erat votpat dolore
-							</p>
-						</div>
-					</div>
-					<div class="c-border-bottom c-bg-opacity-2 c-mobile"></div>
-				</li>
-				<div class="c-border-middle c-bg-opacity-2"></div>
-				<li>
-					<div class="c-card wow animate fadeInRight">
-						<i class="icon-support c-font-27 c-theme-font c-float-left c-border c-border-opacity"></i>
-						<div class="c-content c-content-left">
-							<h3 class="c-font-uppercase c-font-bold">Stunning Customer Support</h3>
-							<p>
-								Lorem ipsum dolor consetuer adipicing sed diam ticidut erat votpat dolore
-							</p>
-						</div>
-					</div>
-				</li>
-			</ul>
-
+	<div class="c-content-feature-10">
+		<!-- Begin: Title 1 component -->
+		<div class="c-content-title-1">
+			<h3 class="c-font-uppercase c-center c-font-bold">Activités</h3>
+			<div class="c-line-center c-theme-bg"></div>
+			<p class="c-font-center">Lorem ipsum dolor consetuer elit adipicing sed diam ticidut erat votpat dolore</p>
 		</div>
+		<!-- End-->
+		<ul class="c-list">
+<BOUCLE_selection(LIAISON_OBJETS){par ordre}{statut ?}{id_objet_dest ?} {objet_dest ?}>
+		<li>
+			<div class="c-card c-font-[(#COMPTEUR_BOUCLE|alterner{right,left})] wow animate [(#COMPTEUR_BOUCLE|alterner{fadeInLeft,fadeInRight})]">
+				<i class="icon-trophy c-font-27 c-theme-font c-float-[(#COMPTEUR_BOUCLE|alterner{right,left})] c-border c-border-opacity"></i>
+				<div class="c-content c-content-[(#COMPTEUR_BOUCLE|alterner{right,left})]">
+					[(#ID_OBJET|generer_modele{#OBJET,modeles_lo/activites,#ARRAY{
+						ordre,#ORDRE,
+						total_boucle,#TOTAL_BOUCLE,
+						id_selection_objet,#ID_LIAISON_OBJET,
+						titre,#TITRE,
+						compteur_boucle,#COMPTEUR_BOUCLE,
+			date,#DATE}})]
+				</div>
+			</div>
+			<div class="c-border-bottom c-bg-opacity-2"> </div>
+		</li>
+		[(#COMPTEUR_BOUCLE|alterner{
+			<div class="c-border-middle c-bg-opacity-2"></div>,
+			''
+			})]
+	[(#COMPTEUR_BOUCLE|alterner{'',</ul>})]
+	[(#COMPTEUR_BOUCLE|alterner{'',<ul class="c-list">})]
+	</BOUCLE_selection>
+	</ul>
 	</div>
 </div>
+</B_selection>
 <!-- END: CONTENT/FEATURES/FEATURES-8 -->
