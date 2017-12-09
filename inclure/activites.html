@@ -10,11 +10,11 @@
 		</div>
 		<!-- End-->
 		<ul class="c-list">
-<BOUCLE_selection(LIAISON_OBJETS){par ordre}{statut ?}{id_objet_dest ?} {objet_dest ?}>
+<BOUCLE_selection(LIAISON_OBJETS){par ordre}{statut ?}{id_objet_dest ?} {objet_dest ?}>#SET{direction,#COMPTEUR_BOUCLE|alterner{right,left}}
 		<li>
-			<div class="c-card c-font-[(#COMPTEUR_BOUCLE|alterner{right,left})] wow animate [(#COMPTEUR_BOUCLE|alterner{fadeInLeft,fadeInRight})]">
-				<i class="icon-trophy c-font-27 c-theme-font c-float-[(#COMPTEUR_BOUCLE|alterner{right,left})] c-border c-border-opacity"></i>
-				<div class="c-content c-content-[(#COMPTEUR_BOUCLE|alterner{right,left})]">
+			<div class="c-card c-font-[(#GET{direction})] wow animate [(#COMPTEUR_BOUCLE|alterner{fadeInLeft,fadeInRight})]">
+				<i class="icon-trophy c-font-27 c-theme-font c-float-[(#GET{direction})] c-border c-border-opacity"></i>
+				<div class="c-content c-content-[(#GET{direction})]">
 					[(#ID_OBJET|generer_modele{#OBJET,modeles_lo/activites,#ARRAY{
 						ordre,#ORDRE,
 						total_boucle,#TOTAL_BOUCLE,
