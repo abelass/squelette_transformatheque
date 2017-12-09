@@ -11,21 +11,21 @@
 		<!-- End-->
 		<ul class="c-list">
 <BOUCLE_selection(LIAISON_OBJETS){par ordre}{statut ?}{id_objet_dest ?} {objet_dest ?}>#SET{direction,#COMPTEUR_BOUCLE|alterner{right,left}}
-		<li>
+		[<li>
 			<div class="c-card c-font-[(#GET{direction})] wow animate [(#COMPTEUR_BOUCLE|alterner{fadeInLeft,fadeInRight})]">
-					[(#ID_OBJET|generer_modele{#OBJET,modeles_lo/activites,#ARRAY{
-						ordre,#ORDRE,
-						total_boucle,#TOTAL_BOUCLE,
-						id_selection_objet,#ID_LIAISON_OBJET,
-						titre,#TITRE,
-						url,#URL,
-						compteur_boucle,#COMPTEUR_BOUCLE,
-						date,#DATE,
-						direction,#GET{direction},
-					}})]
+				(#ID_OBJET|generer_modele{#OBJET,modeles_lo/activites,#ARRAY{
+					ordre,#ORDRE,
+					total_boucle,#TOTAL_BOUCLE,
+					id_selection_objet,#ID_LIAISON_OBJET,
+					titre,#TITRE,
+					url,#URL,
+					compteur_boucle,#COMPTEUR_BOUCLE,
+					date,#DATE,
+					direction,#GET{direction},
+				}})
 			</div>
 			<div class="c-border-bottom c-bg-opacity-2"> </div>
-		</li>
+		</li>]
 		[(#COMPTEUR_BOUCLE|alterner{
 			<div class="c-border-middle c-bg-opacity-2"></div>,
 			''
