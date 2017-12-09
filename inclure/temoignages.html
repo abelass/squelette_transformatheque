@@ -1,3 +1,4 @@
+<B_selection>
 <!-- BEGIN: CONTENT/TESTIMONIALS/TESTIMONIALS-6-3 -->
 <div class="class="c-content-testimonial-2-slider"" data-slider="owl">
 		<div class="c-content-title-1">
@@ -6,75 +7,18 @@
 				<p class="c-center c-font-uppercase1">Ce qu'ils pensent de la Transformathèque</p>
 		</div>
 		<div class="owl-carousel owl-theme c-theme owl-single c-owl-nav-center" data-single-item="true" data-slide-speed="8000" data-rtl="false">
-				<div class="item">
-						<div class="c-content-testimonial-1 c-option-light">
-								<div class="c-content">
-										Lorem ipsum dolor sit amet et consectetuer adipiscing elit, sed nonummy nib euismod
-										tincid unt ut ed laoreet dolore sit amet consectetuer adipiscing.
-								</div>
-								<div class="c-person">
-										<div class="c-person-detail c-font-uppercase">
-												<h4 class="c-name">Mark Doe</h4>
-												<p class="c-position c-font-bold c-theme-font">CFO, Walmart</p>
-										</div>
-								</div>
-						</div>
-				</div>
-				<div class="item">
-						<div class="c-content-testimonial-1 c-option-light">
-								<div class="c-content">
-										Lorem ipsum dolor sit amet et consectetuer adipiscing elit, sed nonummy nib euismod
-										tincid unt ut ed laoreet dolore sit amet consectetuer adipiscing.
-								</div>
-								<div class="c-person">
-										<div class="c-person-detail c-font-uppercase">
-												<h4 class="c-name">Ashley Benson</h4>
-												<p class="c-position c-font-bold c-theme-font">CFO, Loop Inc</p>
-										</div>
-								</div>
-						</div>
-				</div>
-				<div class="item">
-						<div class="c-content-testimonial-1 c-option-light">
-								<div class="c-content">
-										Lorem ipsum dolor sit amet et consectetuer adipiscing elit, sed nonummy nib euismod
-										tincid unt ut ed laoreet dolore sit amet consectetuer adipiscing.
-								</div>
-								<div class="c-person">
-										<div class="c-person-detail c-font-uppercase">
-												<h4 class="c-name">Nina Kunis</h4>
-												<p class="c-position c-font-bold c-theme-font">CFO, ERA Tech</p>
-										</div>
-								</div>
-						</div>
-				</div>
-				<div class="item">
-						<div class="c-content-testimonial-1 c-option-light">
-								<div class="c-content">
-										Lorem ipsum dolor sit amet et consectetuer adipiscing elit, sed nonummy nib euismod
-										tincid unt ut ed laoreet dolore sit amet consectetuer adipiscing.
-								</div>
-								<div class="c-person">
-										<div class="c-person-detail c-font-uppercase">
-												<h4 class="c-name">Ashley Benson</h4>
-												<p class="c-position c-font-bold c-theme-font">CFO, Loop Inc</p>
-										</div>
-								</div>
-						</div>
-				</div>
-				<div class="item">
-						<div class="c-content-testimonial-1 c-option-light">
-								<div class="c-content">
-										Lorem ipsum dolor sit amet et consectetuer adipiscing elit, sed nonummy nib euismod
-										tincid unt ut ed laoreet dolore sit amet consectetuer adipiscing.
-								</div>
-								<div class="c-person">
-										<div class="c-person-detail c-font-uppercase">
-												<h4 class="c-name">Mark Jeep</h4>
-												<p class="c-position c-font-bold c-theme-font">CFO, ERA Tech</p>
-										</div>
-								</div>
-						</div>
-				</div>
+	<BOUCLE_selection(LIAISON_OBJETS){type_lien}{par ordre}{statut ?}{id_objet_dest ?} {objet_dest ?}>#SET{direction,#COMPTEUR_BOUCLE|alterner{right,left}}
+			[(#ID_OBJET|generer_modele{#OBJET,modeles_lo/temoignages,#ARRAY{
+				ordre,#ORDRE,
+				total_boucle,#TOTAL_BOUCLE,
+				id_selection_objet,#ID_LIAISON_OBJET,
+				titre,#TITRE,
+				url,#URL,
+				compteur_boucle,#COMPTEUR_BOUCLE,
+				date,#DATE,
+				direction,#GET{direction},
+			}})]
+	</BOUCLE_selection>
 		</div>
 </div>
+</B_selection>
