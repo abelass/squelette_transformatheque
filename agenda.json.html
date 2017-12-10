@@ -14,8 +14,8 @@
 		allDay,#GET{allday},
 		start,#DATE_DEBUT,
 		end,#DATE_FIN,
-		url,#URL_ARTICLE,
+		url,http://larut.eu/#ID_ARTICLE|generer_url_entite{article,&},
 		color,#f79d6c,
-		description,#GET{descruption}}})]
+		description,#GET{description}}})]
 	[(#GET{tableau}|json_encode)]
 </BOUCLE_evenements>]
