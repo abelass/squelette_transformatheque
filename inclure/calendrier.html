@@ -1,6 +1,3 @@
-<link rel='stylesheet' type='text/css' href='#CHEMIN{lib/fullcalendar/fullcalendar.css}' />
-<script type='text/javascript' src='#CHEMIN{lib/fullcalendar/fullcalendar.min.js}'></script>
-
 <B_type_cours>
 <div class="type_cours">
 	<ul class="nav nav-tabs">
@@ -19,19 +16,13 @@
 #SET{id_article,#ARRAY}
 <BOUCLE_article(larut:ARTICLES)> #SET{id_article,#GET{id_article}|push{#ID_ARTICLE}} </BOUCLE_article>
 
-[(#GET{id_article}|serialize)]
 <script type="text/javascript">
 	$(function() {
 		$(".type_cours a").click(function() {
 			var id_mot = $(this).attr('data-target');
-			ajaxReload('menu_articles_rubriques', {
-				args : {
-					id_mot : id_mot
-				}
-			});
 			ajaxReload('agenda', {
 				args : {
-					//id_mot : id_mot
+					id_mot : id_mot
 				}
 			});
 			return false;
@@ -48,7 +39,7 @@ jQuery(function($) {
 			events: "[(#URL_PAGE{agenda.json}|parametre_url{date_fin,#DATE,&}|parametre_url{id_article,[(#GET{id_article})],&})]",
 			header: {
 				left: [(#LANG_DIR|=={ltr}|?{"'prevYear,prev,next,nextYear today'","'listMonth,month,agendaWeek,agendaDay'"})],
-				center: 'teste',
+				center: 'title',
 				right: [(#LANG_DIR|=={ltr}|?{"'agendaDay,agendaWeek,month,listMonth'","'today nextYear,next,prev,prevYear'"})]
 				},
 			fixedWeekCount: false,

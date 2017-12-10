@@ -4,15 +4,18 @@
 [<BOUCLE_evenements(larut:spip_evenements){', '}
 	{id_article ?IN #ENV**{id_article}}
 	{par date_debut}
-		{mois_relatif_fin<=0}>[(#HORAIRE|=={non}|?{#SET{allday,true},#SET{allday,false}})]
+		{mois_relatif_fin<=0}>
+		[(#HORAIRE|=={non}|?{#SET{allday,true},#SET{allday,false}})]
+		#SET{title,#TITRE|html2unicode|unicode2charset}
+		#SET{description, #DESCRIPTIF|html2unicode|unicode2charset}
 	[(#SET{tableau,#ARRAY{
 		id,#ID_EVENEMENT,
-		title,#TITRE|html2unicode|unicode2charset,
+		title,#GET{title},
 		allDay,#GET{allday},
 		start,#DATE_DEBUT,
 		end,#DATE_FIN,
 		url,#URL_ARTICLE,
-		description,#DESCRIPTIF|html2unicode|unicode2charset}})]
+		description,#GET{descruption}}})]
 	[(#GET{tableau}|json_encode)]
 [(#ENV{couleur}|=={rubrique}|oui)
 #SET{tableau,#GET{tableau}|array_merge{#ARRAY{
