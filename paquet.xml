@@ -1,7 +1,7 @@
 <paquet
 	prefix="transformatheque"
 	categorie="squelette"
-	version="1.0.2"
+	version="1.0.3"
 	etat="dev"
 	compatibilite="[3.2.0;3.2.*]"
 	logo="prive/themes/spip/images/transformatheque-64.png"
@@ -21,6 +21,19 @@
 	<necessite nom="newsletters" compatibilite="[1.5.3;]" />
 	<necessite nom="agenda" compatibilite="[3.18.6;]" />
 	<necessite nom="fullcalendar_facile" compatibilite="[2.0.0;]" />
+	<necessite nom="reservation_evenement" compatibilite="[1.29.5;]" />
+	<necessite nom="reservations_multiples" compatibilite="[1.5.11;]" />
+	<necessite nom="reservation_communication" compatibilite="[1.1.2;]" />
+	<necessite nom="reservations_credits" compatibilite="[1.1.8;]" />
+	<necessite nom="reservation_bank" compatibilite="[1.4.2;]" />
+	<necessite nom="promotions_reservations" compatibilite="[1.0.2;]" />
+	<necessite nom="reservations_mailsubscribers" compatibilite="[1.2.11;]" />
+	<necessite nom="declinaisons" compatibilite="[1.0.3;]" />
+	<necessite nom="partenaires" compatibilite="[1.5.0;]" />
+	<necessite nom="notifications_archive" compatibilite="[1.0.1;]" />
+	<necessite nom="comptes_bancaires" compatibilite="[1.0.0;]" />
+	<necessite nom="message_personnalise" compatibilite="[1.0.0;]" />
+	<necessite nom="rang" compatibilite="[1.0.3;]" />
 
 
 
