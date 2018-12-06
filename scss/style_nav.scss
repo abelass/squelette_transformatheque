@@ -1,0 +1,142 @@
+.nav__item {
+	font-weight:			$medium;
+	font-size:				u($s, em);
+	text-align:				center;	
+	line-height:			$l;
+	margin-bottom:			0;
+	@extend					.heading-e;
+	position:				relative;
+	padding:				0 0.5rem;
+	white-space:			nowrap;
+
+	a {
+		text-decoration: 	none;
+	}
+
+	&--footer {
+		
+	}
+
+	&--nested {
+		font-size:				1em;
+
+		&:not(:last-of-type) {
+
+		}
+	}
+
+	&--search {
+
+	}
+}
+
+.nav--main {
+	list-style:				none;
+	border-top:				2px solid $grey-40;
+	border-bottom:			2px solid $grey-40;
+	padding:				0;
+	width:					auto;
+	display:				flex;
+	justify-content:		center;
+}
+
+.nav--footer {
+	display:				inline-block;
+}
+
+.blog-nav {
+	width:					100%;
+	@extend 				%max-width;
+
+	ul {
+		padding-left:		0;
+	}
+
+	&__item {
+		list-style:				none;
+		width:				auto;
+		max-width:			45%;
+		margin-bottom:		0 !important;
+		color:				$orange-a;
+
+
+		a {
+			display:			flex;
+			flex-direction:		column;
+			padding:			0.5em;
+
+			&:hover {
+				color:		darken($orange-a, 15%);
+				background-color:	$grey-40;
+
+				.citation {
+					color:	$black;
+				}
+			}
+		}
+
+		&:first-child {
+			margin-left:	-0.5em;
+		}
+
+		&:last-child {
+			margin-right:	-0.5em;
+			text-align:		right;
+		}
+	}
+}
+
+.nav__list {
+	list-style:				none;
+	align-items:			center;
+	// display:				flex;
+	justify-content:		center;
+	display:				grid;
+	grid-template-columns:	repeat(auto-fit, minmax(96px, 100px));
+	grid-gap:				var(--margin--xs);
+	padding:				0.25rem;
+
+	&--nested {
+		display:			none;
+		position:			absolute;
+		top:				100%;
+		left:				-0%;
+		width:				auto;
+		border-radius:		0 0 0.5rem 0.5rem;
+		// z-index:			z(0);
+		background-color:	$white;
+		overflow:			hidden;
+		padding:			0 var(--margin--xs);
+		// box-shadow:			0 2px 2px 0 $grey;
+
+		.nav__item {
+			text-align: 	left;
+		    width: calc(100% + var(--margin--xs) * 2);
+		    margin-left: calc(var(--margin--xs) * -1);
+		    padding-left: var(--margin--xs);
+
+			&:hover {
+			    background: $orange-60;
+
+			    a {
+			    	color: $white;
+			    }
+			}
+		}
+
+		.nav__item:not(:hover) & {
+			pointer-events:		none;
+		}
+
+		.nav__item--deep:not(:hover) & {
+
+		}
+	}
+}
+
+.logo {
+	img {
+		display:			block;
+		height:				2.25rem;
+	}
+}

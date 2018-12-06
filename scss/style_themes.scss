@@ -1,0 +1,157 @@
+// // Themes
+
+.page {
+	--display-type:		'fira-sans';
+		--text-type:		'fira-sans';
+		--colour-A:		hsl(15, 82%, 53%);
+		--colour-B:		hsl(14, 100%, 65%);
+		--colour-C:		hsl(40, 100%, 64%);
+		--colour-D:		hsl(9, 100%, 7%);
+		--colour-E:		hsl(14, 93%, 90%);
+
+	&[data-theme="A"] {
+		--display-type:		'mahalia';
+		--text-type:			'ff-basic-gothic-pro';
+		--colour-A:		hsl(15, 82%, 53%);
+		--colour-B:		hsl(14, 100%, 65%);
+		--colour-C:		hsl(40, 100%, 64%);
+		--colour-D:		hsl(9, 100%, 7%);
+		--colour-E:		hsl(14, 93%, 90%);
+
+		font-family:		var(--text-type);
+
+		.card__cta {
+			background-image:	linear-gradient(
+							var(--colour-C), var(--colour-B)
+						);
+		}
+
+		$lock: (property:	font-size,
+			minValue:		18,
+			maxValue:		20,
+			minViewport:	320,
+			maxViewport:	1236
+		);
+
+		@include lock($lock);
+
+		$lock: (property:	line-height,
+			minValue:		28,
+			maxValue:		36,
+			minViewport:	320,
+			maxViewport:	1236
+		);
+
+		@include lock($lock);
+
+		.page__header {
+			background-color:	var(--colour-C);
+			color:				var(--colour-D);
+		}
+	}
+
+	&[data-theme="B"] {
+		--display-type:		'funkydori';
+		--text-type:			'serenity';
+		--colour-A:		hsl(345, 80%, 42%);
+		--colour-B:		hsl(0, 80%, 53%);
+		--colour-C:		hsl(12, 90%, 59%);
+		--colour-D:		hsl(9, 100%, 7%);
+		--colour-E:		hsl(40, 100%, 70%);
+
+		font-family:		var(--text-type);
+
+		.heading-a {
+			margin-bottom:	0 !important;
+			margin-top:		u($s, em);
+		}
+	}
+
+	&[data-theme="C"] {
+		--display-type:		'cortado';
+		--text-type:			'filson-pro';
+		--colour-A:		#FC2755;
+		--colour-B:		#FD7737;
+		--colour-C:		#FDAC3B;
+		--colour-D:		#FEEBCC;
+		--colour-E:		#28B48B;
+
+		font-family:		var(--text-type);
+
+		// background-color:	var(--colour-D);
+
+		$lock: (property:	line-height,
+			minValue:		32,
+			maxValue:		40,
+			minViewport:	320,
+			maxViewport:	1236
+		);
+
+		.card__cta {
+			background-image:	linear-gradient(
+								var(--colour-D), var(--colour-C)
+							);
+			text-shadow:	none;
+			color:	black;
+			
+		}
+
+		@include lock($lock);
+
+		.card__description {
+			font-size:		u($s * 1.25, em);
+			line-height:	$l;
+		}
+
+		.page__header {
+			background-color:	var(--colour-E);
+			// color:				var(--colour-A);
+			// text-shadow:		0 -2px white;
+		}
+	}
+}
+
+.themes {
+	max-height:				1.5em;
+	cursor:					pointer;
+	overflow:				hidden;
+
+	& > p {
+		pointer-events:		none;
+	}
+	
+	&:hover {
+		max-height:			initial;
+	}
+	
+}
+
+.themes__list {
+	list-style:				none;
+	padding:				0 var(--margin--s);
+	background-color:		color($white, $opacity--low);
+
+	&:hover {
+		background-color:	color($white, $opacity--mid);
+	}
+
+}
+
+.themes__item {
+	padding:				0 var(--margin--s);
+	cursor:					pointer;
+
+	&:hover {
+		background-color:	color($white, $opacity--high);
+		color:				$black;
+	}
+
+	&:active {
+		background-color:	$grey-60;
+		color:				$white;
+	}
+
+	&:not(:last-child) {
+		border-bottom:			1px solid $white;
+	}
+}

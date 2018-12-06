@@ -1,0 +1,30 @@
+<body>
+	<main class="page flx f-col f-act page--#ENV{type-page}">
+		<header id="header" class='page__header page__header--home'>
+			<INCLURE{fond=header/#ENV{type-page},env} />
+			<nav class="nav nav--main" id="nav">
+				<INCLURE{fond=inclure/nav,env} />
+			</nav>
+		</header>
+		<section class='section section--full section--splash mrgn-b--xl'>
+			<div class='hero-image'>
+				<img alt='This is an image' src='#CHEMIN{images/atelier-1.jpg}' title='This is an imagesss'>
+				<div class='hero-image__info flx f-col f-act f-jct'>
+					<p>Larut vous propose la transformation de vos vêtements en pièces uniques.</p>
+					<p>
+						<a href='/concept.html'>Find out more</a>
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<INCLURE{fond=content/#ENV{type-page},env} />
+		[(#REM)<aside class="extra1 col" id="extra1"><INCLURE{fond=extra1/#ENV{type-page},env} /></aside>
+			<aside class="extra2 col" id="extra2"><INCLURE{fond=extra2/#ENV{type-page},env} /></aside>]
+
+		<footer id="footer" class='page__footer'>
+			<INCLURE{fond=footer/#ENV{type-page},env} />
+		</footer>
+	</main>
+	<script src='#CHEMIN{scripts/min/scripts-min.js}'></script>
+</body>

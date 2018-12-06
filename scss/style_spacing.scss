@@ -1,0 +1,242 @@
+.btn,
+button,
+input[type="button"] {
+	&:not(:last-child):not([class^="mrgn-"]):not([class*=" mrgn-"]) + * {
+		margin-top:			var(--margin--m);
+	}
+
+	.card__actions & {
+		// margin-top:			0 !important;
+	}
+}
+
+
+.hero-image {
+
+	&+ * {
+		margin-top:			calc( var(--page-margin--vertical) / 2 );
+	}
+
+	.article--workshop & {
+		& + * {
+			@include mq(min-width, 768px) {
+				margin-top:	0;
+			}
+		}
+	}
+}
+
+.heading-a,
+.heading-b,
+.photo-grid {
+	&:not(:last-child):not([class^="mrgn-"]):not([class*=" mrgn-"]) {
+		// margin-bottom:	var(--margin--s);
+	}
+}
+
+.heading-b {
+	&:not(:last-child):not([class^="mrgn-"]):not([class*=" mrgn-"]) + * {
+		margin-top:		var(--margin--m);
+	}
+
+	&:not([class^="mrgn-"]):not([class*=" mrgn-"]) + p {
+		margin-top:		var(--margin--xs);
+
+		&.large {
+			margin-top:	var(--margin--xs);
+		}
+	}
+
+	& + .heading-c,
+	& + form {
+		margin-top:		var(--margin--m);
+	}
+}
+
+fieldset {
+	& + fieldset {
+		margin-top:		var(--margin--m);
+	}
+
+	& + p.small {
+		margin-top:		var(--margin--s);
+	}
+}
+
+.heading-c,
+.heading-d {
+	// margin-bottom:	var(--margin--s);
+
+	& + .timeline__item,
+	& + fieldset {
+		margin-top:		var(--margin--m);
+	}
+}
+
+* {
+	&+ .hr {
+		margin-top:		var(--margin--s);
+	}
+}
+
+.grid {
+	&--3-up {
+		&+ * {
+			margin-top:	var(--margin--l);
+		}
+	}
+}
+
+p {
+	&+ p,
+	&+ .hr,
+	&+ ul,
+	&+ .heading-a,
+	&+ .heading-b,
+	&+ .heading-c,
+	&+ footer,
+	&+ .btn,
+	&+ img, 
+	&+ section
+	/*&+ **/ {
+		margin-top:	var(--margin--s);
+	}
+
+	// &+ .heading-b,
+	&+ blockquote,
+	& + .image--inline {
+		margin-top:	var(--margin--l);
+	}
+
+	& + .timeline {
+		margin-top:	var(--margin--s);
+	}
+}
+
+blockquote {
+	&+ p {
+		margin-top:	var(--margin--l);
+	}
+}
+
+img {
+	&+ p {
+		margin-top:	var(--margin--m);
+	}
+}
+
+p, legend, fieldset, .heading-c {
+	&:not(:last-child):not([class^="mrgn-"]):not([class*=" mrgn-"]) {
+		// margin-bottom:	var(--margin--s);
+	}
+}
+
+li {
+	&:not(:last-child):not([class^="mrgn-"]):not([class*=" mrgn-"]):not([class]) {
+		// margin-bottom:	calc( var(--margin--s) / 2);
+	}
+}
+
+.blog-nav__item {
+	&:not(:last-child):not([class^="mrgn-"]):not([class*=" mrgn-"]) {
+		margin-bottom:	var(--margin--l);
+	}
+}
+
+input {
+	&:not(:last-child):not([class^="mrgn-"]):not([class*=" mrgn-"]):not([class]) {
+		margin-bottom:	var(--margin--s);
+	}
+}
+
+blockquote {
+	&:not(:last-child):not([class^='mrgn-']):not([class*='mrgn-']) {
+		// margin-bottom:	var(--margin--s);
+	}
+}
+
+.timeline {
+	& + .hr {
+		margin-top:			var(--margin--l);
+	}
+}
+
+.timeline__item {
+	& + .timeline__item {
+		padding-top:		var(--margin--m);
+
+		&:before {
+			top:			u($m * 1.125, em);
+		}
+	}
+}
+
+.toggle {
+	& + .select-date {
+		margin-top:			var(--margin--s);
+	}
+}
+
+.grid {
+	& + * {
+		margin-top:			var(--margin--m);
+	}
+}
+
+.article__body {
+
+	& + * {
+
+		@include mq(min-width, 1000px) {
+
+			// margin-top:			var(--page-margin--vertical);
+		}
+	}
+}
+
+.section {
+	& + .section {
+		// margin-top:			var(--margin--m);
+	}
+}
+
+.card {
+	& + *,
+	&:not(:first-child) {
+		margin-top:				var(--margin--m);
+	}
+
+	.card__grid & + *,
+	.card__grid &:not(:first-child) {
+		margin-top:				0;
+	}
+}
+
+.card__info {
+	& + * {
+
+	}
+
+	& + .card__actions {
+		// margin-top:				0;
+	}
+}
+
+.card__title {
+	& + * {
+		// margin-top:		var(--margin--s);
+	}
+}
+
+.section--calendar {
+	& + * {
+		margin-top:		var(--margin--l);
+	}
+}
+
+div,
+section {
+	&:not(:last-child):not([class^="mrgn-"]):not([class*=" mrgn-"]) + * {
+		// margin-top:			var(--margin--m);
+	}
+}

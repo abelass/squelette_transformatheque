@@ -1,0 +1,190 @@
+
+.input {
+	font-size:				u($m, em);
+	font-family:			$textType;
+	
+	&--search {
+		width:				calc( 100% - #{u($xl, em)} );
+		margin-bottom:		0;
+		border-radius:		u($l / 4, em);
+		border:				none;
+		transition:			transform $fast $ease-smooth;
+		transform-origin:	100% 50%;
+		padding:			0 var(--margin--s);
+		display:			none;
+	}
+}
+
+.input--incr {
+	margin-bottom:	0 !important;
+	padding:		0;
+	width:			2.25em;
+	height:			2.25em;
+	border:			2px $orange-a solid!important;
+	z-index:		z(1);
+}
+
+.counter--decr {
+	border-radius:	1.125em 0 0 1.125em;
+	margin-right:	-0.5rem;
+}
+
+.counter--incr {
+	border-radius:	0 1.125em 1.125em 0;
+	margin-left:	-0.5rem;
+	z-index:		z(0);
+}
+
+.input--num {
+	width:		u($xxl, em);
+	height:		u($xxl, em);
+	text-align:	center;
+	line-height:	$m;
+	border:			1px solid $grey-60 !important;
+	margin:		0;
+	box-shadow:	none;
+	padding:	0 !important;
+	border-radius:	50%;
+
+	&::-webkit-inner-spin-button, 
+	&::-webkit-outer-spin-button {
+		-webkit-appearance:	none;
+		margin:		0;
+	}
+}
+
+.toggle {
+	width:		u($l * 2, em);
+	height:		u($l, em);
+	border-radius:	u($l / 2, em);
+	overflow:	hidden;
+	position:	relative;
+	box-shadow:	inset 0 0 0 2px $grey-20;
+
+	&:before {
+		z-index:			-1;
+		position:			absolute;
+		content:			"";
+		display:			block;
+		top:				0;
+		left:				0;
+		width:				200%;
+		height:				100%;
+		transform:			translateX(-50%);
+		transition:			transform $ease-smooth $fast;
+	}
+
+	@extend		%u-pseudo;
+
+	&:after {
+		margin:			0.25em;
+		border-radius:	50%;
+		width:	u(#{$l - 0.5}, em);
+		height:	u(#{$l - 0.5}, em);
+		background-color:	$grey-40;
+		transform:			translateX(0em);
+		transition:	transform $ease-smooth $fast;
+	}
+}
+
+input[type='checkbox'] {
+	display:		none;
+}
+
+form {
+	@extend				.flx;
+	@extend				.f-col;
+}
+
+.form {
+	display:			grid;
+	grid-row-gap:		0.5rem;
+	align-items:		start;
+	font-family:		$textType;
+}
+
+label {
+
+}
+
+fieldset {
+
+}
+
+label,
+input,
+textarea {
+
+}
+
+input,
+textarea {
+	&:not([type="button"]):not([type="submit"]):not([type="checkbox"]):not([type="radio"]) {
+		max-width:			100%;
+		line-height:		$xl;
+		box-sizing:			content-box;
+		padding:			0 var(--margin--xs);
+		border:				1px solid $grey-40;
+	}
+
+	&[type="checkbox"] {
+
+	}
+}
+
+.form__item {
+	margin-bottom:		var(--margin--s);
+	width:				100%;
+	@extend				%max-width;
+}
+
+input {
+	&[type="email"],
+	&[type="password"],
+	&[type="text"] {
+		border-radius:	0.25rem;
+	}
+}
+
+.form-section__heading {
+	@extend				.heading-b;
+	@extend				.heading-b.small;
+	@extend				.flx;
+	@extend				.f-jbt;
+	background-color:	$grey-20;
+	padding:			0.5rem;
+	border-radius:		0.25rem;
+
+	.numeral {
+		margin-right:	0.5rem;
+	}
+
+	.fa-times,
+	.fa-check,
+	.numeral {
+		flex-shrink:	0;
+	}
+
+	.fa-times,
+	.fa-check {
+		margin-left:	0;
+	}
+
+	.fa-times {
+		color:			$orange-40;
+	}
+
+	.fa-check {
+		color:			$green-60;
+	}
+
+	&:not(:first-of-type):not(:active) {
+
+	}
+
+	&:not(:active) {
+		& + div {
+
+		}
+	}
+}

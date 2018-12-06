@@ -1,0 +1,77 @@
+.page {
+	width:				100%;
+	min-height:			100vh;	
+}
+
+.page--home {
+	height:				auto;
+	position:			relative;
+}
+
+.page--plain {
+	margin:					var(--page-margin--vertical) var(--page-margin--horizontal);
+}
+
+.page--workshops {
+	@include mq(min-width, 1024px) {
+		grid-template-columns:	repeat(3, 1fr);
+		grid-column-gap:	0;
+	}
+
+	> .grid {
+		grid-gap:			0;
+		// grid-template-columns:	repeat(auto-fit, minmax(1fr, 320px));
+		padding:			0 var(--page-margin--horizontal);
+
+		@include mq(min-width, 768px) {
+
+		}
+	}
+
+	.page__header,
+	.page__footer {
+		@include mq(min-width, 1024px) {
+			grid-column-start:	1;
+			grid-column-end:	4;
+		}		
+	}
+
+	.card__roll {
+		@include mq(min-width, 1024px) {
+
+		} 
+
+		.card {
+			&:nth-of-type(1) {
+				margin-top:			0;
+			}
+
+			&:nth-of-type(1),
+			&:nth-of-type(4) {
+				grid-column-start:	initial;
+				grid-column-end:	initial;
+			}
+		}
+
+		.card--article {
+			@include mq(min-width, 1024px) {
+				margin-top:	0;
+			}
+		}
+	}
+
+	.card__grid {
+		@include mq(min-width, 1024px) {
+			width:				100%;
+			padding:			0;
+			// display:			block;
+		}
+
+		.card__roll {
+			padding-bottom:		var(--margin--m);
+			display:			grid;
+			grid-gap:		var(--margin--m);
+			grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		}
+	}
+}

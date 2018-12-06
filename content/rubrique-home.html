@@ -1,68 +1,207 @@
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s); js.id = id;
-	js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.11';
-	fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}>
-	<INCLURE{fond=inclure/banner_owl_selection_objets,
-		height=400,
-		items=1,
-		id-carousel=slider_banner,
-		margins=0,
-		lazyLoad=true,
-		dots=false,
-		autoplay=true,
-		autoplayHoverPause=true,
-		type_lien=banner,
-		objet_dest=rubrique,
-		id_objet_dest=#ID_RUBRIQUE,
-		type_lien=banner
-		} />
-	<section>
-		<header class="container">
-			<h1 class="#EDIT{titre} hidden">#TITRE</h1>
-		</header>
-
-		<div class="main container">
-			[(#INCLURE{fond=inclure/outils,env})]
-			[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-		</div>
-
-
-		<aside>
-		<INCLURE{fond=inclure/activites,objet_dest=rubrique,id_objet_dest=#ID_RUBRIQUE,type_lien=activites} />
-		<INCLURE{fond=inclure/actualites,objet_dest=rubrique,id_objet_dest=#ID_RUBRIQUE,type_lien=actualites} />
-		<div class="c-content-box c-size-md c-bg-white">
-			<div class="row">
-				<div class="col-sm-7">
-					<INCLURE{fond=inclure/temoignages,type_lien=temoignages,objet_dest=rubrique,id_objet_dest=#ID_RUBRIQUE} />
-				</div>
-				<div class="col-sm-5 facebook-container">
-					<div
-						class="fb-page"
-						data-href="https://www.facebook.com/laruteu/"
-						data-tabs="timeline"
-						data-small-header="false"
-						data-adapt-container-width="true"
-						data-hide-cover="false"
-						data-show-facepile="true">
-						<blockquote cite="https://www.facebook.com/laruteu/" class="fb-xfbml-parse-ignore">
-							<a href="https://www.facebook.com/laruteu/">Larut</a>
-						</blockquote>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		</aside>
-
-		<footer>
-		[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
-		</footer>
-
-	</section>
-</BOUCLE_content>
+<section class='section grid grid--col--2-1 optional'>
+				<section class='section mrgn-b--xl'>
+					<h2 class='section__title heading-b mrgn-b--m'>Featured workshop</h2>
+					<p>Have a look at our next upcoming workshop, we have some places left!</p>
+					<article class='card card--featured'>
+						<a class='card__link' href='/ateliers/parent-enfant-noel-fait-maison.html'></a>
+						<img alt='This is an image' class='card__image' src='/images/img.jpg' title='This is an imagesss'>
+						<div class='card__info flx f-col f-ast f-jct'>
+							<p class='card__tag mrgn-b--xs'>Workshop</p>
+							<h1 class='heading-a card__title'>Couture de base</h1>
+							<p class='card__description'>How must one look at that which is not to be seen? It is time and place for such notions to be questioned.</p>
+						</div>
+					</article>
+					<h2 class='section__title heading-b'>Latest project</h2>
+					<p>Check out what we've been working on with our community.</p>
+					<article class='card card--article'>
+						<figure class='card__image asp--3-4'>
+							<img alt='This is an image' src='/images/img.jpg' title='This is an imagesss'>
+						</figure>
+						<div class='card__info flx f-col f-ast f-jct'>
+							<p class='card__tag mrgn-b--xs'>Module 1</p>
+							<h3 class='card__title heading-b small mrgn-b--0'>Couture de base</h3>
+							<p class='card__description mrgn-b--xs'>
+								How must one look at that which is not to be seen? It is time and place for such notions to be questioned.
+							</p>
+						</div>
+					</article>
+					<h2 class='section__title heading-b'>Latest news</h2>
+					<article class='card card--article'>
+						<figure class='card__image asp--3-4'>
+							<img alt='This is an image' src='/images/img.jpg' title='This is an imagesss'>
+						</figure>
+						<div class='card__info flx f-col f-ast f-jct'>
+							<p class='card__tag mrgn-b--xs'>Module 1</p>
+							<h3 class='card__title heading-b small mrgn-b--0'>Couture de base</h3>
+							<p class='card__description mrgn-b--xs'>
+								How must one look at that which is not to be seen? It is time and place for such notions to be questioned.
+							</p>
+						</div>
+					</article>
+				</section>
+				<section class='section section--calendar mrgn-b--xl'>
+					<h2 class='section__title heading-b mrgn-b--l'>Upcoming workshops</h2>
+					<!-- %table.calendar.mrgn-b--l -->
+					<!-- %thead.calendar__controls -->
+					<!-- %tr -->
+					<!-- %th.calendar__header{ :colspan=>'7' } -->
+					<!-- .flx.f-act.f-jct -->
+					<!-- %button.calendar__month-scrubber -->
+					<!-- %span.fas.fa-chevron-left -->
+					<!-- %h3.heading-b.t-ctr.mrgn-b--0 September 2018 -->
+					<!-- %button.calendar__month-scrubber -->
+					<!-- %span.fas.fa-chevron-right -->
+					<!-- %tbody -->
+					<!-- %tr.calendar__week -->
+					<!-- %td.calendar__day -->
+					<!-- M -->
+					<!-- %td.calendar__day -->
+					<!-- T -->
+					<!-- %td.calendar__day -->
+					<!-- W -->
+					<!-- %td.calendar__day -->
+					<!-- T -->
+					<!-- %td.calendar__day -->
+					<!-- F -->
+					<!-- %td.calendar__day -->
+					<!-- S -->
+					<!-- %td.calendar__day -->
+					<!-- S -->
+					<!-- %tr.calendar__week -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date.date--inactive 27 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date.date--inactive 28 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date.date--inactive 29 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date.date--inactive 30 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date.date--inactive 31 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 1 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 2 -->
+					<!-- %tr.calendar__week -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 3 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 4 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 5 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 6 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 7 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 8 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 9 -->
+					<!-- %tr.calendar__week -->
+					<!-- %td.calendar__day.is-selected -->
+					<!-- %span.calendar__date.has-event 10 -->
+					<!-- / %div -->
+					<!-- / 	%span.calendar__event.event--a -->
+					<!-- / 	%span.calendar__event.event--b -->
+					<!-- / 	%span.calendar__event.event--c -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 11 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 12 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 13 -->
+					<!-- / %div -->
+					<!-- / 	%span.calendar__event.event--a -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 14 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 15 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 16 -->
+					<!-- %tr.calendar__week -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 17 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 18 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 19 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 20 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 21 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 22 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 23 -->
+					<!-- %tr.calendar__week -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 24 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 25 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 26 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date.has-event 27 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 28 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 29 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date 30 -->
+					<!-- %tr.calendar__week -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date.date--inactive 1 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date.date--inactive 2 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date.date--inactive 3 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date.date--inactive 4 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date.date--inactive 5 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date.date--inactive 6 -->
+					<!-- %td.calendar__day -->
+					<!-- %span.calendar__date.date--inactive 7 -->
+					<section class='section date__details mrgn-b--l'>
+						<h2 class='heading-b small'>Monday, 10 September</h2>
+						<article class='calendar-listing'>
+							<div class='listing__info'>
+								<h3 class='heading-d'>Workshop title</h3>
+								<p>
+									<a>More info</a>
+								</p>
+							</div>
+							<div class='listing__actions'>
+								<p class='heading-d mrgn-b--m'>
+									<strong>11:00</strong>
+								</p>
+								<a class='btn btn--outline' href='#register'>Register</a>
+							</div>
+						</article>
+						<article class='calendar-listing'>
+							<div class='listing__info'>
+								<h3 class='heading-d'>Workshop title</h3>
+								<p>
+									<a>More info</a>
+								</p>
+							</div>
+							<div class='listing__actions'>
+								<p class='heading-d mrgn-b--m'>
+									<strong>18:00</strong>
+								</p>
+								<a class='btn btn--outline' href='#register'>Register</a>
+							</div>
+						</article>
+					</section>
+					<section class='section'>
+						<h2 class='section__title heading-b'>Newsletter</h2>
+						<p class='mrgn-b--xl'>Sign up to our newsletter to receive various informations that can be of use for you and your family in times of urgent need.</p>
+						<form class='form'>
+							<label for=''>Email</label>
+							<input class='input' placeholder='email@address.co' type='email'>
+							<button class='btn'>Sign up</button>
+						</form>
+					</section>
+				</section>
+			</section>

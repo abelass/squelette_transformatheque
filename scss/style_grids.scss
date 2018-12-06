@@ -1,0 +1,15 @@
+.double--2-1 {
+	display:		grid;
+	grid-template-columns:	3fr 2fr;
+	grid-gap:		var(--margin--l);
+}
+
+.grid--main-sidebar {
+	display:				grid;
+	grid-gap:				var(--margin--l);
+	
+	@include mq(min-width, 1000px) {
+		grid-template-columns:	75% 25%;
+		grid-gap:				var(--margin--l);
+	}
+}

@@ -1,0 +1,58 @@
+
+// CSS components should be split into separate files according to their functions, how long their definitions are, and if they contain multiple sub-components that would justify grouping them.
+
+// Files should be named clearly, using singular nouns to describe the components they are defining, prefixed with 'style_'.
+// 	+ following BEM conventions in file naming
+// 	+ prefixed with name of the project
+
+// Source order should reflect the below specified structure, placing utilities and variables at the top, components next, and customisations last.
+
+// Utilities
+	@import 	'style_mixins';
+
+	@import 	'style_variables';
+
+	@import		'style_colours';
+
+	@import 	'style_modifiers';
+
+// Configuration
+	@import 	'style_base';
+
+	@import 	'style_typography';
+
+	@import 	'style_grids';
+
+// Modules
+	@import 	'style_modules';
+
+	@import 	'style_sections';
+
+	@import 	'style_forms';
+
+	@import 	'style_cards';
+
+	@import 	'style_article';
+
+	@import 	'style_projects';
+
+	@import 	'style_nav';
+
+	@import 	'style_calendar';
+
+	@import 	'style_gallery';
+
+	@import 	'style_pages';
+
+	@import 	'style_buttons';
+
+	@import 	'style_tables';
+
+// Customisations
+	@import 	'style_spacing';
+
+	@import 	'style_layouts';
+
+	@import 	'style_themes';
+
+	@import 	'style_states';

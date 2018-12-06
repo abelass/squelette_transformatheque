@@ -1,0 +1,628 @@
+// Configure the type area
+:root {
+	hyphens:		auto;
+	
+	$lock: (property:	--line-length,
+		minValue:	440,
+		maxValue:	680,
+		minViewport:320,
+		maxViewport:1236
+	);
+
+	@include lock($lock);
+	//--------------------------------------------//
+	$lock: (property:	--pageWidth,
+		minValue:	320,
+		maxValue:	1236,
+		minViewport:320,
+		maxViewport:1236
+	);
+
+	@include lock($lock);
+	//--------------------------------------------//
+	$lock: (property:	--pageHeight,
+		minValue:	480,
+		maxValue:	720,
+		minViewport:320,
+		maxViewport:1236
+	);
+
+	@include lock($lock, vmin);
+	//--------------------------------------------//
+	$lock: (property:	--margin--xs,
+		minValue:	4,
+		maxValue:	12,
+		minViewport:320,
+		maxViewport:1236
+	);
+
+	// @include lock($lock);
+	--margin--xs:		0.5rem;
+	//--------------------------------------------//
+	$lock: (property:	--margin--s,
+		minValue:	14,
+		maxValue:	18,
+		minViewport:320,
+		maxViewport:1236
+	);
+
+	@include lock($lock);
+	//--------------------------------------------//
+	$lock: (property:	--margin--m,
+		minValue:	18,
+		maxValue:	22,
+		minViewport:320,
+		maxViewport:1236
+	);
+
+	@include lock($lock);
+	//--------------------------------------------//
+	$lock: (property:	--margin--l,
+		minValue:	22,
+		maxValue:	32,
+		minViewport:320,
+		maxViewport:1236
+	);
+
+	@include lock($lock);
+	//--------------------------------------------//
+	$lock: (property:	--margin--xl,
+		minValue:	60,
+		maxValue:	74,
+		minViewport:320,
+		maxViewport:1236
+	);
+
+	@include lock($lock, $viewportUnit: '%');
+	//--------------------------------------------//
+	$lock: (property:	--page-margin--horizontal,
+		minValue:	16,
+		maxValue:	100,
+		minViewport:320,
+		maxViewport:1236
+	);
+
+	@include lock($lock, vw);
+	//--------------------------------------------//
+	$lock: (property:	--page-margin--vertical,
+		minValue:	24,
+		maxValue:	48,
+		minViewport:320,
+		maxViewport:1236
+	);
+
+	@include lock($lock, vw);
+	//--------------------------------------------//
+}
+
+// Set the font size for the layout container
+.page {
+	$lock: (property:	font-size,
+		minValue:		18,
+		maxValue:		22,
+		minViewport:	320,
+		maxViewport:	1236
+	);
+
+	@include lock($lock);
+
+	$lock: (property:	line-height,
+		minValue:		23,
+		maxValue:		28,
+		minViewport:	320,
+		maxViewport:	1236
+	);
+
+	@include lock($lock);
+}
+
+.type-area {
+	padding-bottom:			calc( var(--margin--m) * 2 + 1.5em );
+}
+
+%max-width {
+	width: 				100%;
+	max-width:			var(--line-length);
+}
+
+h1, h2, h3, h4, h5, h6,
+blockquote,
+li, form, p {
+	color:				var(--font-color);
+	@extend				%max-width;
+}
+
+// Style the FOUT
+
+html{
+	// These styles will be used if web fonts aren't available or haven't yet loaded.
+	font-family: 				"Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: 	subpixel-antialiased;
+	-moz-osx-font-smoothing: 	grayscale;
+	// style these tastefully
+	
+	// These are used if scripts are on, and fonts are loading
+	&.wf-loading {
+		%display-type {
+			font-family: 		"Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
+	}
+
+	-webkit-font-smoothing: antialiased;
+	font-family: 	$textType;
+
+	%text-type {
+		font-family: 		$textType;
+	}
+
+	%display-type {
+		font-family: 		$displayType;
+		font-feature-settings: 		'tnum';
+	}
+}
+
+.heading-a {
+	@extend				%max-width;
+	font-family:		$displayType;
+	--fontSize:			#{u($xl, em)};
+    color:				var(--font-color);
+    font-size:	u($xl, em);
+    font-weight: 		$ultrabold;
+    line-height: 		$m;
+    word-wrap:			break-word;
+
+    $lock: (property:	--fontSize,
+		minValue:	36,
+		maxValue:	48,
+		minViewport:320,
+		maxViewport:1236
+	);
+
+	@include lock($lock);
+
+    &.small {
+    	--fontSize:		#{u($m, em)};
+    	line-height:	1.25;
+    }
+}
+
+.heading-b {
+	@extend				%max-width;
+	--fontSize:			#{u($l, em)};
+	font-size:			var(--fontSize);
+	font-weight: 		$bold;
+	
+	$lock: (property:	line-height,
+		minValue:		30,
+		maxValue:		32,
+		minViewport:	320,
+		maxViewport:	1236
+	);
+
+	@include lock($lock);
+
+	color:				var(--font-color);
+	width:				100%;
+
+	&.x-small {
+		--fontSize:	#{u($s, em)};
+	}
+
+	&.small {
+		--fontSize:	1em;
+
+		$lock: (property:	line-height,
+			minValue:		20,
+			maxValue:		27,
+			minViewport:	320,
+			maxViewport:	1236
+		);
+
+		@include lock($lock);
+	}
+
+	&.large {
+		--fontSize: #{u($xl, em)};
+	}
+
+	&.xlarge {
+		$lock: (property:		font-size,
+			minValue:			54,
+			maxValue:			81,
+			minViewport:		320,
+			maxViewport:		1236
+		);
+
+		@include lock($lock);
+	}
+}
+
+.heading-c,
+h3:not([class]) {
+	width: 			100%;
+	@extend			%max-width;
+	font-size:		var(--fontSize);
+	--fontSize:		#{u($m, em)};
+	font-weight:	$semibold;
+	font-feature-settings: 		
+					'calt' 1, 
+					'onum' 1, 
+					'dlig' 1, 
+					'liga' 1, 
+					'clig' 1, 
+					'salt' 0;
+
+	&.vibe {
+		line-height:1.25;
+		font-weight:$bold;
+		font-style:	italic;
+	}
+
+	&.highlight {
+		color:		$orange-a;
+
+		.dark & {
+
+		}
+	}
+
+	&.faded {
+		--font-color:	#{$grey-60};
+	}
+
+	&.small {
+
+	}
+
+	&.large {
+		$lock: (property:		font-size,
+			minValue:			36,
+			maxValue:			55,
+			minViewport:		320,
+			maxViewport:		1236
+		);
+
+		@include lock($lock);
+
+		line-height: 	1.125;
+	}
+
+	&.x-large {
+		font-weight:	$bold;
+
+		$lock: (property:		font-size,
+			minValue:			81,
+			maxValue:			121.5,
+			minViewport:		320,
+			maxViewport:		1236
+		);
+
+		@include lock($lock);			
+	}
+}
+
+.heading-d {
+	width:			100%;
+	font-size:		u($m, em);
+	line-height: 	$l;
+	font-weight:	$bold;
+
+	&.small {
+		color:			$white;
+		font-size:		#{u($m, em)};
+		font-weight:	$medium;
+	}
+
+	&.x-large {
+		font-size:	u($l, em);
+		line-height:	1;
+		color:		hsl(266, 10%, 30%);
+	}
+}
+
+.heading-e {
+	font-size:			u($m, em);
+	line-height: 		u($m * 2, em);
+	font-weight: 		$ultrabold;
+	text-transform:		uppercase;
+	font-feature-settings: 'lnum' 1;
+
+	&.small {
+		font-size:		u($s, em);
+	}
+}
+
+.heading-f {
+	@extend 			.heading-d;
+	color:				$white;
+	background-color:	$orange-60;
+	width:				auto;
+	border-radius:		0.25em;
+	align-self:			flex-start;
+	padding:			0 0.5rem;
+}
+
+p {
+	width: 					100%;
+	font-weight:			$medium;
+	@extend					%max-width;
+	color:					var(--font-color);
+	font-size:				var(--fontSize);
+	--fontSize:				#{u($m, em)};
+	font-feature-settings: 	'onum' 1;
+
+	&:not(.large) {
+
+	}
+		
+	&.small {
+		--fontSize:			#{u($l / 2, em)};
+		line-height:		$l;
+	}
+
+	&.large {
+		--fontSize:			#{u($l, em)};
+
+		$lock: (property:	line-height,
+			minValue:		30,
+			maxValue:		38,
+			minViewport:	320,
+			maxViewport:	1236
+		);
+
+		@include lock($lock);
+	}
+	
+	strong {
+
+		font-weight:	$bold;
+	}
+
+	&.x-large {
+		--fontSize:			#{u($xl, em)};
+		font-weight:		$light;
+	}
+}
+	
+q {
+	quotes: '“' '”' '‘' '’';
+	font-style:		italic;
+	font-weight:	$semibold;
+
+	&:before {
+		content:	open-quote;
+		color:		var(--font-color);
+	}
+
+	&:after {
+		content:	close-quote;
+		color:		var(--font-color);
+	}
+}
+
+blockquote {
+	width:			100%;
+	@extend			%max-width;
+	border-radius:	0.5rem;
+	align-self:		center;
+	position:		relative;
+	margin-bottom:	0;
+	font-style:		italic;
+	background-color:	$grey-20;
+	padding:		var(--margin--xs) var(--margin--s);
+
+	blockquote {
+		padding:	0;
+		margin:		0;
+		border:		initial;
+		font-weight:$bold;
+	}
+
+	cite {
+		font-style:			initial;
+		color:				$grey-60;
+
+		p {
+			font-weight:	$bold;
+		}
+
+		a {
+			color:	$orange-a;
+			font-weight:	$bold;
+			text-decoration:underline;
+			text-decoration-skip:	ink; 
+		}
+
+		p {
+
+		}
+	}
+
+	strong {
+	    margin-top: #{u($l / 2, em)};
+	    display: 	inline-block;
+	}
+}
+
+ul,
+ol {
+	font-size:			inherit;
+	@extend				%max-width;
+	padding-left:		1em;
+}
+
+ul:not([class]),
+ol:not([class]) {
+
+}
+
+li {
+	font-size:			inherit;
+	color:				var(--font-color);
+}
+
+a {
+	color:				inherit;
+	color:				var(--font-color);
+	// text-decoration:	initial;
+	cursor:				pointer;
+	font-style:			normal;
+	display:			inline-block;
+
+	p &,
+	figcaption &, {
+		text-decoration: 		underline;
+		color:					$blue-a;
+	}
+
+	p.large & {
+		font-weight:			$semibold;
+	}
+
+	.heading-c &,
+	.tag__item & {
+		color:			var(--font-color);
+	}
+}
+
+hr {
+	width:				100%;
+	@extend				%max-width;
+	height:				1px;
+	background-color:	$grey-20;
+	
+	& + * {
+		margin-top:		#{u($m, rem)};
+	}
+}
+
+strike {
+	color:				$white;
+}
+
+.nbsp--desktop {
+	display:			none;
+
+	@include mq(min-width, 768px) {
+		display:		initial;
+	}
+}
+
+html.wf-active .font {
+	&--henriette {
+		font-family:	'henriette';
+	}
+
+	&--uppercut {
+		font-family:	'uppercut-angle';
+	}
+
+	&--eldwin {
+		font-family:	'eldwin-script';
+	}
+
+	&--mahalia {
+		font-family:	'mahalia';
+	}
+
+	&--sutturah {
+		font-family:	'sutturah';
+	}
+
+	&--lust-script-display {
+		font-family:	'lust-script-display';
+	}
+
+	&--madre-script {
+		font-family:	'madre-script';
+	}
+
+	&--funkydori {
+		font-family:	'funkydori';
+	}
+
+	&--cortado {
+		font-family:	'cortado';
+	}
+
+	&--ff-basic-gothic-pro {
+		font-family:	'ff-basic-gothic-pro';
+	}
+
+	&--mrs-eaves-xl-serif {
+		font-family:	'mrs-eaves-xl-serif';
+	}
+
+	&--mrs-eaves {
+		font-family:	'mrs-eaves';
+	}
+
+	&--mr-eaves-modern {
+		font-family:	'mr-eaves-modern';
+	}
+
+	&--serenity {
+		font-family:	'serenity';
+	}
+
+	&--skolar-latin {
+		font-family:	'skolar-latin';
+	}
+
+	&--cortado {
+		font-family:	'cortado';
+	}
+
+	&--filson-pro {
+		font-family:	'filson-pro';
+	}
+}
+
+ul, ol {
+	list-style-position:	outside;
+}
+
+caption {
+	font-weight:			$semibold;
+	font-style:				italic;
+	margin-bottom:			var(--margin--s);
+}
+
+figcaption {
+	font-size:				#{u($s, em)};
+}
+
+.citation {
+	font-style:			italic;
+	font-weight:		$bold;
+	font-size:			#{u($s, em)};
+	color:				$grey-60;
+}
+
+.t-bt {
+	font-family:		$textType;
+}
+
+.font--amatic-sc {
+	font-family:	'Amatic SC', cursive;
+}
+
+sup {
+	font-size:		u($s, em);
+}
+
+.numeral {
+	width:			1.5em;
+	height:			1.5em;
+	line-height: 	1.5;
+	border-radius:	0.75em;
+	background-color:	$grey-60;
+	color:			$white;
+	font-size:		u($s, em);
+	display:		inline-block;
+	text-align: 	center;
+}
+
+* {
+	quotes: '“' '”' '‘' '’';
+}

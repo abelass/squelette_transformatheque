@@ -1,0 +1,32 @@
+html {
+    -webkit-tap-highlight-color: 	transparent;
+    background-color:				#10051e;
+}
+
+html,
+body,
+.page,
+.page__layout {
+	// height:							100%;
+}	
+
+* {
+	box-sizing:						border-box;
+	margin:							0;
+	padding:						0;
+	border:							0;
+	background-repeat:				no-repeat;
+	// color:							var(--font-color);
+}
+
+img, picture, svg {
+	max-width:						100%;
+	width:							100%;
+	height:							auto;
+	// padding:						var(--margin--s);
+}
+
+a[href] {
+	cursor:							pointer;
+	pointer-events:					initial;
+}

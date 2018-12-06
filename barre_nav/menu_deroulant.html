@@ -1,0 +1,27 @@
+<BOUCLE_nav(RUBRIQUES) {racine} {par num titre, titre}{!par date}{tout}{lang}>
+	<B_rubriques>
+	<div class="nav nav--main">
+		<ul class="nav__list">
+			<BOUCLE_rubriques (RUBRIQUES) {id_parent} {par num titre, titre} {tout}>
+			<li class="nav__item  nav__item--deep[ (#EXPOSE)]">
+				<a href="#URL_RUBRIQUE" class="intitule">
+					[(#TITRE|supprimer_numero|couper{80})]
+				</a>
+				<B_sous_rubriques>
+				<ul class='nav__list nav__list--nested'>
+					<BOUCLE_sous_rubriques (RUBRIQUES) {id_parent} {par num titre, titre} {tout}>
+					<li class="nav__item nav__item--nested[ (#EXPOSE)]">
+						<a href="#URL_RUBRIQUE"<BOUCLE_test_sousrub(RUBRIQUES){id_parent}{0,1}>class="daddy"</BOUCLE_test_sousrub>>
+							[(#TITRE|supprimer_numero|couper{80})]
+						</a>
+					<BOUCLE_re(BOUCLE_sous_rubriques)> </BOUCLE_re>
+					</li>
+					</BOUCLE_sous_rubriques>
+				</ul>
+				</B_sous_rubriques>
+				</li>
+			</BOUCLE_rubriques>
+		</ul>
+	</div>
+	</B_rubriques>
+</BOUCLE_nav>

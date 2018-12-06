@@ -1,0 +1,81 @@
+
+// Opacity
+$opacity--full:			1;
+$opacity--high:			0.85;
+$opacity--mid:			0.5;
+$opacity--low:			0.35;
+$opacity--none:			0;
+
+// Hue
+// $hue--black:			;
+$hue--blue:				205;
+$hue--green:			91;
+$hue--green-2:			137;
+$hue--grey:				0;
+$hue--orange:			20;
+$hue--white:			0;
+
+// Saturation
+
+// Lightness
+
+// Darkness
+
+// Function
+
+$white:					hsl($hue--white, 40%, 99%);
+$white--pure:			hsl(0, 0%, 100%);
+$orange-a:				hsl(20, 77%, 53%);
+
+$grey-20:				hsl(0, 0%, 92%);
+$grey-40:				hsl(0, 0%, 63%);
+$grey-60:				hsl(0, 0%, 53%);
+$grey-80:				hsl(0, 0%, 40%);
+$grey-100:				hsl(0, 0%, 10%);
+// $grey:					hsl(0, 0%, var(--lightness) );
+
+$black:					#444;
+$black-d:				#000;
+$red:					red;
+$green:					hsl(91, 82%, 53%);
+$green-b:				hsl(137, 100%, 43%);
+$green-c:				hsl(158, 97%, 36%);
+$blue-a:				hsl(205, 97%, 36%);
+
+$orange-100:			#66290A;
+$orange-80:				#BD531E;
+$orange-60:				#D46731;
+$orange-40:				#E57840;
+$orange-20:				#E5B095;
+
+$green-100:				#003523;
+$green-80:				lighten(#006643, 15%);
+$green-60:				#00D189;
+$green-40:				#00E596;
+$green-20:				#00FFA7;
+
+$blue-100:				#231440;
+$blue-80:				#342B9E;
+$blue-60:				#1E44F7;
+$blue-40:				#7AA8E5;
+$blue-20:				#A6E0FC;
+
+.colour__swatch {
+	width:				u($xl, em);
+	height:				u($xl, em);
+	background-color:	var(--swatch-color);
+	margin:				0 !important;
+}
+
+.swatch-palette {
+	display:			grid;
+	grid-template-columns: repeat(auto-fit, u($xl, em) );
+	grid-gap:			0.25rem;
+}
+
+.swatch__label {
+	font-size:			0.5em;
+	font-weight:		$bold;
+	margin-top:			0 !important;
+	text-align:			center;
+}

@@ -1,0 +1,563 @@
+//	Keyframe animations
+//	Create keyframes without specifying a percentage value
+@mixin 	keyframe( $step, $steps ) {
+
+	// Divide by number of steps, times this step
+	#{ 100% / ($steps - 1)  * ($step - 1) } {
+
+		// Styles go here
+		@content;
+	}
+}
+
+// 	Convert text to string
+// 	Prepare selectors or other output for concatenation
+// 	
+// 	$input:			a list to process
+// 	$glue:			a separator character
+// 	$is-nested:		(optional) boolean
+@function 	to-string( $list, $glue: '', $is-nested: false ) {
+	
+	// Create empty variable
+	$result: null;
+
+	// For each item in the list...
+	@for $i from 1 through length($list) {
+		
+		// Select the nth item
+		$e: nth($list, $i);
+
+		// If the item is a list...
+		@if type-of($e) == list {
+
+			// Create string
+			$result: 
+				unquote(
+					"$result#{to-string($e, $glue, true)}"
+				)
+			;
+		}
+	
+		// Otherwise...
+		@else {
+
+			// Something I don't understand
+			$result: 
+				if($i != length($list) or $is-nested, 
+					unquote("#{$result}#{$e}#{$glue}"), 
+					unquote("#{$result}#{$e}")
+				)
+			;
+		}
+	}
+
+	// Return string
+	@return $result;
+}
+
+// 	Add units to a value
+// 
+// 	$value:			a number, variable, or function
+// 	$unit:			a unit identifier (px, em, rem)
+@function 	u( $value, $unit ) {
+	
+	// Concatenate, return value
+	@return $value + $unit
+}
+
+// Unit-specific functions.
+// Begin phasing out
+@function ems($unit) {
+
+	@return $unit+em
+}
+
+@function rems($unit) {
+
+	@return $unit+rem
+}
+
+// 	Specify layering
+// 	Get a z-index value from a variable map
+// 
+// 	$index:			integer between -10 and 10
+@function 	z( $index ) {
+
+	// If key doesn't exist...
+	@if not map-has-key($z-index, $index) {
+		
+		// Warn me
+		@warn "No z-index found for '#{$index}' in $z-index map. Property ommited.";
+	}
+
+	// Otherwise, return the value
+	@return map-get($z-index, $index)
+}
+
+// 	Create a media query
+// 
+// 	$property:		min/max, width/height
+// 	$size:			number, variable, or function
+@mixin 		mq( $property, $size ) {
+
+	@media screen and ( $property: $size ) {
+		@content
+	}
+}
+
+// 	Create an attribute selector 
+// 
+// 	$attr:			attribute to target
+// 	$value:			attribute value
+// 	$element:		(optional) element to target
+@mixin 		attr( $attr, $value, $element: null ) {
+	
+	#{$element}[data-#{$attr}="#{$value}"] {
+		@content
+	}
+}
+
+// 	Return RGB colour
+// 
+// 	$color:			RGB, HSL, HEX value, or variable
+// 	$opacity:		(optional) decimal between 0 and 1, or variable
+@function 	color( $color, $opacity: 1 ) {
+
+	// if opacity is less than 1...
+	@if $opacity < 1 {
+
+		// return RGBa value
+		@return 	rgba(red($color), green($color), blue($color), $opacity);
+	}
+
+	// if opacity is 1...
+	@else {
+
+		// return RGB value
+		@return 	rgb(red($color), green($color), blue($color));
+	}
+}
+
+//	Return colour with property
+// 
+// 	$color:			RGB, HSL, HEX, or variable
+// 	$opacity:		(optional) decimal between 0 < 1, or variable
+// 	$property:		property or variable
+@mixin 		color( $color, $opacity: 1, $property: null ) {
+
+	#{$property}:	
+		rgba(red($color), 
+		green($color), 
+		blue($color), 
+		$opacity);
+}
+
+// 	Create a linear gradient
+@mixin 		gradient($direction, $color-stops...) {
+
+	// Direction has been omitted and happens to be a color-stop
+	@if is-direction($direction) == false {
+	
+			$color-stops: $direction, $color-stops;
+	
+			$direction: 180deg;
+	}
+
+	background: nth(nth($color-stops, 1), 1);
+	
+	// background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+	
+	background: linear-gradient($direction, $color-stops);
+}
+
+// 	Create an eased gradient
+@mixin 		easedScrim($direction, $color, $start: 0%, $end: 100%) {
+
+	// Break down the provided colour to its RGB values
+	$color:	
+		rgb(
+			red($color), 
+			green($color), 
+			blue($color)
+		);
+	
+	// Set the opacity stops
+	$opacity: (
+		1.000,		// 0
+		0.738,		// 0.19
+		0.541,		// 0.34
+		0.382,		// 0.47
+		0.278,		// 0.565
+		0.194,		// 0.65
+		0.126,		// 0.73
+		0.075,		// 0.802
+		0.042,		// 0.861
+		0.021,		// 0.91
+		0.008,		// 0.952
+		0.002,		// 0.982
+		0.000		// 1
+	);
+
+	// Set the position stops
+	$position: (
+		0,
+		0.19,
+		0.34,
+		0.47,
+		0.565,
+		0.65,
+		0.73,
+		0.802,
+		0.861,
+		0.91,
+		0.952,
+		0.982,
+		0.000
+	);
+
+	// Set the first stop
+	$firstStop:		
+		rgba(
+			red($color), 
+			green($color), 
+			blue($color), 
+			1
+		) $start;
+
+	// Create variable for mid-stops
+	$allStops:		();
+
+	// Set the last stop
+	$lastStop:		
+		rgba(
+			red($color), 
+			green($color), 
+			blue($color), 
+			0
+		) $end;
+
+	// Create gradient stops, excluding first and last
+	@for $i from 2 to length($opacity) {
+
+		// Append each colour stop with a comma
+		$allStops:	
+			append(
+				// Set the colour
+				$allStops,
+
+				rgba(
+					red($color), 
+					green($color), 
+					blue($color), 
+
+					// Set the opacity
+					nth($opacity, $i)
+				) 
+
+				// Set the position
+				calc( 
+						#{$start} 
+					+ 	( 
+						( 
+								#{$end} 
+							- 	#{$start} 
+						) 
+						* 	#{ nth($position, $i) } 
+					) 
+				),
+				comma
+			)
+		;
+	}
+
+	background-image:	linear-gradient(
+							$direction,
+							$firstStop,
+							$allStops,
+							$lastStop
+						);
+
+	// @debug $gradientStops;
+	// @warn $gradientStops;
+	// background-image:	$gradient;
+
+	// @each $key in $stops  {
+
+		// $gColour:	
+		// 	rgba(
+		// 		red($color),
+		// 		green($color),
+		// 		blue($color),
+		// 		$opacity
+		// 	)
+		// ; 
+
+		// @debug $gColour;
+	// }
+
+	// @each $value in $position {
+
+		// $gStop:	calc( #{ $start } + ( ( #{ $end } - #{ $start }) * #{ $value } ) );
+
+		// @debug $gStop;
+	// }
+
+		// )
+	// ;
+
+	// background:		
+	// 	linear-gradient(
+	// 		$direction,
+	// 		rgba(
+	// 			red($color), 
+	// 			green($color), 
+	// 			blue($color), 
+	// 			1.000
+	// 		) 
+	// 		calc( $start 						+ 0% ),
+			
+	// 		rgba(
+	// 			red($color), 
+	// 			green($color), 
+	// 			blue($color), 
+	// 			0.738
+	// 		) 
+	// 		calc( $start + ( ($end - $start) 	* 0.19% )	),
+			
+	// 		rgba(
+	// 			red($color), 
+	// 			green($color), 
+	// 			blue($color), 
+	// 			0.541
+	// 		) 
+	// 		calc( $start + ( ($end - $start) 	* 0.34% )	),
+			
+	// 		rgba(
+	// 			red($color), 
+	// 			green($color), 
+	// 			blue($color), 
+	// 			0.382
+	// 		) 
+	// 		calc( $start + ( ($end - $start) 	* 0.47% )	),
+			
+	// 		rgba(
+	// 			red($color), 
+	// 			green($color), 
+	// 			blue($color), 
+	// 			0.278
+	// 		) 
+	// 		calc( $start + ( ($end - $start) 	* 0.565% )	),
+			
+	// 		rgba(
+	// 			red($color), 
+	// 			green($color), 
+	// 			blue($color), 
+	// 			0.194
+	// 		) 
+	// 		calc( $start + ( ($end - $start) 	* 0.65% )	),
+			
+	// 		rgba(
+	// 			red($color), 
+	// 			green($color), 
+	// 			blue($color), 
+	// 			0.126
+	// 		) 
+	// 		calc( $start + ( ($end - $start) 	* 0.73% )	),
+			
+	// 		rgba(
+	// 			red($color), 
+	// 			green($color), 
+	// 			blue($color), 
+	// 			0.075
+	// 		) 
+	// 		calc( $start + ( ($end - $start) 	* 0.802% )	),
+			
+	// 		rgba(
+	// 			red($color), 
+	// 			green($color), 
+	// 			blue($color), 
+	// 			0.042
+	// 		) 
+	// 		calc( $start + ( ($end - $start) 	* 0.861% )	),
+			
+	// 		rgba(
+	// 			red($color), 
+	// 			green($color), 
+	// 			blue($color), 
+	// 			0.021
+	// 		) 
+	// 		calc( $start + ( ($end - $start) 	* 0.91% )	),
+			
+	// 		rgba(
+	// 			red($color), 
+	// 			green($color), 
+	// 			blue($color), 
+	// 			0.008
+	// 		) 
+	// 		calc( $start + ( ($end - $start) 	* 0.952% )	),
+			
+	// 		rgba(
+	// 			red($color), 
+	// 			green($color), 
+	// 			blue($color), 
+	// 			0.002
+	// 		) 
+	// 		calc( $start + ( ($end - $start) 	* 0.982% )	),
+			
+	// 		rgba(
+	// 			red($color), 
+	// 			green($color), 
+	// 			blue($color), 
+	// 			0.000
+	// 		) 
+	// 		calc( $end 					  	+ 0% )
+	// 	)
+	// ;
+}
+	
+// 	Raise a power
+@function 	pow($number, $exp) {
+
+	$value: 		1;
+	
+	@if $exp > 0 {
+		
+		@for $i from 1 through $exp {
+			
+			$value:	$value 	* 	$number;
+		}
+	}
+	
+	@else if $exp < 0 {
+		
+		@for $i from 1 through -$exp {
+			
+			$value:	$value 	/	$number;
+		}
+	}
+
+	@return $value;
+}
+
+//	Get a factorial
+@function 	fact($number) {
+	
+	$value: 		1;
+	
+	@if $number > 0 {
+		
+		@for $i from 1 through $number {
+		
+			$value:	$value * $i;
+		}
+	}
+	
+	@return $value;
+}
+
+// 	Get Pi
+@function 	pi() {
+	
+	@return 		3.14159265359;
+}
+
+// 	Get radians
+@function 	rad( $angle ) {
+	
+	$unit: 			unit( $angle );
+	$unitless: 		$angle	/	( $angle * 0 + 1 );
+	
+	// If the angle has 'deg' as unit, convert to radians.
+	@if $unit == deg {
+		
+		$unitless: 	$unitless	/	180	*	pi();
+	}
+
+	@return $unitless;
+}
+
+// 	Get the sine
+@function 	sin($angle, $amp: 1, $base: 1) {
+	
+	$sin: 			0;
+	$angle: 		rad($angle);
+	// $amp:			1;
+	// $base:			1;
+	
+	// Iterate a bunch of times.
+	@for $i from 0 through 10 {
+		
+		$sin: 		$sin + pow( -1, $i ) * pow( $angle, ( 2 * $i + 1 ) ) / fact( 2 * $i + 1 );
+	}
+
+	@return $sin * $amp + $base;
+}
+
+// 	Get the cosine
+@function 	cos($angle) {
+	
+	$cos: 			0;
+	$angle: 		rad( $angle );
+	
+	// Iterate a bunch of times.
+	@for $i from 0 through 10 {
+	
+		$cos: 		$cos 
+					+ pow( -1, $i ) 
+					* pow( $angle, 2 * $i ) 
+					/ fact( 2 * $i );
+	}
+
+	@return $cos;
+}
+
+// 	Get the tangent
+@function 	tan($angle) {
+	
+	@return sin( $angle )	/	cos( $angle );
+}
+
+// CSS Lock
+// 
+// A mixin that outputs a set of media queries with property: value; 
+// pairs to set a range for a value, limited by upper and lower bounds.
+@mixin lock($lock, $viewportUnit: 'vw') {
+
+	$property:			map-get($lock, property);
+	$minValue:			map-get($lock, minValue);
+	$maxValue:			map-get($lock, maxValue);
+	$minViewport:		map-get($lock, minViewport);
+	$maxViewport:		map-get($lock, maxViewport);
+
+	$viewport:			100 + $viewportUnit;
+	
+	// Get ranges
+	$viewportRange:		$maxViewport - $minViewport;
+	$valueRange:		$maxValue - $minValue;
+
+	// content:			#{$viewportRange};
+	// content:			#{$valueRange};
+
+	// Get scale factor
+	$scaleFactor:		$valueRange / $viewportRange;
+
+	// Get base value
+	$baseValue:			($minValue - $scaleFactor * $minViewport) / 16 * 1rem;
+
+	// Get fluid value
+	$fluidValue:		calc((#{$scaleFactor} * #{$viewport} + #{$baseValue}) /* * var(--scaleFactor) */);
+
+	// Output
+
+	#{$property}:		#{$minValue / 16 * 1rem};
+
+	@media screen and ( min-width: #{$minViewport * 1px} ) {
+
+		#{$property}:	#{$fluidValue};
+
+	}
+
+	@media screen and ( min-width: #{$maxViewport * 1px} ) {
+		#{$property}:	#{$maxValue / 16 * 1rem};
+	}
+}

@@ -36,7 +36,6 @@
 	<necessite nom="rang" compatibilite="[1.0.3;]" />
 
 
-
 	<pipeline nom="autoriser" inclure="transformatheque_autorisations.php" />
 
 
