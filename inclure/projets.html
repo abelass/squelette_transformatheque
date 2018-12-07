@@ -1,0 +1,58 @@
+<BOUCLE_projets(RUBRIQUES){composition=projets}{lang}>
+	<B_evenements>
+	<div class='card__roll mrgn-b--l'>
+	<BOUCLE_evenements(EVENEMENTS){id_rubrique} {par date_debut} {0, #ENV{limite,1000}} {pagination 20}>
+		<article class='card'>
+			<a class='card__link' href='[(#URL_EVENEMENT)]'></a>
+			<div class='card__image'>
+			[(#LOGO_EVENEMENT|sinon{#LOGO_ARTICLE}|image_reduire{400}
+				|inserer_attribut{alt,#TITRE}
+				|inserer_attribut{title,#TITRE})]
+			</div>
+			<div class='card__info'>
+				<p class='card__label'>
+					<span class='far fa-clock'></span>
+					<span>[(#DATE_DEBUT|affdate_court)][(#DATE_DEBUT|affdate_court|!={#DATE_FIN|affdate_court}|oui)[-(#DATE_FIN|affdate_court)]]</span>
+				</p>
+				<h3 class='card__title heading-b small'>#TITRE</h3>
+				<p class='card__description mrgn-b--s'>[(#DESCRIPTIF|sinon{#INFO_DESCRIPTIF{article,#ID_ARTICLE}})]</p>
+				<B_mots>
+				<div class='tag__wrp'>
+					<BOUCLE_mots(MOTS){id_article}>
+					<a class='card__tag mrgn-b--0 card__tag--faded' href='#URL_MOT'>
+						#TITRE
+					</a>
+					</BOUCLE_mots>
+				</div>
+				</B_mots>
+
+				[(#REM)Toutes les résérvations]
+				<hr class='hr mrgn-b--s'>
+				<div class='flx f-jbt f-ast'>
+					[(#PLACES|>{0}|oui)
+					#SET{total,#INCLURE{fond=inclure/compteur_reservations,env}}
+
+					[(#REM)Les disponibilités]
+					#SET{disponibles,#PLACES|moins{#GET{total}}}
+					<div class='card__actions'>
+						<p class='card__count mrgn-b--0'>
+							<span class='link__number'>#GET{disponibles}</span>
+							<:transformatheque:places:>
+						</p>
+					</div>]#INSCRIPTION
+					[(#INSCRIPTION|oui)
+					<a class='btn card__cta' href='[(#URL_PAGE{inscription}|parametre_url{id_evenement,#ID_EVENEMENT})]'>
+						<span class='fas small fa-check'></span>
+						<span><:transformatheque:inscription:></span>
+					</a>]
+				</div>
+			</div>
+		</article>
+	</BOUCLE_evenements>
+	<div class="pagination">#PAGINATION</div>
+	[(#ENV{limite}|non)
+		<a class='btn' href='#URL_RUBRIQUE'><:transformatheque:voir_tous_projets:></a>
+	]
+	</B_evenements>
+	</div>
+</BOUCLE_projets>

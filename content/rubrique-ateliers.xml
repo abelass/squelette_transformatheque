@@ -1,4 +1,5 @@
 <composition>
 	<nom>Rubrique Ateliers</nom>
 	<description>Affichage de la rubrique Ateliers</description>
+	<branche type="article" composition="ateliers" />
 </composition>

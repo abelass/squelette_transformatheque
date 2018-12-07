@@ -35,6 +35,7 @@
 	<necessite nom="message_personnalise" compatibilite="[1.0.0;]" />
 	<necessite nom="rang" compatibilite="[1.0.3;]" />
 	<necessite nom="numero" compatibilite="[2.1.1;]" />
+	<necessite nom="objets_infos_extras" compatibilite="[1.0.3;]" />
 
 	<pipeline nom="autoriser" inclure="transformatheque_autorisations.php" />
 
