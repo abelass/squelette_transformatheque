@@ -1,7 +1,7 @@
 <paquet
 	prefix="transformatheque"
 	categorie="squelette"
-	version="1.0.4"
+	version="1.0.5"
 	etat="dev"
 	compatibilite="[3.2.0;3.2.*]"
 	logo="prive/themes/spip/images/transformatheque-64.png"
@@ -36,8 +36,5 @@
 	<necessite nom="rang" compatibilite="[1.0.3;]" />
 	<necessite nom="numero" compatibilite="[2.1.1;]" />
 	<necessite nom="objets_infos_extras" compatibilite="[1.0.3;]" />
-
-	<pipeline nom="autoriser" inclure="transformatheque_autorisations.php" />
-
 
 </paquet>
