@@ -20,7 +20,7 @@
   text-align: center; }
 
 /* line 2, Users/haninhamed/localdev/lab/transformatheque/scss/style_modifiers.scss */
-.asp--16-9:after, .card__image:after, .asp--16-10:after, .asp--235-1:after, .asp--1-1:after, .asp--4-3:after, .asp--3-4:after, .asp--2-3:after, .card--featured:after, .asp--3-2:after, .wrp--circle:after, .scrim:after, .tab__label:after, .toggle:after, .photo-grid--3up:after {
+.asp--16-9:after, .card__image:after, .asp--16-10:after, .asp--235-1:after, .asp--1-1:after, .asp--4-3:after, .asp--3-4:after, .asp--2-3:after, .card--featured:after, .asp--3-2:after, .wrp--circle:after, .scrim:after, .toggle:after, .photo-grid--3up:after {
   content: "";
   display: block;
   top: 0;
@@ -758,7 +758,7 @@ html {
 .heading-b, .form-section__heading {
   --fontSize:			1.5em;
   font-size: var(--fontSize);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.875rem;
   color: var(--font-color);
   width: 100%; }
@@ -813,7 +813,7 @@ h3:not([class]) {
   .heading-c.vibe,
   h3:not([class]).vibe {
     line-height: 1.25;
-    font-weight: 800;
+    font-weight: 600;
     font-style: italic; }
   /* line 261, Users/haninhamed/localdev/lab/transformatheque/scss/style_typography.scss */
   .heading-c.highlight,
@@ -841,7 +841,7 @@ h3:not([class]) {
   /* line 290, Users/haninhamed/localdev/lab/transformatheque/scss/style_typography.scss */
   .heading-c.x-large,
   h3:not([class]).x-large {
-    font-weight: 800;
+    font-weight: 600;
     font-size: 5.0625rem; }
     @media screen and (min-width: 320px) {
       /* line 290, Users/haninhamed/localdev/lab/transformatheque/scss/style_typography.scss */
@@ -859,7 +859,7 @@ h3:not([class]) {
   width: 100%;
   font-size: 1em;
   line-height: 1.5;
-  font-weight: 800; }
+  font-weight: 600; }
   /* line 310, Users/haninhamed/localdev/lab/transformatheque/scss/style_typography.scss */
   .heading-d.small, .small.heading-f {
     color: #fdfbfb;
@@ -920,7 +920,7 @@ p, .card__tag {
         line-height: 2.375rem; } }
   /* line 376, Users/haninhamed/localdev/lab/transformatheque/scss/style_typography.scss */
   p strong, .card__tag strong {
-    font-weight: 800; }
+    font-weight: 600; }
   /* line 381, Users/haninhamed/localdev/lab/transformatheque/scss/style_typography.scss */
   p.x-large, .x-large.card__tag {
     --fontSize:			2.25em;
@@ -956,18 +956,18 @@ blockquote {
     padding: 0;
     margin: 0;
     border: initial;
-    font-weight: 800; }
+    font-weight: 600; }
   /* line 421, Users/haninhamed/localdev/lab/transformatheque/scss/style_typography.scss */
   blockquote cite {
     font-style: initial;
     color: #878787; }
     /* line 425, Users/haninhamed/localdev/lab/transformatheque/scss/style_typography.scss */
     blockquote cite p, blockquote cite .card__tag {
-      font-weight: 800; }
+      font-weight: 600; }
     /* line 429, Users/haninhamed/localdev/lab/transformatheque/scss/style_typography.scss */
     blockquote cite a {
       color: #e3682b;
-      font-weight: 800;
+      font-weight: 600;
       text-decoration: underline;
       -webkit-text-decoration-skip: ink;
               text-decoration-skip: ink; }
@@ -1114,7 +1114,7 @@ figcaption {
 /* line 595, Users/haninhamed/localdev/lab/transformatheque/scss/style_typography.scss */
 .citation {
   font-style: italic;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 0.6667em;
   color: #878787; }
 
@@ -1214,19 +1214,20 @@ sup {
 /* line 50, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .hero-image {
   width: var(--pageWidth);
+  width: 100vw;
   height: calc( var(--pageHeight) - var(--page-margin--vertical) * 1);
   position: relative;
   top: 0;
   padding: 0 var(--margin--m);
   overflow: hidden; }
-  /* line 59, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 60, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   .article--workshop .hero-image {
-    width: 100%; }
+    margin-left: calc(var(--page-margin--horizontal) * -1); }
     @media screen and (min-width: 768px) {
-      /* line 59, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+      /* line 60, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
       .article--workshop .hero-image {
         grid-column: 1 / span 2; } }
-  /* line 67, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 69, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   .hero-image img {
     position: absolute;
     width: 100%;
@@ -1234,22 +1235,23 @@ sup {
     max-width: initial;
     -o-object-fit: cover;
        object-fit: cover;
-    margin-left: calc(var(--margin--m) * -1); }
-    /* line 76, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+    margin-left: calc(var(--margin--m) * -1);
+    z-index: 0; }
+    /* line 79, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
     .page--home .hero-image img {
       -webkit-animation: hero-slideshow 12s cubic-bezier(0.69, -0.01, 0, 1) infinite both;
               animation: hero-slideshow 12s cubic-bezier(0.69, -0.01, 0, 1) infinite both; }
-      /* line 79, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+      /* line 82, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
       .page--home .hero-image img:nth-of-type(1) {
         z-index: 300;
         -webkit-animation-delay: 0s;
                 animation-delay: 0s; }
-      /* line 84, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+      /* line 87, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
       .page--home .hero-image img:nth-of-type(2) {
         z-index: 200;
         -webkit-animation-delay: 4s;
                 animation-delay: 4s; }
-      /* line 89, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+      /* line 92, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
       .page--home .hero-image img:nth-of-type(3) {
         z-index: 100;
         -webkit-animation-delay: 8s;
@@ -1287,7 +1289,7 @@ sup {
     z-index: 300;
     opacity: 1; } }
 
-/* line 123, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 126, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .hero-image__info {
   position: absolute;
   background: rgba(253, 251, 251, 0.85);
@@ -1301,19 +1303,19 @@ sup {
   width: calc(100% - var(--page-margin--horizontal) * 2);
   max-width: var(--line-length); }
 
-/* line 140, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 143, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 img {
   width: 100%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover; }
 
-/* line 147, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 150, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .taxonomy-list {
   list-style: none;
   padding: 0;
   margin-bottom: 0; }
-  /* line 152, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 155, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   .taxonomy-list__item {
     border-radius: 0.25rem;
     display: inline-block;
@@ -1329,71 +1331,71 @@ img {
     margin-bottom: 0 !important; }
 
 @media screen and (max-width: 1000px) {
-  /* line 167, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 170, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   .info-table {
     display: block !important;
     width: 100%; } }
 
-/* line 173, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 176, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .info-table .info-list {
   width: 100%; }
 
-/* line 177, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 180, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .info-table .info-list__item {
   margin-bottom: 0; }
 
-/* line 181, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 184, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .info-table td, .info-table th {
   text-align: left;
   border-bottom: none;
   width: calc(100% / 3);
   padding: 0; }
 
-/* line 192, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 195, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .info-table th {
   font-size: 1em; }
 
-/* line 196, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 199, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .info-table td {
   font-size: 0.6667em;
   padding-top: 0;
   padding-bottom: 0; }
 
-/* line 203, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 206, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .session-table {
   font-family: "Amatic SC", cursive; }
-  /* line 206, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 209, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   .session-table th, .session-table td {
     padding: 0.25em 0;
     -webkit-font-feature-settings: 'tnum';
             font-feature-settings: 'tnum'; }
 
-/* line 213, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 216, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .accordion-toggle {
   display: none; }
-  /* line 216, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 219, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   .accordion-toggle + label {
     position: relative; }
-    /* line 219, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+    /* line 222, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
     .accordion-toggle + label:hover {
       color: #7e3510;
       text-decoration: underline; }
-    /* line 224, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+    /* line 227, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
     .accordion-toggle + label + * {
       max-height: 0;
       overflow: hidden; }
-  /* line 231, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 234, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   .accordion-toggle:checked + label {
     display: none; }
-  /* line 238, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 241, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   .accordion-toggle:checked + label + * {
     max-height: initial; }
 
-/* line 244, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 247, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .image--inline {
   max-width: calc( var(--pageWidth)); }
 
-/* line 248, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 251, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .timeline__item {
   max-width: calc( var(--line-length) / 1);
   border-left: 4px solid #D46731;
@@ -1402,11 +1404,11 @@ img {
   position: relative;
   width: calc(100% - 0.5rem);
   margin-left: 0.5rem; }
-  /* line 257, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 260, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   .timeline__item:last-of-type {
     border-bottom: 4px solid #D46731;
     border-bottom-left-radius: 1.5em; }
-  /* line 262, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 265, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   .timeline__item:before {
     content: "";
     display: block;
@@ -1420,16 +1422,16 @@ img {
     left: 0;
     -webkit-transform: translateX(calc(-50% - 2px)) translateY(0%);
             transform: translateX(calc(-50% - 2px)) translateY(0%); }
-  /* line 277, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 280, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   .timeline__item p, .timeline__item .card__tag {
     padding-bottom: var(--margin--m); }
 
-/* line 287, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 290, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .select-session > label {
   display: grid;
   grid-template-columns: 1fr auto; }
 
-/* line 293, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 296, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .hidden-marker {
   visibility: none;
   margin-top: calc( var(--page-margin--vertical) * 0);
@@ -1437,7 +1439,7 @@ img {
   height: 0;
   width: 0; }
 
-/* line 301, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 304, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .attendees {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -1446,32 +1448,32 @@ img {
           align-items: center;
   grid-column-gap: var(--margin--s); }
 
-/* line 308, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 311, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 div.price {
   width: 100%; }
 
-/* line 312, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 315, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 output.price {
   font-weight: 800; }
-  /* line 315, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 318, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   output.price--small {
     font-size: 1em;
     font-weight: 400; }
-  /* line 320, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 323, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   output.price--total {
     background-color: #00D189;
     color: #fdfbfb;
     padding: 0.25rem;
     border-radius: 0.25rem; }
 
-/* line 328, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 331, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .equipment-info, .session-info, .sect-reg {
   max-width: var(--line-length);
   padding: 0 0.5rem 0.5rem;
   border-radius: 0.5rem;
   -webkit-box-shadow: inset 0 0 0 1px #a1a1a1;
           box-shadow: inset 0 0 0 1px #a1a1a1; }
-  /* line 339, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 342, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   .equipment-info .heading-e, .session-info .heading-e, .sect-reg .heading-e, .equipment-info .nav__item, .session-info .nav__item, .sect-reg .nav__item {
     width: calc(100% + 1rem);
     margin-left: -0.5rem;
@@ -1479,43 +1481,43 @@ output.price {
     border-radius: 0.5rem 0.5rem 0 0;
     padding: 0 0.5rem;
     color: #fdfbfb; }
-    /* line 347, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+    /* line 350, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
     .equipment-info .heading-e + *, .session-info .heading-e + *, .sect-reg .heading-e + *, .equipment-info .nav__item + *, .session-info .nav__item + *, .sect-reg .nav__item + * {
       margin-top: 0.5rem; }
 
-/* line 353, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 356, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .workshop-details {
   grid-gap: var(--margin--l) !important;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start; }
   @media screen and (max-width: 999px) {
-    /* line 353, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+    /* line 356, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
     .workshop-details {
       -webkit-box-align: start;
           -ms-flex-align: start;
               align-items: start; } }
 
-/* line 362, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 365, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .hero-video {
   max-width: calc( 100vw - var(--page-margin--horizontal) * 2);
   max-width: var(--pageWidth);
   -ms-flex-item-align: center;
       align-self: center;
   position: relative; }
-  /* line 368, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 371, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   .hero-video iframe {
     position: absolute;
     width: 100%;
     height: 100%; }
 
-/* line 375, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 378, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .workshop-info {
   width: 100%;
   display: grid;
   grid-template-columns: 2fr 1fr; }
 
-/* line 381, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 384, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .workshop-info__register {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1528,7 +1530,7 @@ output.price {
       -ms-flex-pack: justify;
           justify-content: space-between;
   text-align: right; }
-  /* line 387, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 390, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   .workshop-info__register .btn, .workshop-info__register button, .workshop-info__register input[type='button'] {
     -ms-flex-item-align: end;
         align-self: flex-end;
@@ -1540,87 +1542,48 @@ output.price {
     font-size: 0.6667em;
     text-transform: uppercase; }
 
-/* line 400, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 403, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .fas.small,
 .far.small {
   font-size: 0.6667em; }
 
-/* line 405, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 408, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .session-info {
   padding-right: 0; }
   @media screen and (min-width: 768px) {
-    /* line 405, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+    /* line 408, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
     .session-info {
       margin-top: 0 !important; } }
-  /* line 415, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 418, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   .session-info .heading-e, .session-info .nav__item {
     width: calc( 100% + 0.5rem); }
-  /* line 419, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 422, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   .session-info p, .session-info .card__tag,
   .session-info .heading-d,
   .session-info .heading-f {
     padding-right: 0.5rem; }
 
-@media screen and (min-width: 768px) {
-  /* line 425, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
-  .sect-reg {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    grid-column: 1 / span 1;
-    grid-row: 1 / 2; } }
-
-/* line 436, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
-.sect-reg .heading-e, .sect-reg .nav__item {
-  width: calc( 100% + 1rem); }
-
-/* line 445, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 432, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .tab__label {
   width: 100%;
   display: block;
   position: relative;
   line-height: 1.5em;
-  padding-left: 2em;
   text-transform: uppercase;
   white-space: nowrap; }
-  /* line 456, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
-  .tab__label:hover:after {
-    -webkit-box-shadow: 0 0 0 2px #00E596;
-            box-shadow: 0 0 0 2px #00E596; }
-  /* line 462, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
-  .tab__label:active:after {
-    -webkit-box-shadow: 0 0 0 2px #00D189, inset 0 0 0 4px #fdfbfb;
-            box-shadow: 0 0 0 2px #00D189, inset 0 0 0 4px #fdfbfb; }
-  /* line 468, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
-  .tab__label:after {
-    background-color: #fdfbfb;
-    -webkit-box-shadow: 0 0 0 2px #878787;
-            box-shadow: 0 0 0 2px #878787;
-    position: absolute;
-    width: 1em;
-    height: 1em;
-    border-radius: 0.25em;
-    margin: 0.25em; }
-  /* line 478, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 465, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   .tab__label + * + .tab__label {
     margin-top: 0.5rem; }
 
-/* line 483, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
-.tab__item {
-  display: none; }
-  /* line 487, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
-  .tab__item:checked + .tab__label {
-    font-weight: 800; }
-    /* line 490, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
-    .tab__item:checked + .tab__label:after {
-      background-color: #00D189;
-      -webkit-box-shadow: 0 0 0 2px #00D189, inset 0 0 0 4px #fdfbfb;
-              box-shadow: 0 0 0 2px #00D189, inset 0 0 0 4px #fdfbfb; }
-    /* line 496, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
-    .tab__item:checked + .tab__label .week__day.is-selected {
-      background-color: #00D189;
-      color: #fdfbfb; }
+/* line 474, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+.tab__label {
+  font-weight: 800; }
+  /* line 483, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  .tab__label .week__day.is-selected {
+    background-color: #00D189;
+    color: #fdfbfb; }
 
-/* line 504, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 491, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .week__strip {
   width: 100%;
   display: grid;
@@ -1629,16 +1592,16 @@ output.price {
   -webkit-box-shadow: 0 0 0 1px #ebebeb;
           box-shadow: 0 0 0 1px #ebebeb; }
 
-/* line 516, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 503, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .week__day {
   text-align: center;
   font-size: 0.6667em;
   font-weight: 600; }
-  /* line 521, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+  /* line 508, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
   .week__day.is-selected {
     background-color: #ebebeb; }
 
-/* line 526, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
+/* line 513, Users/haninhamed/localdev/lab/transformatheque/scss/style_modules.scss */
 .session__dates {
   display: grid;
   grid-column-gap: 0.5rem;
@@ -1712,24 +1675,40 @@ section {
   -ms-flex-item-align: center;
       align-self: center; }
 
-/* line 74, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+/* line 70, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+.sect-reg {
+  justify-self: center;
+  -ms-flex-item-align: start;
+      align-self: flex-start; }
+  @media screen and (min-width: 768px) {
+    /* line 70, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+    .sect-reg {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      grid-column: 1 / span 1;
+      grid-row: 1 / 2; } }
+  /* line 83, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+  .sect-reg .heading-e, .sect-reg .nav__item {
+    width: calc( 100% + 1rem); }
+
+/* line 88, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
 .section--splash {
   width: var(--pageWidth);
   max-width: initial;
   padding: 0 var(--page-margin--horizontal); }
-  /* line 80, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+  /* line 94, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
   .section--splash p, .section--splash .card__tag {
     text-align: center;
     letter-spacing: -0.25px;
     -webkit-font-feature-settings: 'calt' 1,  'onum' 1,  'dlig' 1,  'liga' 1,  'clig' 1,  'salt' 1;
             font-feature-settings: 'calt' 1,  'onum' 1,  'dlig' 1,  'liga' 1,  'clig' 1,  'salt' 1; }
 
-/* line 93, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+/* line 107, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
 .section__title {
   grid-column-start: 1;
   grid-column-end: 3; }
 
-/* line 98, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+/* line 112, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
 .section__cover-img {
   height: 100%;
   width: 100%;
@@ -1739,7 +1718,7 @@ section {
   -webkit-filter: saturate(0);
           filter: saturate(0); }
 
-/* line 107, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+/* line 121, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
 .section__cover {
   position: relative;
   max-width: var(--pageWidth);
@@ -1747,14 +1726,14 @@ section {
   overflow: hidden;
   height: 15rem; }
   @media screen and (min-width: 320px) {
-    /* line 107, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+    /* line 121, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
     .section__cover {
       height: calc((0.2620087336 * 100vw + 9.7598253275rem)); } }
   @media screen and (min-width: 1236px) {
-    /* line 107, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+    /* line 121, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
     .section__cover {
       height: 30rem; } }
-  /* line 122, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+  /* line 136, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
   .section__cover .btn, .section__cover button, .section__cover input[type='button'] {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1774,20 +1753,20 @@ section {
     -webkit-box-shadow: 0 0 0 2px #fdfbfb;
             box-shadow: 0 0 0 2px #fdfbfb;
     z-index: 900; }
-    /* line 135, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+    /* line 149, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
     .is-closed .section__cover .btn, .is-closed .section__cover button, .is-closed .section__cover input[type='button'],
     .is-hidden .section__cover .btn,
     .is-hidden .section__cover button,
     .is-hidden .section__cover input[type='button'] {
       display: none; }
   @media screen and (min-width: 768px) {
-    /* line 141, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+    /* line 155, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
     .card__grid .section__cover {
       width: 100%;
       margin-left: 0;
       margin-top: 0; } }
 
-/* line 150, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+/* line 164, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
 .section__info {
   z-index: 200;
   background-color: rgba(227, 104, 43, 0.85);
@@ -1797,22 +1776,22 @@ section {
   bottom: 0;
   padding: var(--margin--m) var(--page-margin--horizontal); }
   @media screen and (min-width: 768px) {
-    /* line 150, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+    /* line 164, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
     .section__info {
       padding: var(--margin--m); } }
 
-/* line 170, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+/* line 184, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
 .section__title {
   text-shadow: 0 1px rgba(68, 68, 68, 0.35); }
 
-/* line 174, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+/* line 188, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
 .section__description {
   font-weight: 600;
   line-height: 1;
   text-shadow: 0 1px rgba(68, 68, 68, 0.35); }
 
 @media screen and (min-width: 720px) {
-  /* line 180, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+  /* line 194, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
   .section.grid--col--2-1.optional {
     width: var(--pageWidth);
     padding: 0 calc( var(--page-margin--horizontal) / 2);
@@ -1823,12 +1802,12 @@ section {
             align-items: start;
     grid-gap: var(--margin--m); } }
 
-/* line 190, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+/* line 204, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
 .section.grid--col--2-1.optional .section:not([class^="mrgn-"]):not([class*=" mrgn-"]) + * {
   margin-top: 0; }
 
 @media screen and (min-width: 768px) {
-  /* line 195, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
+  /* line 209, Users/haninhamed/localdev/lab/transformatheque/scss/style_sections.scss */
   .section--workshops {
     display: grid;
     grid-template-columns: repeat(3, auto); } }
@@ -2027,17 +2006,18 @@ input[type="email"], input[type="password"], input[type="text"] {
             align-items: flex-start;
     grid-column-gap: 0.5em;
     padding: 0.25rem 0.5rem 0.25rem 0.25rem;
+    padding: 0.5em;
     border-radius: 0.5rem;
     max-width: var(--line-length); }
-  /* line 79, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 80, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card__roll .card {
     -ms-flex-item-align: start;
         align-self: flex-start; }
-    /* line 82, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+    /* line 83, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
     .card__roll .card:nth-of-type(1) {
       margin-top: var(--margin--m); }
 
-/* line 88, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+/* line 89, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
 .tag__wrp {
   width: 100%;
   display: grid;
@@ -2047,7 +2027,7 @@ input[type="email"], input[type="password"], input[type="text"] {
       -ms-flex-pack: start;
           justify-content: flex-start; }
 
-/* line 96, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+/* line 97, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
 .card__tag {
   text-decoration: none;
   color: #fdfbfb;
@@ -2060,75 +2040,75 @@ input[type="email"], input[type="password"], input[type="text"] {
   padding: 0 0.25rem;
   -webkit-font-feature-settings: 'lnum' 1;
           font-feature-settings: 'lnum' 1; }
-  /* line 110, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 111, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card__tag--faded {
     background-color: #ebebeb;
     color: #878787;
     -webkit-box-shadow: inset 0 0 0 1px #a1a1a1;
             box-shadow: inset 0 0 0 1px #a1a1a1; }
-  /* line 116, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 117, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card__tag--light {
     background-color: #a1a1a1;
     color: #fdfbfb;
     -webkit-box-shadow: inset 0 0 0 1px #878787;
             box-shadow: inset 0 0 0 1px #878787; }
 
-/* line 123, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+/* line 124, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
 .card__header {
   background-color: #878787;
   position: relative; }
-  /* line 128, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 129, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card:nth-of-type(0) .card__header {
     background-color: #e87d7d; }
-  /* line 128, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 129, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card:nth-of-type(1) .card__header {
     background-color: #e88f7d; }
-  /* line 128, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 129, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card:nth-of-type(2) .card__header {
     background-color: #e8a17d; }
-  /* line 128, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 129, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card:nth-of-type(3) .card__header {
     background-color: #e8b37d; }
-  /* line 128, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 129, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card:nth-of-type(4) .card__header {
     background-color: #e8c47d; }
-  /* line 128, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 129, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card:nth-of-type(5) .card__header {
     background-color: #e8d67d; }
-  /* line 128, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 129, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card:nth-of-type(6) .card__header {
     background-color: #e8e87d; }
 
-/* line 135, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+/* line 136, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
 .card__image {
   display: block;
   position: relative;
   overflow: hidden;
   width: 100%; }
-  /* line 145, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 146, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card__image img {
     position: absolute;
     -o-object-fit: cover;
        object-fit: cover;
     width: 100%;
     height: 100%; }
-  /* line 152, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 153, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .section--featured .card__image img {
     max-width: initial; }
-  /* line 156, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 157, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card--article .card__image {
     display: block;
     width: 5rem; }
     @media screen and (min-width: 320px) {
-      /* line 156, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+      /* line 157, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
       .card--article .card__image {
         width: calc((0.0873362445 * 100vw + 3.2532751092rem)); } }
     @media screen and (min-width: 1236px) {
-      /* line 156, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+      /* line 157, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
       .card--article .card__image {
         width: 10rem; } }
 
-/* line 171, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+/* line 172, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
 .card__details {
   padding: 0.5em 0.5em;
   display: -webkit-box;
@@ -2145,15 +2125,15 @@ input[type="email"], input[type="password"], input[type="text"] {
       -ms-flex-align: start;
           align-items: flex-start;
   width: 100%; }
-  /* line 179, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 180, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card--article .card__details {
     padding: 0; }
 
-/* line 184, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+/* line 185, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
 .card__info {
   padding: 0.5em;
   position: relative; }
-  /* line 192, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 193, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card--featured .card__info {
     position: absolute;
     bottom: 0;
@@ -2162,7 +2142,7 @@ input[type="email"], input[type="password"], input[type="text"] {
     width: calc(100% - 1rem);
     margin: 0.5rem;
     border-radius: 0.5rem; }
-  /* line 203, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 204, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card--article .card__info {
     padding: 0;
     padding-top: 0.25rem;
@@ -2172,11 +2152,11 @@ input[type="email"], input[type="password"], input[type="text"] {
     width: auto;
     grid-column-start: 2;
     grid-column-end: 3; }
-    /* line 211, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+    /* line 212, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
     .card--article .card__info:first-child {
       padding: 0 0.5rem 0.25rem; }
   @media screen and (min-width: 1024px) {
-    /* line 219, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+    /* line 220, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
     .card:nth-of-type(1) .card__grid .card__info,
     .card:nth-of-type(4) .card__grid .card__info {
       position: absolute;
@@ -2185,12 +2165,12 @@ input[type="email"], input[type="password"], input[type="text"] {
       left: 0;
       padding: 1rem;
       width: 50%; } }
-  /* line 232, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 233, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card__grid .card__info .card:nth-of-type(4) {
     left: initial;
     right: 0; }
 
-/* line 239, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+/* line 240, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
 .card__label {
   position: absolute;
   top: -0.75em;
@@ -2215,12 +2195,12 @@ input[type="email"], input[type="password"], input[type="text"] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
-  /* line 271, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 272, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card__label .fas,
   .card__label .far {
     margin-right: 0.25em; }
 
-/* line 277, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+/* line 278, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
 .card__grid {
   width: 100%;
   -webkit-box-align: start;
@@ -2229,7 +2209,7 @@ input[type="email"], input[type="password"], input[type="text"] {
   display: grid;
   grid-gap: var(--margin--m); }
 
-/* line 303, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+/* line 304, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
 .card__count {
   font-size: 0.6667em;
   font-weight: 800;
@@ -2240,7 +2220,7 @@ input[type="email"], input[type="password"], input[type="text"] {
   -webkit-font-feature-settings: 'lnum' 1;
           font-feature-settings: 'lnum' 1; }
 
-/* line 313, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+/* line 314, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
 .link__number {
   background-color: #E57840;
   color: #fdfbfb;
@@ -2251,7 +2231,7 @@ input[type="email"], input[type="password"], input[type="text"] {
   line-height: 1.5em;
   margin-right: 0.25em; }
 
-/* line 325, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+/* line 326, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
 .card__actions {
   width: auto;
   display: grid;
@@ -2263,27 +2243,27 @@ input[type="email"], input[type="password"], input[type="text"] {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
-  /* line 333, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 334, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card__actions:not(:last-child) {
     margin-right: 0.5em; }
-  /* line 337, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 338, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card--featured .card__actions {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end; }
 
-/* line 342, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+/* line 343, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
 .card__description {
   padding-right: 0.75em; }
-  /* line 346, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 347, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card__description:not(:last-child) {
     margin-bottom: 1rem; }
-  /* line 350, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 351, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card--featured .card__description {
     font-weight: 600;
     font-style: italic; }
 
-/* line 356, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+/* line 357, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
 .card__roll {
   max-width: var(--pageWidth);
   width: 100%;
@@ -2291,22 +2271,22 @@ input[type="email"], input[type="password"], input[type="text"] {
       -ms-flex-pack: center;
           justify-content: center;
   max-width: var(--line-length); }
-  /* line 363, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+  /* line 364, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
   .card__roll.grid--col-2.optional {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
   @media screen and (min-width: 768px) {
-    /* line 356, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+    /* line 357, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
     .card__roll {
       padding: 0;
       display: grid;
       grid-template-columns: auto auto;
       grid-gap: var(--margin--m); } }
 
-/* line 378, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+/* line 379, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
 .card a:not(.card__link) {
   z-index: 200; }
 
-/* line 382, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+/* line 383, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
 .card__link {
   position: absolute;
   top: 0;
@@ -2315,11 +2295,11 @@ input[type="email"], input[type="password"], input[type="text"] {
   height: 100%;
   z-index: 100; }
 
-/* line 391, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+/* line 392, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
 .card__title {
   width: auto; }
 
-/* line 395, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
+/* line 396, Users/haninhamed/localdev/lab/transformatheque/scss/style_cards.scss */
 .card__cta {
   -ms-flex-item-align: end;
       align-self: flex-end; }
@@ -2359,13 +2339,13 @@ input[type="email"], input[type="password"], input[type="text"] {
 /* line 25, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
 .article-info {
   margin: var(--page-margin--vertical) 0 0; }
-  /* line 28, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
+  /* line 33, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
   .article-info--fullscreen {
     max-width: calc(100% - var(--page-margin--horizontal) * 2);
     border-radius: 0.5em;
     position: absolute;
     left: initial;
-    right: var(--margin--m);
+    right: var(--page-margin--horizontal);
     bottom: 0;
     margin: 0 0 var(--margin--m);
     padding: 0.5em;
@@ -2377,23 +2357,23 @@ input[type="email"], input[type="password"], input[type="text"] {
     grid-template-columns: 1fr auto;
     grid-gap: 0.5em;
     grid-template-areas: "title	price" "next 	cta"; }
-    /* line 45, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
+    /* line 50, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
     .article-info--fullscreen .article__title {
       grid-area: title; }
-    /* line 49, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
+    /* line 54, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
     .article-info--fullscreen .workshop__price {
       grid-area: price; }
-    /* line 53, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
+    /* line 58, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
     .article-info--fullscreen .workshop-info__next {
       grid-area: next; }
-    /* line 61, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
+    /* line 66, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
     .article-info--fullscreen .article__cta {
       grid-area: cta; }
-    /* line 65, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
+    /* line 70, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
     .article-info--fullscreen div.w--fw {
       grid-area: more; }
 
-/* line 71, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
+/* line 76, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
 .article__body {
   width: 100%;
   -webkit-box-orient: vertical;
@@ -2407,46 +2387,51 @@ input[type="email"], input[type="password"], input[type="text"] {
   display: -ms-flexbox;
   display: flex; }
   @media screen and (min-width: 768px) {
-    /* line 77, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
+    /* line 82, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
     .article--workshop .article__body {
       grid-column: 1 / span 1; } }
 
-/* line 84, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
+/* line 89, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
 .workshop__price {
   -webkit-font-feature-settings: 'lnum' 1;
           font-feature-settings: 'lnum' 1;
   text-align: right; }
 
-/* line 89, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
+/* line 94, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
 .article__related {
   width: 100%;
   max-width: var(--line-length); }
   @media screen and (min-width: 768px) {
-    /* line 89, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
+    /* line 94, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
     .article__related {
       grid-column: 2 / span 1; } }
-  /* line 102, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
+  /* line 107, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
   .article__related .heading-b, .article__related .form-section__heading {
     grid-area: title; }
 
-/* line 119, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
+/* line 124, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
 .article__sidebar {
   max-width: var(--line-length);
   width: 100%; }
   @media screen and (min-width: 768px) {
-    /* line 119, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
+    /* line 124, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
     .article__sidebar {
       display: grid;
       grid-row-gap: 1rem;
       grid-template-columns: 1fr; } }
 
-@media screen and (min-width: 768px) {
-  /* line 138, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
-  .article__footer {
-    grid-column: 1 / span 2;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: var(--margin--l); } }
+/* line 143, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
+.article__footer {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  @media screen and (min-width: 768px) {
+    /* line 143, Users/haninhamed/localdev/lab/transformatheque/scss/style_article.scss */
+    .article__footer {
+      grid-column: 1 / span 2;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-gap: var(--margin--l); } }
 
 /* line 1, Users/haninhamed/localdev/lab/transformatheque/scss/style_projects.scss */
 .related-projects {
@@ -2476,7 +2461,7 @@ input[type="email"], input[type="password"], input[type="text"] {
 /* line 1, Users/haninhamed/localdev/lab/transformatheque/scss/style_nav.scss */
 .nav__item {
   font-weight: 400;
-  font-size: 0.6667em;
+  font-size: 1em;
   text-align: center;
   line-height: 1.5;
   margin-bottom: 0;
@@ -2496,7 +2481,7 @@ input[type="email"], input[type="password"], input[type="text"] {
   border-top: 2px solid #a1a1a1;
   border-bottom: 2px solid #a1a1a1;
   padding: 0;
-  width: auto;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2556,10 +2541,10 @@ input[type="email"], input[type="password"], input[type="text"] {
       -ms-flex-pack: center;
           justify-content: center;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(96px, 100px));
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: var(--margin--xs);
   padding: 0.25rem; }
-  /* line 99, Users/haninhamed/localdev/lab/transformatheque/scss/style_nav.scss */
+  /* line 100, Users/haninhamed/localdev/lab/transformatheque/scss/style_nav.scss */
   .nav__list--nested {
     display: none;
     position: absolute;
@@ -2570,26 +2555,27 @@ input[type="email"], input[type="password"], input[type="text"] {
     background-color: #fdfbfb;
     overflow: hidden;
     padding: 0 var(--margin--xs); }
-    /* line 112, Users/haninhamed/localdev/lab/transformatheque/scss/style_nav.scss */
+    /* line 113, Users/haninhamed/localdev/lab/transformatheque/scss/style_nav.scss */
     .nav__list--nested .nav__item {
       text-align: left;
       width: calc(100% + var(--margin--xs) * 2);
       margin-left: calc(var(--margin--xs) * -1);
       padding-left: var(--margin--xs); }
-      /* line 118, Users/haninhamed/localdev/lab/transformatheque/scss/style_nav.scss */
+      /* line 119, Users/haninhamed/localdev/lab/transformatheque/scss/style_nav.scss */
       .nav__list--nested .nav__item:hover {
         background: #D46731; }
-        /* line 121, Users/haninhamed/localdev/lab/transformatheque/scss/style_nav.scss */
+        /* line 122, Users/haninhamed/localdev/lab/transformatheque/scss/style_nav.scss */
         .nav__list--nested .nav__item:hover a {
           color: #fdfbfb; }
-    /* line 127, Users/haninhamed/localdev/lab/transformatheque/scss/style_nav.scss */
+    /* line 128, Users/haninhamed/localdev/lab/transformatheque/scss/style_nav.scss */
     .nav__item:not(:hover) .nav__list--nested {
       pointer-events: none; }
 
-/* line 138, Users/haninhamed/localdev/lab/transformatheque/scss/style_nav.scss */
+/* line 139, Users/haninhamed/localdev/lab/transformatheque/scss/style_nav.scss */
 .logo img {
   display: block;
-  height: 2.25rem; }
+  height: 3em;
+  width: auto; }
 
 /* line 2, Users/haninhamed/localdev/lab/transformatheque/scss/style_calendar.scss */
 .calendar {
@@ -3474,206 +3460,220 @@ input[type='button']:active {
   --button-bg:		#BD531E; }
 
 /* line 38, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+html.no-touchevents .btn--highlight:hover {
+  --button-bg:		#00E596; }
+
+/* line 45, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+html.no-touchevents .btn--highlight:focus,
+html.touchevents .btn--highlight:focus {
+  --button-bg:		#00E596; }
+
+/* line 49, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+html.no-touchevents .btn--highlight:active,
+html.touchevents .btn--highlight:active {
+  --button-bg:		#00b375; }
+
+/* line 58, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 html.no-touchevents .btn--outline:hover {
   --button-bg:		#E57840;
   background-color: #E57840;
   color: #fdfbfb; }
 
-/* line 47, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 67, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 html.no-touchevents .btn--outline:focus,
 html.touchevents .btn--outline:focus {
   --button-bg:		#E57840; }
 
-/* line 51, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 71, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 html.no-touchevents .btn--outline:active,
 html.touchevents .btn--outline:active {
   --button-bg:		#BD531E;
   background-color: #BD531E; }
 
-/* line 59, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 79, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .card--article:hover .card__title {
   color: #e3682b; }
 
-/* line 67, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 87, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 html.no-touchevents .card__tag--faded:hover {
   background-color: #a1a1a1;
   color: #fdfbfb; }
 
-/* line 72, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 92, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 html.no-touchevents .card__tag--faded:active {
   background-color: #878787;
   color: #ebebeb; }
 
-/* line 82, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 102, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .calendar__month-scrubber:hover {
   background-color: #a1a1a1; }
 
-/* line 86, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 106, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .calendar__month-scrubber:active {
   background-color: #878787;
   color: #fdfbfb; }
 
-/* line 93, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 113, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .calendar__event:blank {
   padding: 0;
   width: 0.25em;
   height: 0.25em;
   border-radius: 50%; }
 
-/* line 102, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 122, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .nav__item:hover .nav__list {
   display: block; }
 
-/* line 108, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 128, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 html.no-touchevents .nav__item:hover {
   background-color: #D46731; }
-  /* line 111, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+  /* line 131, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
   html.no-touchevents .nav__item:hover > a {
     color: #fdfbfb; }
 
-/* line 127, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 147, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .nav__item a.inactive {
   pointer-events: none;
   opacity: 0.25; }
 
-/* line 134, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 154, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .nav__item--deep {
   color: #444; }
-  /* line 137, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+  /* line 157, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
   .nav__item--deep:not(:hover) .nav__item--nested {
     pointer-events: none; }
 
-/* line 144, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 164, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .nav__item--search.is-closed .input--search {
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
   width: 0;
   padding: 0; }
 
-/* line 150, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 170, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .nav__item--search.is-closed .btn--search {
   width: 0;
   height: 0;
   display: none; }
 
-/* line 185, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 205, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .card:hover {
   -webkit-box-shadow: 0 0.125em 0.4444em 0 rgba(135, 135, 135, 0.5);
           box-shadow: 0 0.125em 0.4444em 0 rgba(135, 135, 135, 0.5); }
 
-/* line 195, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 215, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .calendar__day:hover {
   background-color: #ebebeb; }
 
-/* line 199, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 219, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .calendar__day:active {
   background-color: #ebebeb; }
 
-/* line 204, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 224, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .calendar__day.is-selected:hover {
   background-color: #c25219; }
 
-/* line 212, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
-html.no-touchevents a:hover {
+/* line 232, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+html.no-touchevents a:not(.btn.solid):not(button.solid):not(input.solid[type='button']):hover {
   color: #D46731; }
 
-/* line 220, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 240, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .taxonomy-list__item:hover {
   color: #444; }
 
-/* line 224, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 244, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .taxonomy-list__item:not(:last-child) {
   margin-right: 0.25em; }
 
-/* line 233, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 253, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .page--workshops .card__grid.is-closed:hover {
   -webkit-filter: brightness(1.125) saturate(0.75);
           filter: brightness(1.125) saturate(0.75); }
 
-/* line 238, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 258, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .page--workshops .card__grid.is-closed:active {
   -webkit-filter: brightness(0.875) saturate(0.875);
           filter: brightness(0.875) saturate(0.875); }
 
-/* line 243, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 263, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .page--workshops .card__grid.is-closed .card__roll {
   display: none; }
 
-/* line 272, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 292, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .page--workshops .card__grid.is-hidden:not(:hover) {
   -webkit-filter: saturate(0);
           filter: saturate(0); }
 
-/* line 276, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 296, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .page--workshops .card__grid.is-hidden .section__cover {
   height: auto; }
   @media screen and (min-width: 768px) {
-    /* line 276, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+    /* line 296, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
     .page--workshops .card__grid.is-hidden .section__cover {
       -webkit-writing-mode: vertical-lr;
           -ms-writing-mode: tb-lr;
               writing-mode: vertical-lr; } }
 
-/* line 293, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 313, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .page--workshops .card__grid.is-hidden .section__cover-img {
   display: none; }
 
-/* line 297, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 317, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .page--workshops .card__grid.is-hidden .section__info {
   position: relative; }
-  /* line 300, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+  /* line 320, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
   .page--workshops .card__grid.is-hidden .section__info .heading-b, .page--workshops .card__grid.is-hidden .section__info .form-section__heading {
     white-space: nowrap; }
 
 @media screen and (min-width: 768px) {
-  /* line 270, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+  /* line 290, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
   .page--workshops .card__grid.is-hidden {
     width: 4.5rem;
     overflow: hidden; } }
 
-/* line 310, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 330, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .page--workshops .card__grid.is-hidden .card__roll {
   display: none; }
 
-/* line 314, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 334, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .page--workshops .card__grid.is-hidden .section__description {
   display: none; }
 
-/* line 327, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 347, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 html:not(.no-touchevents) input, html:not(.no-touchevents)
 textarea {
   line-height: 3.375; }
 
-/* line 331, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 351, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 input:focus,
 textarea:focus {
   outline: 1px solid transparent;
   border-color: #e3682b; }
 
-/* line 339, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 359, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 input[type='checkbox']:checked + .toggle {
   -webkit-box-shadow: inset 0 0 0 2px #00D189;
           box-shadow: inset 0 0 0 2px #00D189; }
-  /* line 342, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+  /* line 362, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
   input[type='checkbox']:checked + .toggle:before {
     -webkit-transform: translateX(0%);
             transform: translateX(0%); }
-  /* line 346, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+  /* line 366, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
   input[type='checkbox']:checked + .toggle:after {
     -webkit-transform: translateX(1.5em);
             transform: translateX(1.5em);
     background-color: #00D189; }
-  /* line 352, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+  /* line 372, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
   input[type='checkbox']:checked + .toggle:hover:after {
     -webkit-transform: translateX(1.625em);
             transform: translateX(1.625em);
     background-color: #00b375; }
 
-/* line 359, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 379, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 input[type='checkbox']:checked ~ .select-date {
   display: grid; }
 
-/* line 367, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
+/* line 387, Users/haninhamed/localdev/lab/transformatheque/scss/style_states.scss */
 .toggle:hover:after {
   -webkit-transform: translateX(-0.125em);
           transform: translateX(-0.125em); }
