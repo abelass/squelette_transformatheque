@@ -1,0 +1,19 @@
+<BOUCLE-rubrique(RUBRIQUES){id_rubrique}{tout}>
+<section class='section section--full section--splash mrgn-b--xl'>
+	<div class='hero-image'>
+	<BOUCLE_images(DOCUMENTS){id_rubrique}{extension IN jpg,png}{par rang_lien, num titre, titre}>
+		<img
+			src="[(#FICHIER|image_reduire{1920}|extraire_attribut{src})]"
+			srcset="[(#FICHIER|image_reduire{300}|extraire_attribut{src})] 300w,
+				[(#FICHIER|image_reduire{600}|extraire_attribut{src})] 600w,
+				[(#FICHIER|image_reduire{1000}|extraire_attribut{src})] 1000w"
+			alt="#TITLE"/>
+	</BOUCLE_images>
+	</div>
+		<p class='large'>Larut vous propose la transformation de vos vêtements en pièces uniques.</p>
+		<p>
+			<a href='/concept.html'>En savoir plus</a>
+		</p>
+		<hr class='hr'>
+</section>
+</BOUCLE-rubrique>
