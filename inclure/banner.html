@@ -10,10 +10,12 @@
 			alt="#TITLE"/>
 	</BOUCLE_images>
 	</div>
-		<p class='large'>Larut vous propose la transformation de vos vêtements en pièces uniques.</p>
+	<BOUCLE_concept(RUBRIQUES){id_rubrique IN 10}{lang}{tout}>
+		<p class='large'>#DESCRIPTIF*</p>
 		<p>
-			<a href='/concept.html'>En savoir plus</a>
+			<a href='#URL_RUBRIQUE'><:transformatheque:savoir_plus:></a>
 		</p>
 		<hr class='hr'>
+	</BOUCLE_concept>
 </section>
 </BOUCLE-rubrique>
