@@ -6,7 +6,7 @@
 				<INCLURE{fond=inclure/nav,env} />
 			</nav>
 		</header>
-		[(#ENV{composition}|=={home}|oui)
+		[(#ENV{composition}|!={ateliers}|oui)
 		<INCLURE{fond=inclure/banner,id_rubrique} />
 		]
 		<INCLURE{fond=content/#ENV{type-page},env} />
