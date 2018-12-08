@@ -7,7 +7,7 @@
 			</nav>
 		</header>
 		[(#ENV{composition}|!={ateliers}|oui)
-		<INCLURE{fond=inclure/banner,id_rubrique} />
+		<INCLURE{fond=inclure/banner,id_rubrique=#LISTE{4,5}} />
 		]
 		<INCLURE{fond=content/#ENV{type-page},env} />
 		[(#REM)<aside class="extra1 col" id="extra1"><INCLURE{fond=extra1/#ENV{type-page},env} /></aside>

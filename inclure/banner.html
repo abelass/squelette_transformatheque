@@ -1,4 +1,4 @@
-<BOUCLE-rubrique(RUBRIQUES){id_rubrique}{tout}>
+<BOUCLE-rubrique(RUBRIQUES){id_rubrique IN #ENV{id_rubrique}}{lang}{tout}>
 <section class='section section--full section--splash mrgn-b--xl'>
 	<div class='hero-image'>
 	<BOUCLE_images(DOCUMENTS){id_rubrique}{extension IN jpg,png}{par rang_lien, num titre, titre}>
