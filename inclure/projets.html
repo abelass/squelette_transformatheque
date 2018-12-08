@@ -1,7 +1,16 @@
-<BOUCLE_projets(RUBRIQUES){composition=projets}{lang}>
+#SET{articles,#ARRAY}
+<BOUCLE_projets(RUBRIQUES){composition}{lang}>
+#SET{url_rubrique,#URL_RUBRIQUE}
+	<BOUCLE_articles_mots(ARTICLES){id_rubrique}{id_mot}>
+	#SET{articles,#GET{articles}|push{#ID_ARTICLE}}
+	</BOUCLE_articles_mots>
+		<BOUCLE_articles_tous(ARTICLES){id_rubrique}>
+		#SET{articles,#GET{articles}|push{#ID_ARTICLE}}
+		</BOUCLE_articles_tous>
+	<//B_articles_mots>
 	<B_evenements>
 	<div class='card__roll mrgn-b--l'>
-	<BOUCLE_evenements(EVENEMENTS){id_rubrique} {par date_debut} {0, #ENV{limite,1000}} {pagination 20}>
+	<BOUCLE_evenements(EVENEMENTS){id_evenement_source=0}{id_article IN #GET{articles}} {par date_debut} {0, #ENV{limite,1000}} {pagination 20}>
 		<article class='card'>
 			<a class='card__link' href='[(#URL_EVENEMENT)]'></a>
 			<div class='card__image'>
@@ -12,14 +21,23 @@
 			<div class='card__info'>
 				<p class='card__label'>
 					<span class='far fa-clock'></span>
-					<span>[(#DATE_DEBUT|affdate_court)][(#DATE_DEBUT|affdate_court|!={#DATE_FIN|affdate_court}|oui)[-(#DATE_FIN|affdate_court)]]</span>
+					<span>
+					[(#DATE_DEBUT|affdate_court)]
+					<BOUCLE_ev_rep(EVENEMENTS){id_evenement_source=#ID_EVENEMENT}{par date_debut}>
+#SET{date_fin, #DATE_FIN}
+					</BOUCLE_ev_rep>
+					[- (#GET{date_fin}|affdate_court)]
+					</B_ev_rep>
+					[(#DATE_DEBUT|affdate_court|!={#DATE_FIN|affdate_court}|oui)[- (#DATE_FIN|affdate_court)]]
+					<//B_ev_rep>
+					</span>
 				</p>
 				<h3 class='card__title heading-b small'>#TITRE</h3>
 				<p class='card__description mrgn-b--s'>[(#DESCRIPTIF|sinon{#INFO_DESCRIPTIF{article,#ID_ARTICLE}})]</p>
 				<B_mots>
 				<div class='tag__wrp'>
 					<BOUCLE_mots(MOTS){id_article}>
-					<a class='card__tag mrgn-b--0 card__tag--faded' href='#URL_MOT'>
+					<a class='card__tag mrgn-b--0 card__tag--faded' href='[(#GET{url_rubrique}|parametre_url{id_mot,#ID_MOT})]'>
 						#TITRE
 					</a>
 					</BOUCLE_mots>
@@ -39,8 +57,8 @@
 							<span class='link__number'>#GET{disponibles}</span>
 							<:transformatheque:places:>
 						</p>
-					</div>]#INSCRIPTION
-					[(#INSCRIPTION|oui)
+					</div>]
+					[(#INSCRIPTION|et{#DATE_DEBUT|>{#ENV{date}}}|oui)
 					<a class='btn card__cta' href='[(#URL_PAGE{inscription}|parametre_url{id_evenement,#ID_EVENEMENT})]'>
 						<span class='fas small fa-check'></span>
 						<span><:transformatheque:inscription:></span>
