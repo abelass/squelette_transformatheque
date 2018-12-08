@@ -10,7 +10,12 @@
 	<//B_articles_mots>
 	<B_evenements>
 	<div class='card__roll mrgn-b--l'>
-	<BOUCLE_evenements(EVENEMENTS){id_evenement_source=0}{id_article IN #GET{articles}} {par date_debut} {0, #ENV{limite,1000}} {pagination 20}>
+	<BOUCLE_evenements(EVENEMENTS)
+		{id_evenement_source=0}
+		{id_article IN #GET{articles}}
+		{par date_debut}
+		{0, #ENV{limite,1000}}
+		{pagination #ENV{pagination,10}}>
 		<article class='card'>
 			<a class='card__link' href='[(#URL_EVENEMENT)]'></a>
 			<div class='card__image'>
