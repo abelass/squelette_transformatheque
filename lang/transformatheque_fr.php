@@ -8,6 +8,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// A
 	'ateliers_vedette' => 'Ateliers en vedette',
+	'ateliers_futurs' => 'Ateliers futurs',
 
 	// C
 	'contactez_nous' => 'Contactez nous',
@@ -25,4 +26,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// T
 	'transformatheque_titre' => 'Squelette transformathèque',
 	'voir_tous_projets' => 'Voir tous les projets',
+
+	// V
+	'voir_calendrier' => 'Calendrier',
+	'voir_liste' => 'Liste',
 );

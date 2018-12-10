@@ -1,0 +1,41 @@
+#SET{articles,#ARRAY}
+<BOUCLE_projets(RUBRIQUES){composition}{lang}>
+#SET{url_rubrique,#URL_RUBRIQUE}
+	<BOUCLE_articles_mots(ARTICLES){id_rubrique}{id_mot}>
+	#SET{articles,#GET{articles}|push{#ID_ARTICLE}}
+	</BOUCLE_articles_mots>
+		<BOUCLE_articles_tous(ARTICLES){id_rubrique}>
+		#SET{articles,#GET{articles}|push{#ID_ARTICLE}}
+		</BOUCLE_articles_tous>
+	<//B_articles_mots>
+	<B_evenements>
+[<h2 class='section__title heading-b mrgn-b--m'>(#ENV{titre})</h2>]
+	<div class='card__roll mrgn-b--l'>
+	<BOUCLE_evenements(EVENEMENTS)
+		{id_evenement_source=0}
+		{id_article IN #GET{articles}}
+		{par date_debut}
+		{0, #ENV{limite,1000}}
+		{pagination #ENV{pagination,10}}>
+		<INCLURE{fond=inclure/detail_complet,
+			logo=(#LOGO_EVENEMENT|sinon{#LOGO_ARTICLE}|image_reduire{400}
+				|inserer_attribut{alt,#TITRE}
+				|inserer_attribut{title,#TITRE}),
+			url=#URL_EVENEMENT,
+			date_debut,
+			date_fin,
+			titre,
+			descriptif=(#DESCRIPTIF|sinon{#INFO_DESCRIPTIF{article,#ID_ARTICLE}}),
+			id_article,
+			places,
+			inscription,
+			url_rubrique=#GET{url_rubrique},
+			env} />
+	</BOUCLE_evenements>
+	<div class="pagination">#PAGINATION</div>
+	[(#ENV{limite}|non)
+		<a class='btn' href='#URL_RUBRIQUE'><:transformatheque:voir_tous_projets:></a>
+	]
+	</B_evenements>
+	</div>
+</BOUCLE_projets>

@@ -1,7 +1,7 @@
 #SET{start,#ENV{start}|strtotime}
 #SET{end,#ENV{end}|strtotime}
 #HTTP_HEADER{Content-type:application/json;charset=#CHARSET}
-[<BOUCLE_evenements(larut:spip_evenements){', '}
+[<BOUCLE_evenements(spip_evenements){', '}
 	{id_article ?IN #ENV**{id_article}}
 	{par date_debut}
 		{mois_relatif_fin<=0}>

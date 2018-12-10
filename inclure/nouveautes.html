@@ -1,0 +1,9 @@
+<BOUCLE_selection(LIAISON_OBJETS){type_lien}{par ordre}{statut ?}{id_objet_dest ?}{objet_dest ?}>
+	[<div class="owl-slide" data-hash="#ENV{id-carousel,demo}#ID_LIAISON_OBJET">
+		(#ID_OBJET|generer_modele{#OBJET,inclure/detail_complet,#ARRAY{
+			ordre,#ORDRE,
+			total_boucle,#TOTAL_BOUCLE,
+			id_liaison_objet,#ID_LIAISON_OBJET,
+			titre,#TITRE,
+			date,#DATE}})</div>]
+</BOUCLE_selection>

@@ -1,83 +1,32 @@
 <section class='section grid grid--col--2-1 optional'>
 	<section class='section mrgn-b--xl'>
 		[(#REM)les projets]
-		<INCLURE{fond=inclure/articles_evenements,limite=2,composition=projets,titre=<:transformatheque:projets_cours:>} />
+		[<h2 class='section__title heading-b mrgn-b--m'>(#ENV{titre})</h2>]
+		<INCLURE{fond=inclure/projets,limite=2,composition=projets,titre=<:transformatheque:projets_cours:>} />
 
-		[(#REM)les ateliers en vedette]
-		<INCLURE{fond=inclure/articles_evenements,limite=4,composition=ateliers,titre=<:transformatheque:ateliers_vedette:>} />
 	</section>
-		<section class='section section--calendar mrgn-b--xl'>
-					<h2 class='section__title heading-b mrgn-b--l'>Ateliers futurs</h2>
-					<section class='section date__details mrgn-b--l'>
-						<article class='calendar-listing'>
-							<div class='listing__info'>
-								<h3 class='heading-b small'>Module 3 - Couture de vêtements: le pantalon</h3>
-								<p>
-									<a href='/ateliers/adults/couture-vetements-pantalon.html'>Plus d'info</a>
-								</p>
-							</div>
-							<div class='listing__actions'>
-								<p class='mrgn-b--m'>20 novembre</p>
-								<a class='btn btn--outline' href='https://www.larut.eu/fr/ateliers/inscriptions/?id_evenement=1136' taget='_blank'>Inscription</a>
-							</div>
-						</article>
-						<article class='calendar-listing'>
-							<div class='listing__info'>
-								<h3 class='heading-b small'>Café-couture</h3>
-								<p>
-									<a href='/ateliers/adults/cafe-couture.html'>Plus d'info</a>
-								</p>
-							</div>
-							<div class='listing__actions'>
-								<p class='mrgn-b--m'>21 novembre</p>
-								<a class='btn btn--outline' href='https://www.larut.eu/fr/ateliers/inscriptions/?id_evenement=1193' target='_blank'>Inscription</a>
-							</div>
-						</article>
-						<article class='calendar-listing'>
-							<div class='listing__info'>
-								<h3 class='heading-b small'>Module 3 - Couture de vêtements : le pantalon</h3>
-								<p>
-									<a href='/ateliers/adults/couture-vetements-pantalon.html'>Plus d'info</a>
-								</p>
-							</div>
-							<div class='listing__actions'>
-								<p class='mrgn-b--m'>22 novembre</p>
-								<a class='btn btn--outline' href='https://www.larut.eu/fr/ateliers/inscriptions/?id_evenement=1157' target='_blank'>Inscription</a>
-							</div>
-						</article>
-						<article class='calendar-listing'>
-							<div class='listing__info'>
-								<h3 class='heading-b small'>Enfants - couture magique vendredis</h3>
-								<p>
-									<a href='/ateliers/enfants/couture-magique-vendredis.html'>Plus d'info</a>
-								</p>
-							</div>
-							<div class='listing__actions'>
-								<p class='mrgn-b--m'>23 novembre</p>
-								<a class='btn btn--outline' href='https://www.larut.eu/fr/ateliers/inscriptions/?id_evenement=1157' target='_blank'>Inscription</a>
-							</div>
-						</article>
-						<a class='btn f-aSnd' href=''>Voir tous les ateliers</a>
-					</section>
-					<section class='section'>
-						<hr class='hr'>
-						<div class='card card--article'>
-							<div class='mrgn-b--m'>
-								<h2 class='section__title heading-b'>Chèque cadeau</h2>
-								<p>Some information that will explain what this is and why I want it.</p>
-							</div>
-							<a class='btn btn--large btn--highlight w--fw' href=''>Offrez un chèque cadeau</a>
-						</div>
-						<hr class='hr'>
-						<h2 class='section__title heading-b'>Newsletter</h2>
-						<p class='mrgn-b--xl'>Sign up to our newsletter to receive various informations that can be of use for you and your family in times of urgent need.</p>
-						<form class='form'>
-							<label for=''>Email</label>
-							<input class='input' placeholder='email@address.co' type='email'>
-							<button class='btn'>Sign up</button>
-						</form>
-					</section>
-				</section>
+	<section class='section section--calendar mrgn-b--xl'>
+		<h2 class='section__title heading-b mrgn-b--l'><:transformatheque:ateliers_futurs:></h2>
+		<INCLURE{fond=inclure/ateliers_liste,env} />
+		<section class='section'>
+			<hr class='hr'>
+			<div class='card card--article'>
+				<div class='mrgn-b--m'>
+					<h2 class='section__title heading-b'>Chèque cadeau</h2>
+					<p>Some information that will explain what this is and why I want it.</p>
+				</div>
+				<a class='btn btn--large btn--highlight w--fw' href=''>Offrez un chèque cadeau</a>
+			</div>
+			<hr class='hr'>
+			<h2 class='section__title heading-b'>Newsletter</h2>
+			<p class='mrgn-b--xl'>Sign up to our newsletter to receive various informations that can be of use for you and your family in times of urgent need.</p>
+			<form class='form'>
+				<label for=''>Email</label>
+				<input class='input' placeholder='email@address.co' type='email'>
+				<button class='btn'>Sign up</button>
+			</form>
+		</section>
+			</section>
 				<section class='section mrgn-b--xl'>
 					<h2 class='section__title heading-b mrgn-b--m'>News</h2>
 					<!-- %p Have a look at our next upcoming workshop, we have some places left! -->
