@@ -6,6 +6,8 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 }
 
 $GLOBALS[$GLOBALS['idx_lang']] = array(
+	// A
+	'ateliers_vedette' => 'Ateliers en vedette',
 
 	// C
 	'contactez_nous' => 'Contactez nous',
@@ -15,6 +17,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// P
 	'places' => 'places',
+	'projets_cours' => 'Projects en cours',
 
 	//S
 	'savoir_plus' => 'En savoir plus',
