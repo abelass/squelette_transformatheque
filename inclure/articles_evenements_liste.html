@@ -1,4 +1,4 @@
-<section class='section date__details mrgn-b--l'>
+<section class='section date__3details mrgn-b--l'>
 <BOUCLE_projets(RUBRIQUES){composition}{lang}>
 	<BOUCLE_evenements(EVENEMENTS)
 		{date_debut>#DATE}
@@ -11,7 +11,7 @@
 		<div class='listing__info'>
 			<h3 class='heading-b small'>#TITRE</h3>
 			<p>
-				<a href='#URL_EVENEMENT'><:transformatheque:plus_info:></a>
+				<a href='#URL_ARTICLE{#ID_ARTICLE}'><:transformatheque:plus_info:></a>
 			</p>
 		</div>
 		<div class='listing__actions'>
@@ -25,6 +25,6 @@
 	</article>
 	</BOUCLE_evenements>
 </BOUCLE_projets>
-	<a class='btn f-aSnd' href=''><:transformatheque:voir_tous_ateliers:></a>
+	<a class='btn f-aSnd' href='#URL_RUBRIQUE'><:transformatheque:voir_tous_ateliers:></a>
 </B_projets>
 </section>

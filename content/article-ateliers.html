@@ -1,0 +1,271 @@
+<BOUCLE_content(ARTICLES){id_article}>
+
+<article class='article article--workshop'>
+	<figure class='hero-image'>
+			<img
+			src="[(#LOGO_ARTICLE|image_reduire{1920}|extraire_attribut{src})]"
+			srcset="[(#LOGO_ARTICLE|image_reduire{300}|extraire_attribut{src})] 300w,
+				[(#LOGO_ARTICLE|image_reduire{600}|extraire_attribut{src})] 600w,
+				[(#LOGO_ARTICLE|image_reduire{1000}|extraire_attribut{src})] 1000w"
+			alt="#TITLE"/>
+		<div class='article-info article-info--fullscreen flx f-col f-act f-jct'>
+			<h1 class="article__title heading-a #EDIT{titre}">#TITRE</h1>
+				<p class='workshop__price heading-d x-large mrgn-b--0'>
+					<strong>
+					<BOUCLE_prix_article(PRIX_OBJETS){id_prix_objet_source=0}{id_objet=#ID_ARTICLE}{objet=article}{par prix}>
+						[(#COMPTEUR_BOUCLE|=={1}|oui)#PRIX]
+						[(#TOTAL_BOUCLE|>{1}|et{#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}}|oui)-#PRIX]
+					</BOUCLE_prix_article>
+				</strong>
+				</p>
+				<BOUCLE_evenement(EVENEMENTS){id_article}{date_fin>#DATE}{par date_debut}{0,1}>
+				<div class='workshop-info__next'>
+					<h4 class='card__tag card__tag--light mrgn-b--0'>
+						<span>Prochaine date</span>
+					</h4>
+					<p>
+						<span class='fas fa-clock mrgn-r--xs small'></span>
+						<span class='heading-e small'>[(#DATE_DEBUT|affdate{H:m})], [(#DATE_DEBUT|nom_jour)]</span>
+						<br>
+						<span class='far fa-calendar mrgn-r--xs small'></span>
+						<span class='heading-e small'>[(#DATE_DEBUT|affdate{court})]</span>
+					</p>
+				</div>
+				</BOUCLE_evenement>
+				<a class='btn article__cta btn--outline' href='[(#URL_PAGE{inscription}|parametre_url{id_article,#ID_ARTICLE})]'>
+					<span><:transformatheque:inscription:></span>
+				</a>
+		</div>
+	</figure>
+	[<section class='article__body #EDIT{texte}'>
+		<h3 class='heading-e small mrgn-b--m'>
+			<a href='/workshops.html'>
+				<span class='fas fa-chevron-left mrgn-r--xs'></span>
+				<span>Retour aux ateliers</span>
+			</a>
+		</h3>
+		<h2 class='heading-b'>Workshop details</h2>
+	(#TEXTE|image_reduire{500,0})</section>]
+
+					<!-- %span.hidden-marker#details -->
+				<section class='article__sidebar'>
+					<a class='btn' href=''>Offrez un chèque cadeau</a>
+					<section class='equipment-info mrgn-b--m'>
+						<h2 class='heading-e'>
+							<span class='fas fa-cut mrgn-r--xs'></span>
+							<span>Equipment</span>
+						</h2>
+						<ul>
+							<li>le tissu de votre choix pour vos créations</li>
+							<li>son fil assorti</li>
+							<li>le papier patron ou tirettes, boutons etc.</li>
+						</ul>
+					</section>
+					<section class='session-info'>
+						<h3 class='heading-e'>
+							<span class='fas fa-calendar mrgn-r--xs'></span>
+							<span>Sessions</span>
+						</h3>
+						<p class='t-bt'>
+							Trois séances de 3 heures pour apprendre à utiliser la machine à coudre et les techniques de base.
+						</p>
+						<div class='timeline'>
+							<div class='timeline__item'>
+								<h4 class='heading-d'>Premier cours</h4>
+								<p class='t-bt'>Apprendre à utiliser la machine à coudre, la couture droite, en angle, points à la main. Confection de dessous de verre/coussin à épingles.</p>
+							</div>
+							<div class='timeline__item'>
+								<h4 class='heading-d'>Session 2</h4>
+								<p class='t-bt'>Le point zig-zag, le surfilage, et les ourlets. Confection d’un sac de courses.</p>
+							</div>
+							<div class='timeline__item'>
+								<h4 class='heading-d'>Session 3</h4>
+								<p class='t-bt'>Details of session and what it contains and what you will be doing.</p>
+							</div>
+						</div>
+						<!-- %hr.hr -->
+					</section>
+				</section>
+				<section class='article__footer'>
+					<section class='section article__related mrgn-b--xl'>
+						<h2 class='heading-e'>Related projects</h2>
+						<article class='card card--sidebar'>
+							<a class='card__link' href='https://google.com'></a>
+							<img alt='This is an image' class='card__image' src='/images/img.jpg' title='This is an imagesss'>
+							<div class='card__info'>
+								<h3 class='card__title heading-b small mrgn-b--s'>This is the title of a card</h3>
+								<div class='flx f-act f-jnd w--fw'>
+									<a class='btn card__cta btn--outline' href='https://amazon.com'>
+										<span class='fas fa-align-left small'></span>
+										<span>Read</span>
+									</a>
+								</div>
+							</div>
+						</article>
+						<article class='card card--sidebar'>
+							<a class='card__link' href='https://google.com'></a>
+							<img alt='This is an image' class='card__image' src='/images/img.jpg' title='This is an imagesss'>
+							<div class='card__info'>
+								<h3 class='card__title heading-b small mrgn-b--s'>This is the title of a card</h3>
+								<div class='flx f-act f-jnd w--fw'>
+									<a class='btn card__cta btn--outline' href='https://amazon.com'>
+										<span class='fas fa-align-left small'></span>
+										<span>Read</span>
+									</a>
+								</div>
+							</div>
+						</article>
+					</section>
+					<section class='mrgn-b--l sect-reg'>
+						<h2 class='heading-e'>
+							<span class='fas fa-sign-in-alt mrgn-r--xs'></span>
+							<span>Registration</span>
+						</h2>
+						<form id='registration'>
+							<!-- .select-date.tab.mrgn-b--m -->
+							<!-- %h4.form-section__heading -->
+							<!-- %span.numeral 1 -->
+							<!-- %span Choose your dates -->
+							<!-- %span.fas.fa-times -->
+							<!-- %div -->
+							<!-- %input.tab__item.mrgn-b--m{ :type=>'radio', :name=>'group-3', :form=>'#registration', :id=>'session-3--date-1'} -->
+							<!-- %label.tab__label{:for=>'session-3--date-1' } -->
+							<!-- .session__dates -->
+							<!-- %span 12 Sept -->
+							<!-- .week__strip -->
+							<!-- .week__day M -->
+							<!-- .week__day.is-selected T -->
+							<!-- .week__day W -->
+							<!-- .week__day.is-selected T -->
+							<!-- .week__day.is-selected F -->
+							<!-- .week__day S -->
+							<!-- .week__day S -->
+							<!-- %input.tab__item{ :type=>'radio', :name=>'group-3', :form=>'#registration', :id=>'session-3--date-2'} -->
+							<!-- %label.tab__label{:for=>'session-3--date-2' } -->
+							<!-- .session__dates -->
+							<!-- %span 21 Nov -->
+							<!-- .week__strip -->
+							<!-- .week__day.is-selected M -->
+							<!-- .week__day T -->
+							<!-- .week__day.is-selected W -->
+							<!-- .week__day T -->
+							<!-- .week__day.is-selected F -->
+							<!-- .week__day S -->
+							<!-- .week__day S -->
+							<!-- %input.tab__item{ :type=>'radio', :name=>'group-3', :form=>'#registration', :id=>'session-3--date-3'} -->
+							<!-- %label.tab__label.mrgn-b--s{:for=>'session-3--date-3' } -->
+							<!-- .session__dates -->
+							<!-- %span 5 Dec -->
+							<!-- .week__strip -->
+							<!-- .week__day M -->
+							<!-- .week__day.is-selected T -->
+							<!-- .week__day.is-selected W -->
+							<!-- .week__day T -->
+							<!-- .week__day.is-selected F -->
+							<!-- .week__day S -->
+							<!-- .week__day S -->
+							<h4 class='form-section__heading'>
+								<span class='numeral'>1</span>
+								<span>Choose your modules</span>
+								<span class='fas fa-check'></span>
+							</h4>
+							<div>
+								<fieldset class='select-session'>
+									<label class='w--fw' for='session-1' name='session-1'>
+										<a href=''>Module 1</a>
+										<input checked='1' form='#registration' id='session-1' name='session-1' type='checkbox' value='session-1'>
+										<span class='toggle'></span>
+										<div class='tab__label'>
+											<div class='session__dates'>
+												<span>12, 16, 19 September</span>
+											</div>
+										</div>
+									</label>
+								</fieldset>
+								<fieldset class='select-session'>
+									<label class='w--fw' for='session-2' name='session-2'>
+										<a href=''>Module 2</a>
+										<input form='#registration' id='session-2' name='session-2' type='checkbox' value='session-2'>
+										<span class='toggle'></span>
+										<div class='tab__label'>
+											<div class='session__dates'>
+												<span>6, 16, 17 October</span>
+											</div>
+										</div>
+									</label>
+								</fieldset>
+								<fieldset class='select-session mrgn-b--l'>
+									<label class='w--fw' for='session-3' name='session-3'>
+										<a href=''>Module 3</a>
+										<input form='#registration' id='session-3' name='session-3' type='checkbox' value='session-1'>
+										<span class='toggle'></span>
+										<div class='tab__label'>
+											<div class='session__dates'>
+												<span>15, 22, 31 December</span>
+											</div>
+										</div>
+									</label>
+								</fieldset>
+								<p class='small t-ctr mrgn-b--l'>
+									Inscrivez-vous pour les modules 1, 2 et 3 et profitez d’un 10% de réduction sur le prix totale.
+								</p>
+							</div>
+							<!-- %h4.form-section__heading -->
+							<!-- %span.numeral 3 -->
+							<!-- %span Attendees -->
+							<!-- %span.fas.fa-times -->
+							<!-- %div.mrgn-b--xs -->
+							<!-- %fieldset -->
+							<!-- %div.attendees -->
+							<!-- %label.heading-b.small.flx.f-row.f-jbt.w--fw.mrgn-b--0{:for=>'session-1', :name=>'session-1' } -->
+							<!-- Attendees -->
+							<!-- %div.flx.f-act.f-jct -->
+							<!-- %span.btn.btn--incr.small.counter--decr.js-num-minus.js-num.mrgn-b--0 - -->
+							<!-- %input#attendees.input--num.js-num-increment.js-num.input--incr{ :type=>'number', :min=>'1', :max=>'8', :step=>'1', :value=>'1'} -->
+							<!-- %span.btn.btn--incr.small.counter--incr.js-num-plus.js-num + -->
+							<!-- %fieldset.flx.f-jbt.f-col.f-act.mrgn-b--xs -->
+							<!-- %div.price.flx.f-act.f-jbt -->
+							<!-- %label.p.mrgn-b--0 -->
+							<!-- Sessions × 3 -->
+							<!-- %output.price.price--small.js-price -->
+							<!-- €120.00 -->
+							<!-- %div.price.flx.f-act.f-jbt -->
+							<!-- %label.p.mrgn-b--0 -->
+							<!-- Attendees × 2 -->
+							<!-- %output.price.price--small.js-price -->
+							<!-- €120.00 -->
+							<!-- %div.price.flx.f-act.f-jbt.mrgn-b--xs -->
+							<!-- %label.p.mrgn-b--0 -->
+							<!-- 10% discount -->
+							<!-- %output.price.price--small.js-price -->
+							<!-- \-&#xfeff;€24.00 -->
+							<!-- %div.price.flx.f-act.f-jbt -->
+							<!-- %label.heading-b.small.mrgn-b--0 -->
+							<!-- Total -->
+							<!-- %output.price.price--total.js-price -->
+							<!-- €130.00 -->
+							<button class='btn btn--large f-aSnd w--fw' type='button'>
+								<span class='mrgn-r--s'>Confirm & pay</span>
+								<span class='fas fa-check'></span>
+							</button>
+						</form>
+						<!-- %h2.heading-b More information -->
+						<!-- %div.grid.grid--col-2.f-ast.extra-info.w--fw -->
+						<!-- %div -->
+						<!-- %h3.heading-c Venue -->
+						<!-- %p.mrgn-b--0 -->
+						<!-- La Transformathèque -->
+						<!-- %br -->
+						<!-- Rue du Fort 7 -->
+						<!-- %br -->
+						<!-- 1060 Saint-Gilles -->
+						<!-- %br -->
+						<!-- Bruxelles -->
+						<!-- .asp--1-1.w--fw{ :style=>'background: beige;'} -->
+						<!-- %h3.heading-c Time -->
+						<!-- %p 18:00-20:30 -->
+						<!-- %hr.hr -->
+					</section>
+				</section>
+</article>
+</BOUCLE_content>

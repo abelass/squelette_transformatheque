@@ -6,9 +6,13 @@
 				<INCLURE{fond=inclure/nav,env} />
 			</nav>
 		</header>
-		[(#ENV{composition}|!={ateliers}|oui)
-		<INCLURE{fond=inclure/banner,id_rubrique=#LISTE{4,5}} />
+
+		[(#ENV{type-page}|in_array{#LISTE{article,evenement}}|non)
+			[(#ENV{composition}|!={ateliers}|oui)
+			<INCLURE{fond=inclure/banner,id_rubrique=#LISTE{4,5}} />
+			]
 		]
+
 		<INCLURE{fond=content/#ENV{type-page},env} />
 		[(#REM)<aside class="extra1 col" id="extra1"><INCLURE{fond=extra1/#ENV{type-page},env} /></aside>
 			<aside class="extra2 col" id="extra2"><INCLURE{fond=extra2/#ENV{type-page},env} /></aside>]

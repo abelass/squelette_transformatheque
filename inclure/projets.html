@@ -21,7 +21,7 @@
 			logo=(#LOGO_EVENEMENT|sinon{#LOGO_ARTICLE}|image_reduire{400}
 				|inserer_attribut{alt,#TITRE}
 				|inserer_attribut{title,#TITRE}),
-			url=#URL_EVENEMENT,
+			url=#URL_ARTICLE{#ID_ARTICLE},
 			date_debut,
 			date_fin,
 			titre,

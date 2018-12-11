@@ -1,0 +1,12 @@
+<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}>
+[(#REM) Fil d'Ariane ]
+<section class="content-principal">
+	<h2 class="section__title heading-b #EDIT{titre}">#TITRE</h2>
+
+	[<section class="#EDIT{texte} section__body">(#TEXTE)</section>]
+</section>
+
+[(#REM) Gestion du portfolio et des documents ]
+[(#INCLURE{fond=inclure/documents,id_rubrique})]
+
+</BOUCLE_content>
