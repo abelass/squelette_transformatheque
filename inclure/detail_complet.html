@@ -1,30 +1,30 @@
 <article class='card'>
 	<a class='card__link' href='[(#URL)]'></a>
 	<div class='card__image'>
-	[(#LOGO|image_reduire{400}
+	[(#LOGO|sinon{#ENV{logo_objet}}|image_reduire{400}
 		|inserer_attribut{alt,#TITRE}
 		|inserer_attribut{title,#TITRE})]
 	</div>
 	<div class='card__info'>
-		<p class='card__label'>
-			<span class='far fa-clock'></span>
-			<span>
-			[(#DATE_DEBUT|affdate_court)]
-			<BOUCLE_ev_rep(EVENEMENTS){id_evenement_source=#ID_EVENEMENT}{!par date_debut}{0,1}>
+		[<p class='card__label'>
+			<span class='far fa-clock'></span><span>(#DATE_DEBUT|affdate_court)]
+			<BOUCLE_ev_rep(EVENEMENTS){id_evenement_source=#ENV{id_evenement,-1}}{par date_debut}{0,1}>1
 				#SET{date_fin, #DATE_FIN}
 			</BOUCLE_ev_rep>
-			[- (#GET{date_fin}|affdate_court)]
+			[- (#GET{date_fin}|affdate_court)</span>
+			</p>]
 			</B_ev_rep>
-			[(#DATE_DEBUT|affdate_court|!={#DATE_FIN|affdate_court}|oui)[- (#DATE_FIN|affdate_court)]]
+			[(#DATE_DEBUT|affdate_court|!={#DATE_FIN|affdate_court}|oui)[- (#DATE_FIN|affdate_court)]	</span>
+			</p>]
 			<//B_ev_rep>
-			</span>
-		</p>
+
+
 		<h3 class='card__title heading-b small'>#TITRE</h3>
 		<p class='card__description mrgn-b--s'>[(#DESCRIPTIF|sinon{#INFO_DESCRIPTIF{article,#ID_ARTICLE}})]</p>
 		<B_mots>
 		<div class='tag__wrp'>
 			<BOUCLE_mots(MOTS){id_article}>
-			<a class='card__tag mrgn-b--0 card__tag--faded' href='[(#URL_RUBRIQUE|parametre_url{id_mot,#ID_MOT})]'>
+			<a class='card__tag mrgn-b--0 card__tag--faded' href='[(#ENV{url_rubrique}|parametre_url{id_mot,#ID_MOT})]'>
 				#TITRE
 			</a>
 			</BOUCLE_mots>

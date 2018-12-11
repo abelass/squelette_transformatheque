@@ -1,9 +1,31 @@
+<h2 class='section__title heading-b mrgn-b--m'><:transformatheque:nouveautes:></h2>
+<div class='card__roll mrgn-b--l'>
 <BOUCLE_selection(LIAISON_OBJETS){type_lien}{par ordre}{statut ?}{id_objet_dest ?}{objet_dest ?}>
-	[<div class="owl-slide" data-hash="#ENV{id-carousel,demo}#ID_LIAISON_OBJET">
+	#SET{logo,''}
+	#SET{id_evenement,''}
+	#SET{id_rubrique,#ID_OBJET}
+	[(#OBJET|=={evenement}|oui)
+		#SET{id_evenement,#ID_OBJET}
+		#SET{id_article,#INFO_ID_ARTICLE{evenement,#ID_OBJET}}
+		#SET{id_rubrique,#INFO_ID_RUBRIQUE{article,#GET{id_article}}}
+		#SET{logo,#LOGO_EVENEMENT|sinon{#LOGO_ARTICLE{#GET{id_article}}|extraire_attribut{src}}}
+	]
+	[(#OBJET|=={article}|oui)
+	#SET{id_rubrique,#INFO_ID_RUBRIQUE{article,#ID_OBJET}}
+	]
+
+	#SET{url_rubrique,#URL_RUBRIQUE{#GET{id_rubrique}}}
+	[
 		(#ID_OBJET|generer_modele{#OBJET,inclure/detail_complet,#ARRAY{
 			ordre,#ORDRE,
 			total_boucle,#TOTAL_BOUCLE,
 			id_liaison_objet,#ID_LIAISON_OBJET,
 			titre,#TITRE,
-			date,#DATE}})</div>]
+			date,#DATE,
+			logo,#GET{logo},
+			id_evenement,#GET{id_evenement},
+			url_rubrique,#GET{url_rubrique},
+
+			}})]
 </BOUCLE_selection>
+</div>

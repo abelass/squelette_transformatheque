@@ -16,6 +16,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// I
 	'inscription' => 'Inscription',
 
+	// N
+	'nouveautes' => 'Nouveautés',
+
 	// P
 	'places' => 'places',
 	'projets_cours' => 'Projects en cours',

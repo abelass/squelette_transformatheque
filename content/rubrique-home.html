@@ -2,7 +2,7 @@
 	<section class='section mrgn-b--xl'>
 		[(#REM)les projets]
 		[<h2 class='section__title heading-b mrgn-b--m'>(#ENV{titre})</h2>]
-		<INCLURE{fond=inclure/projets,limite=2,composition=projets,titre=<:transformatheque:projets_cours:>} />
+		<INCLURE{fond=inclure/nouveautes,limite=2,objet_dest=rubrique,id_objet_dest=#ID_RUBRIQUE} />
 
 	</section>
 	<section class='section section--calendar mrgn-b--xl'>
@@ -27,73 +27,5 @@
 			</form>
 		</section>
 			</section>
-				<section class='section mrgn-b--xl'>
-					<h2 class='section__title heading-b mrgn-b--m'>News</h2>
-					<!-- %p Have a look at our next upcoming workshop, we have some places left! -->
-					<div class='card__roll mrgn-b--l'>
-						<article class='card'>
-							<a class='card__link' href='/ateliers/enfants/parent-enfant-noel-fait-maison.html'></a>
-							<div class='card__image'>
-								<img alt='This is an image' src='/images/parent-enfant.png' title='This is an imagesss'>
-							</div>
-							<div class='card__info'>
-								<p class='card__label'>
-									<span class='far fa-clock'></span>
-									<span>October 3</span>
-								</p>
-								<h3 class='card__title heading-b small'>Parent-enfant: Noël fait maison</h3>
-								<p class='card__description mrgn-b--s'>Créer ensemble une décoration de Noël unique fait par vous même.</p>
-								<div class='tag__wrp'>
-									<a class='card__tag mrgn-b--0 card__tag--faded' href='https://apple.com/'>
-										Enfants
-									</a>
-								</div>
-								<hr class='hr mrgn-b--s'>
-								<div class='flx f-jbt f-ast'>
-									<div class='card__actions'>
-										<p class='card__count mrgn-b--0'>
-											<span class='link__number'>4</span>
-											places
-										</p>
-									</div>
-									<a class='btn card__cta' href='https://amazon.com'>
-										<span class='fas small fa-check'></span>
-										<span>Inscription</span>
-									</a>
-								</div>
-							</div>
-						</article>
-						<article class='card'>
-							<a class='card__link' href='/ateliers/zero-dechet/zero-dechet-sac-a-lunch.html'></a>
-							<div class='card__image'>
-								<img alt='This is an image' src='/images/zero-dechet-sac.png' title='This is an imagesss'>
-							</div>
-							<div class='card__info'>
-								<p class='card__label'>
-									<span class='far fa-clock'></span>
-									<span>October 3</span>
-								</p>
-								<h3 class='card__title heading-b small'>Sac à lunch</h3>
-								<p class='card__description mrgn-b--s'>Passez au zéro-déchet grâce à la couture.</p>
-								<div class='tag__wrp'>
-									<a class='card__tag mrgn-b--0 card__tag--faded' href='/ateliers/zero-dechet'>Zéro-déchet</a>
-								</div>
-								<hr class='hr mrgn-b--s'>
-								<div class='flx f-jbt f-ast'>
-									<div class='card__actions'>
-										<p class='card__count mrgn-b--0'>
-											<span class='link__number'>4</span>
-											places
-										</p>
-									</div>
-									<a class='btn card__cta' href='https://amazon.com'>
-										<span class='fas small fa-check'></span>
-										<span>Inscription</span>
-									</a>
-								</div>
-							</div>
-						</article>
-						<a class='btn' href=''>Voir tous les projets</a>
-					</div>
-				</section>
-			</section>
+
+</section>
