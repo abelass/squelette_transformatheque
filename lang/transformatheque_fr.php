@@ -22,12 +22,14 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// P
 	'places' => 'places',
 	'projets_cours' => 'Projects en cours',
+	'plus_info' => 'Plus d\'info',
 
 	//S
 	'savoir_plus' => 'En savoir plus',
 
 	// T
 	'transformatheque_titre' => 'Squelette transformathèque',
+	'voir_tous_ateliers' => 'Voir tous les ateliers',
 	'voir_tous_projets' => 'Voir tous les projets',
 
 	// V

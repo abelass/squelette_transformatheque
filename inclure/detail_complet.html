@@ -8,7 +8,7 @@
 	<div class='card__info'>
 		[<p class='card__label'>
 			<span class='far fa-clock'></span><span>(#DATE_DEBUT|affdate_court)]
-			<BOUCLE_ev_rep(EVENEMENTS){id_evenement_source=#ENV{id_evenement,-1}}{par date_debut}{0,1}>1
+			<BOUCLE_ev_rep(EVENEMENTS){id_evenement_source=#ENV{id_evenement,-1}}{par date_debut}{0,1}>
 				#SET{date_fin, #DATE_FIN}
 			</BOUCLE_ev_rep>
 			[- (#GET{date_fin}|affdate_court)</span>
