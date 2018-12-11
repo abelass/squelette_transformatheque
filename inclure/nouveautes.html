@@ -8,7 +8,10 @@
 		#SET{id_evenement,#ID_OBJET}
 		#SET{id_article,#INFO_ID_ARTICLE{evenement,#ID_OBJET}}
 		#SET{id_rubrique,#INFO_ID_RUBRIQUE{article,#GET{id_article}}}
-		#SET{logo,#LOGO_EVENEMENT|sinon{#LOGO_ARTICLE{#GET{id_article}}|extraire_attribut{src}}}
+		[(#LOGO_LIAISON_OBJET|non)
+		#SET{logo,#ID_OBJET|quete_logo_objet{evenement,on}|table_valeur{chemin}
+			|extraire_attribut{src}|sinon{#GET{id_article}|quete_logo_objet{article,on}|table_valeur{chemin}}}
+		]
 	]
 	[(#OBJET|=={article}|oui)
 	#SET{id_rubrique,#INFO_ID_RUBRIQUE{article,#ID_OBJET}}
