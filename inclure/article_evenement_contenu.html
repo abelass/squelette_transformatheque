@@ -64,17 +64,9 @@
 		</section>
 		</B_materiel>
 
-		<section class='session-info'>
-			<h3 class='heading-e'>
-				<span class='fas fa-calendar mrgn-r--xs'></span>
-				<span>Sessions</span>
-			</h3>
-			<p class='t-bt'>
-				Trois séances de 3 heures pour apprendre à utiliser la machine à coudre et les techniques de base.
-			</p>
-			<div class='timeline'>
-
-				#SET{id_objets_dest,#ARRAY}				
+	
+			#SET{texte_seance,#TEXTE_SEANCE}
+			#SET{id_objets_dest,#ARRAY}				
 			<BOUCLE_objet_selection(LIAISON_OBJETS)
 				{par ordre}
 				{objet=article}
@@ -82,7 +74,20 @@
 				#SET{objets_dest,#OBJET_DEST}
 				#SET{id_objets_dest,#GET{id_objets_dest}|push{#ID_OBJET_DEST}}
 			</BOUCLE_objet_selection>
+			<BOUCLE_selection_base(LIAISON_OBJETS){type_lien=seance}{par ordre}{where id_objet=id_objet_dest}{statut ?}{objet_dest=#GET{objets_dest}}{id_objet_dest IN #GET{id_objets_dest}}>
+			[(#INFO_TEXTE_SEANCE{article,#ID_ARTICLE}|oui)
+				[(#SET{texte_seance,#INFO_TEXTE_SEANCE{article,#ID_ARTICLE}})]
+			]
+			</BOUCLE_selection_base>
 			#SET{id_objet_actif,#ID_ARTICLE}
+			<B_selection>	
+			<section class='session-info'>
+			<h3 class='heading-e'>
+				<span class='fas fa-calendar mrgn-r--xs'></span>
+				<span>Sessions</span>
+			</h3>
+			[<p class='t-bt'>(#GET{texte_seance})</p>]
+			<div class='timeline'>
 			<BOUCLE_selection(LIAISON_OBJETS){type_lien=seance}{par ordre}{statut ?}{objet_dest=#GET{objets_dest}}{id_objet_dest IN #GET{id_objets_dest}}>
 				[(#GET{id_objet_actif}|=={#ID_OBJET}|?{
 					#SET{actif,on},
@@ -95,6 +100,7 @@
 						titre,#TITRE,
 						descriptif,#DESCRIPTIF}})]
 			</BOUCLE_selection>
+			</B_selection>		
 			</div>
 			<!-- %hr.hr -->
 		</section>
