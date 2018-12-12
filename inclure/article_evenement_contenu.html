@@ -76,7 +76,7 @@
 				#SET{id_objets_dest,#GET{id_objets_dest}|push{#ID_OBJET_DEST}}
 			</BOUCLE_objet_selection>
 			[(#REM) regarde si un article de destination contien un texte pour le bloc séance]	
-			<BOUCLE_selection_base(LIAISON_OBJETS){type_lien=seance}{par id_selection_objet}{where id_objet=id_objet_dest}{statut ?}{objet_dest=#GET{objets_dest}}{id_objet_dest IN #GET{id_objets_dest}}{0,1}>
+			<BOUCLE_selection_base(LIAISON_OBJETS){type_lien=seance}{par id_liaison_objet}{where id_objet=id_objet_dest}{statut ?}{objet_dest=#GET{objets_dest}}{id_objet_dest IN #GET{id_objets_dest}}{0,1}>
 			[(#INFO_TEXTE_SEANCE{article,#ID_ARTICLE}|oui)
 				[(#SET{texte_seance,#INFO_TEXTE_SEANCE{article,#ID_ARTICLE}})]
 			]
