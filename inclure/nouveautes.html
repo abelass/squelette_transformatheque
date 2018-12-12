@@ -4,7 +4,7 @@
 	#SET{logo,''}
 	#SET{id_evenement,''}
 	#SET{id_rubrique,#ID_OBJET}
-	<BOUCLE_condition(CONDITION){si #OBJET|==article}>
+	<BOUCLE_condition(CONDITION){si #OBJET|=={article}}>
 		#SET{id_rubrique,#INFO_ID_RUBRIQUE{article,#ID_OBJET}}
 		<BOUCLE_evenement(EVENEMENTS){par date_debut}{id_article=#ID_OBJET}>
 		#SET{id_evenement,#ID_EVENEMENT}
