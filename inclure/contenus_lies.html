@@ -1,0 +1,16 @@
+<article class='card card--sidebar'>
+	<a class='card__link' href='#URL'></a>
+		[(#LOGO|sinon{#ENV{logo_objet}}|image_reduire{400}
+		|inserer_attribut{class,card__image}
+		|inserer_attribut{alt,#TITRE}
+		|inserer_attribut{title,#TITRE})]
+	<div class='card__info'>
+		<h3 class='card__title heading-b small mrgn-b--s'>#TITRE</h3>
+		<div class='flx f-act f-jnd w--fw'>
+			<a class='btn card__cta btn--outline' href='#URL'>
+				<span class='fas fa-align-left small'></span>
+				<span><:transformatheque:lire:></span>
+			</a>
+		</div>
+	</div>
+</article>

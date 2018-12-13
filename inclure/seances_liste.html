@@ -18,23 +18,24 @@
 #SET{id_objet_actif,#ID_ARTICLE}
 <B_selection>	
 <section class='session-info'>
-<h3 class='heading-e'>
-	<span class='fas fa-calendar mrgn-r--xs'></span>
-	<span>Sessions</span>
-</h3>
-[<p class='t-bt'>(#GET{texte_seance})</p>]
-<div class='timeline'>
-<BOUCLE_selection(LIAISON_OBJETS){type_lien}{par ordre}{statut ?}{objet_dest=#GET{objets_dest}}{id_objet_dest IN #GET{id_objets_dest}}>
-	[(#GET{id_objet_actif}|=={#ID_OBJET}|?{
-		#SET{actif,on},
-		#SET{actif,''}
-	})]
-	[(#ID_OBJET|generer_modele{#OBJET,inclure/seances,#ARRAY{
-			actif,#GET{actif},
-			compteur,#COMPTEUR_BOUCLE,
-			id_liaison_objet,#ID_LIAISON_OBJET,
-			titre,#TITRE,
-			descriptif,#DESCRIPTIF}})]
-</BOUCLE_selection>
-</div>
+	<h3 class='heading-e'>
+		<span class='fas fa-calendar mrgn-r--xs'></span>
+		<span>Sessions</span>
+	</h3>
+	[<p class='t-bt'>(#GET{texte_seance})</p>]
+	<div class='timeline'>
+	<BOUCLE_selection(LIAISON_OBJETS){type_lien}{par ordre}{statut ?}{objet_dest=#GET{objets_dest}}{id_objet_dest IN #GET{id_objets_dest}}>
+		[(#GET{id_objet_actif}|=={#ID_OBJET}|?{
+			#SET{actif,on},
+			#SET{actif,''}
+		})]
+		[(#ID_OBJET|generer_modele{#OBJET,inclure/seances,#ARRAY{
+				actif,#GET{actif},
+				compteur,#COMPTEUR_BOUCLE,
+				id_liaison_objet,#ID_LIAISON_OBJET,
+				titre,#TITRE,
+				descriptif,#DESCRIPTIF}})]
+	</BOUCLE_selection>
+	</div>
+</section>
 </B_selection>	

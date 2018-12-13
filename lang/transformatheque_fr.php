@@ -11,6 +11,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'ateliers_futurs' => 'Ateliers futurs',
 
 	// C
+	'choisir' => 'Choissisez vos @type@s',
 	'contactez_nous' => 'Contactez nous',
 
 	// D
@@ -22,6 +23,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// I
 	'inscription' => 'Inscription',
+
+	// L
+	'lies' => '@type@s liés',
+	'lire' => 'Lire',
 
 	// N
 	'nouveautes' => 'Nouveautés',

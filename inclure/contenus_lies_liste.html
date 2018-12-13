@@ -1,0 +1,12 @@
+<B_selection>	
+<section class='section article__related mrgn-b--xl'>
+	<h2 class='heading-e'><:transformatheque:lies{type=#COMPOSITION}:></h2>
+	<div class='timeline'>
+<BOUCLE_selection(LIAISON_OBJETS){type_lien}{par ordre}{statut ?}{objet_dest}{id_objet_dest}>
+	[(#ID_OBJET|generer_modele{#OBJET,inclure/contenus_lies,#ARRAY{
+			titre,#TITRE,
+			descriptif,#DESCRIPTIF}})]
+</BOUCLE_selection>
+	</div>
+</section>
+</B_selection>	
