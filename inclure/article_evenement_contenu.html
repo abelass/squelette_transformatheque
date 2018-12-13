@@ -21,7 +21,7 @@
 				<BOUCLE_evenement(EVENEMENTS){id_article}{date_fin>#DATE}{par date_debut}{0,1}>
 				<div class='workshop-info__next'>
 					<h4 class='card__tag card__tag--light mrgn-b--0'>
-						<span>Prochaine date</span>
+						<span><:transformatheque:prochaine_date:></span>
 					</h4>
 					<p>
 						<span class='fas fa-clock mrgn-r--xs small'></span>
@@ -70,48 +70,12 @@
 			</ul>
 		</section>
 		</B_materiel>
-
-	
-			#SET{texte_seance,#TEXTE_SEANCE}
-			#SET{id_objets_dest,#ARRAY}	
-			[(#REM) regarde si l'article est lié comme séance]			
-			<BOUCLE_objet_selection(LIAISON_OBJETS)
-				{par ordre}
-				{objet=article}
-				{id_objet=#ID_ARTICLE}>
-				#SET{objets_dest,#OBJET_DEST}
-				#SET{id_objets_dest,#GET{id_objets_dest}|push{#ID_OBJET_DEST}}
-			</BOUCLE_objet_selection>
-			[(#REM) regarde si un article de destination contien un texte pour le bloc séance]	
-			<BOUCLE_selection_base(LIAISON_OBJETS){type_lien=seance}{par id_liaison_objet}{where id_objet=id_objet_dest}{statut ?}{objet_dest=#GET{objets_dest}}{id_objet_dest IN #GET{id_objets_dest}}{0,1}>
-			[(#INFO_TEXTE_SEANCE{article,#ID_ARTICLE}|oui)
-				[(#SET{texte_seance,#INFO_TEXTE_SEANCE{article,#ID_ARTICLE}})]
-			]
-			</BOUCLE_selection_base>
-			#SET{id_objet_actif,#ID_ARTICLE}
-			<B_selection>	
-			<section class='session-info'>
-			<h3 class='heading-e'>
-				<span class='fas fa-calendar mrgn-r--xs'></span>
-				<span>Sessions</span>
-			</h3>
-			[<p class='t-bt'>(#GET{texte_seance})</p>]
-			<div class='timeline'>
-			<BOUCLE_selection(LIAISON_OBJETS){type_lien=seance}{par ordre}{statut ?}{objet_dest=#GET{objets_dest}}{id_objet_dest IN #GET{id_objets_dest}}>
-				[(#GET{id_objet_actif}|=={#ID_OBJET}|?{
-					#SET{actif,on},
-					#SET{actif,''}
-				})]
-				[(#ID_OBJET|generer_modele{#OBJET,inclure/seances,#ARRAY{
-						actif,#GET{actif},
-						compteur,#COMPTEUR_BOUCLE,
-						id_liaison_objet,#ID_LIAISON_OBJET,
-						titre,#TITRE,
-						descriptif,#DESCRIPTIF}})]
-			</BOUCLE_selection>
-			</B_selection>		
-			</div>
-			<!-- %hr.hr -->
+		<INCLURE{fond=inclure/seances_liste,
+			texte_seance=#TEXTE_SEANCE,
+			objet=article,
+			id_objet=#ID_ARTICLE,
+			type_lien=seance,
+			env}	/>	
 		</section>
 	</section>
 	<section class='article__footer'>

@@ -31,6 +31,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// P
 	'places' => 'places',
+	'prochaine_date' => 'Prochaine date',
 	'projets_cours' => 'Projects en cours',
 	'plus_info' => 'Plus d\'info',
 
