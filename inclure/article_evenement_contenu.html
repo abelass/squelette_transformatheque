@@ -29,6 +29,13 @@
 						<br>
 						<span class='far fa-calendar mrgn-r--xs small'></span>
 						<span class='heading-e small'>[(#DATE_DEBUT|affdate_court)]</span>
+						<BOUCLE_gis(GIS){id_article}>
+						<br>
+						<span class='fas fa-map-marker-alt mrgn-r--xs small'></span>
+						<span class='heading-e small'><a href="[(#URL_GIS)]#content" onclick="window.open(this.href,
+						'gis',
+						'height=400, width=450, top=100, left=100, toolbar=no, menubar=no, location=no, resizable=yes, scrollbars=no, status=no'); return false;">#ADRESSE* - #VILLE</a></span>
+						</BOUCLE_gis>
 					</p>
 				</div>
 				</BOUCLE_evenement>
