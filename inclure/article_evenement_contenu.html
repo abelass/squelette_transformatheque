@@ -56,7 +56,10 @@
 
 		<!-- %span.hidden-marker#details -->
 	<section class='article__sidebar'>
-		<a class='btn' href=''><:transformatheque:offrez_cheque_cadeau:></a>
+	<BOUCLE_cheques(ARTICLES){composition=cheques}{tout}{lang}>
+		<a class='btn' href='#URL_ARTICLE'><:transformatheque:offrez_cheque_cadeau:></a>
+	</BOUCLE_cheques>
+	
 		<B_materiel>
 		<section class='equipment-info mrgn-b--m'>
 			<h2 class='heading-e'>
