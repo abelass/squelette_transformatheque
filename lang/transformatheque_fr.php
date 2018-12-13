@@ -42,7 +42,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'seance_nr' =>'Cours @compteur@',
 
 	// T
-	'texte_newslette' => 'Sign up to our newsletter to receive various informations that can be of use for you and your family in times of urgent need.',
+	'texte_newsletter' => 'Sign up to our newsletter to receive various informations that can be of use for you and your family in times of urgent need.',
 	'transformatheque_titre' => 'Squelette transformathèque',
 	'voir_tous_ateliers' => 'Voir tous les ateliers',
 	'voir_tous_projets' => 'Voir tous les projets',
