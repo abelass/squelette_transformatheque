@@ -9,7 +9,7 @@
 		<li[(#ENV{id_mot}|non) class="active"]>
 			<a href="[(#SELF|parametre_url{id_mot,''})]" data-target="" class="ajax"><:larut:ateliers_tous:></a>
 		</li[(#ENV{id_mot}|non)>
-	<BOUCLE_type_cours(larut:MOTS){id_groupe=6}{si #COMPOSITION|in_array{#LISTE{ateliers,ateliers_sous_domaine}}|oui}>
+	<BOUCLE_type_cours(larut:MOTS){id_groupe=6}{si #COMPOSITION|in_array{#LISTE{ateliers}}|oui}>
 		<li[(#ENV{id_mot}|=={#ID_MOT}|oui) class="active"]>
 			<a href="[(#SELF|parametre_url{id_mot,#ID_MOT})]"  data-target="#ID_MOT" class="ajax">#TITRE</a>
 		</li>
@@ -19,7 +19,7 @@
 </B_type_cours>
 
 #SET{id_article,#ARRAY}
-<BOUCLE_article(ARTICLES){composition=ateliers}{id_mot}> #SET{id_article,#GET{id_article}|push{#ID_ARTICLE}} </BOUCLE_article>
+<BOUCLE_article(ARTICLES){composition=ateliers}{id_mot}{lang}> #SET{id_article,#GET{id_article}|push{#ID_ARTICLE}} </BOUCLE_article>
 
 <script type="text/javascript">
 	$(function() {
