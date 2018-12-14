@@ -19,7 +19,7 @@
 </B_type_cours>
 
 #SET{id_article,#ARRAY}
-<BOUCLE_article(ARTICLES){composition=ateliers}> #SET{id_article,#GET{id_article}|push{#ID_ARTICLE}} </BOUCLE_article>
+<BOUCLE_article(ARTICLES){composition=ateliers}{id_mot}> #SET{id_article,#GET{id_article}|push{#ID_ARTICLE}} </BOUCLE_article>
 
 <script type="text/javascript">
 	$(function() {
