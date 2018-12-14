@@ -14,7 +14,7 @@
 		allDay,#GET{allday},
 		start,#DATE_DEBUT,
 		end,#DATE_FIN,
-		url,http://larut.eu/#ID_ARTICLE|generer_url_entite{article,&},
+		url,#URL_ARTICLE{#ID_ARTICLE},
 		color,#f79d6c,
 		description,#GET{description}}})]
 	[(#GET{tableau}|json_encode)]
