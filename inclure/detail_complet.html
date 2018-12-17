@@ -6,15 +6,14 @@
 		|inserer_attribut{title,#TITRE})]
 	</div>
 	<div class='card__info'>
-		[<p class='card__label'>
-			<span class='far fa-clock'></span><span>(#DATE_DEBUT|affdate_court)]
+		[(#ENV{date_debut}|!={0000-00-00 00:00:00}|oui)<p class='card__label'>
+			<span class='far fa-clock'></span><span>[(#DATE_DEBUT|affdate_court)]]
 			<BOUCLE_ev_rep(EVENEMENTS){id_evenement_source=#ENV{id_evenement,-1}}{par date_debut}{0,1}>
-				#SET{date_fin, #DATE_FIN}
+			[(#DATE_DEBUT|affdate{Y-m-d}|!={#DATE_FIN|affdate{Y-m-d}}|oui) - [(#DATE_FIN|affdate_court)]]</span>
 			</BOUCLE_ev_rep>
-			[- (#GET{date_fin}|affdate_court)</span>
-			</p>]
+			</p>
 			</B_ev_rep>
-			[(#DATE_DEBUT|affdate_court|!={#DATE_FIN|affdate_court}|oui)[- (#DATE_FIN|affdate_court)]	</span>
+			[(#DATE_DEBUT|affdate_court|!={#DATE_FIN|affdate_court}|oui)[- (#DATE_FIN|affdate_court)]</span>
 			</p>]
 			<//B_ev_rep>
 

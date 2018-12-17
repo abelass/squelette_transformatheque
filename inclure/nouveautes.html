@@ -5,9 +5,12 @@
 	#SET{id_evenement,''}
 	#SET{id_rubrique,#ID_OBJET}
 	#SET{inscription,''}
-	#SET{inscription,0}
 	<BOUCLE_condition(CONDITION){si #OBJET|=={article}}>
 		#SET{id_rubrique,#INFO_ID_RUBRIQUE{article,#ID_OBJET}}
+		#SET{date_debut,''}
+		#SET{date_fin,''}
+		#SET{inscription,''}
+		#SET{places,0}
 		<BOUCLE_evenement(EVENEMENTS){id_evenement_source=0}{par date_debut}{id_article=#ID_OBJET}{date_debut>#ENV{date}}>
 		#SET{id_evenement,#ID_EVENEMENT}
 		#SET{date_debut,#DATE_DEBUT}
