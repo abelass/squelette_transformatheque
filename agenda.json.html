@@ -2,20 +2,20 @@
 #SET{end,#ENV{end}|strtotime}
 #HTTP_HEADER{Content-type:application/json;charset=#CHARSET}
 [<BOUCLE_evenements(spip_evenements){', '}
-	{id_article ?IN #ENV**{id_article}}
-	{par date_debut}
-		{mois_relatif_fin<=0}>
-		[(#HORAIRE|=={non}|?{#SET{allday,true},#SET{allday,false}})]
-		#SET{title,#TITRE|html2unicode|unicode2charset}
-		#SET{description, #DESCRIPTIF|html2unicode|unicode2charset}
-	[(#SET{tableau,#ARRAY{
-		id,#ID_EVENEMENT,
-		title,#GET{title},
-		allDay,#GET{allday},
-		start,#DATE_DEBUT,
-		end,#DATE_FIN,
-		url,#URL_ARTICLE{#ID_ARTICLE},
-		color,#f79d6c,
-		description,#GET{description}}})]
-	[(#GET{tableau}|json_encode)]
+  {id_article ?IN #ENV**{id_article}}
+  {par date_debut}
+    {mois_relatif_fin<=0}>
+    [(#HORAIRE|=={non}|?{#SET{allday,true},#SET{allday,false}})]
+    #SET{title,#TITRE|html2unicode|unicode2charset}
+    #SET{description, #DESCRIPTIF|html2unicode|unicode2charset}
+  [(#SET{tableau,#ARRAY{
+    id,#ID_EVENEMENT,
+    title,#GET{title},
+    allDay,#GET{allday},
+    start,#DATE_DEBUT,
+    end,#DATE_FIN,
+    url,#URL_ARTICLE{#ID_ARTICLE},
+    color,#f79d6c,
+    description,#GET{description}}})]
+  [(#GET{tableau}|json_encode)]
 </BOUCLE_evenements>]

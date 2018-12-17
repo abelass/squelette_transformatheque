@@ -8,35 +8,35 @@
 <BOUCLE_article(ARTICLES){composition=ateliers}{id_mot}{lang}> #SET{id_article,#GET{id_article}|push{#ID_ARTICLE}} </BOUCLE_article>
 
 <script type="text/javascript">
-	$(function() {
-		$(".type_cours a").click(function() {
-			var id_mot = $(this).attr('data-target');
-			ajaxReload('agenda', {
-				args : {
-					id_mot : id_mot
-				}
-			});
-			return false;
-		});
+  $(function() {
+    $(".type_cours a").click(function() {
+      var id_mot = $(this).attr('data-target');
+      ajaxReload('agenda', {
+        args : {
+          id_mot : id_mot
+        }
+      });
+      return false;
+    });
 
-	$('#agenda').fullCalendar({
-			locale: '[(#LANG|strtolower)]',
-			editable: false,
-			navLinks: true,
-			eventLimit: true,
-			events: "[(#URL_PAGE{agenda.json}|parametre_url{date_fin,#DATE,&}|parametre_url{id_article,[(#GET{id_article})],&})]",
-			header: {
-				left: [(#LANG_DIR|=={ltr}|?{"'prevYear,prev,next,nextYear today'","'listMonth,month,agendaWeek,agendaDay'"})],
-				center: 'title',
-				right: [(#LANG_DIR|=={ltr}|?{"'agendaDay,agendaWeek,month,listMonth'","'today nextYear,next,prev,prevYear'"})]
-				},
-			fixedWeekCount: false,
-			allDayHtml:'<:organiseur:cal_jour_entier|textebrut:>',
-			loading: function(bool) {
-				if (bool) $('#calendrier-loading').show();
-				else $('#calendrier-loading').hide();
-			},
-	})
+  $('#agenda').fullCalendar({
+      locale: '[(#LANG|strtolower)]',
+      editable: false,
+      navLinks: true,
+      eventLimit: true,
+      events: "[(#URL_PAGE{agenda.json}|parametre_url{date_fin,#DATE,&}|parametre_url{id_article,[(#GET{id_article})],&})]",
+      header: {
+        left: [(#LANG_DIR|=={ltr}|?{"'prevYear,prev,next,nextYear today'","'listMonth,month,agendaWeek,agendaDay'"})],
+        center: 'title',
+        right: [(#LANG_DIR|=={ltr}|?{"'agendaDay,agendaWeek,month,listMonth'","'today nextYear,next,prev,prevYear'"})]
+        },
+      fixedWeekCount: false,
+      allDayHtml:'<:organiseur:cal_jour_entier|textebrut:>',
+      loading: function(bool) {
+        if (bool) $('#calendrier-loading').show();
+        else $('#calendrier-loading').hide();
+      },
+  })
 
 });
 /*]]>*/</script>
@@ -46,16 +46,16 @@
 <div id="calendrier-loading">
 <p class="pagination">#PAGINATION</p>
 <BOUCLE_agenda(DATA){source json, #PRODUIRE{fond=agenda.json, start=0,end=2147483647,_=#REM|time},id_article=#ENV{id_article}}{pagination 15}>
-		<dl>
-				[<dt><:agenda:evenement_titre:></dt>
-				<dd><a href="#VALEUR{url}">(#VALEUR{title})</a></dd>]
+    <dl>
+        [<dt><:agenda:evenement_titre:></dt>
+        <dd><a href="#VALEUR{url}">(#VALEUR{title})</a></dd>]
 
-				[<dt><:agenda:evenement_date:></dt>
-				<dd>(#VALEUR{start}|Agenda_affdate_debut_fin{#VALEUR{end},#VALEUR{allDay}|=={true}|?{non,oui}})</dd>]
+        [<dt><:agenda:evenement_date:></dt>
+        <dd>(#VALEUR{start}|Agenda_affdate_debut_fin{#VALEUR{end},#VALEUR{allDay}|=={true}|?{non,oui}})</dd>]
 
-				[<dt><:agenda:evenement_descriptif:></dt>
-				<dd>(#VALEUR{description})</dd>]
-		</dl>
+        [<dt><:agenda:evenement_descriptif:></dt>
+        <dd>(#VALEUR{description})</dd>]
+    </dl>
 </BOUCLE_agenda>
 <p class="pagination">#PAGINATION</p>
 </div>

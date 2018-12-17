@@ -1,7 +1,9 @@
-[(#REM) Fil d'Ariane ]
-<section class='section mrgn-b--l'>
-	<h2 class='section__title heading-b'>[ (#ENV{status})]</h2>
-
-	[<section class="section__body">(#ENV{erreur})</section>]
-	#FORMULAIRE_LOGIN{#ENV{cible},'',0}
-</section>
+<article class='article'>
+	<div class='article__body'>
+		<div class='article-info flx f-col f-act f-jct'>
+			<h1 class='heading-b mrgn-b--s'>  [ (#ENV{status})]</h1>
+			[<div class="large">(#ENV{erreur})</div>]
+			#FORMULAIRE_LOGIN{#ENV{cible},'',0}
+		</div>
+	</div>
+</article>

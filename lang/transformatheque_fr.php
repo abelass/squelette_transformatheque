@@ -35,6 +35,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'offrez_cheque_cadeau' => 'Offrez un chèque cadeau',
 
 	// P
+	'page_not_found' => 'Pages n\'existe pas',
 	'places' => 'places',
 	'prochaine_date' => 'Prochaine date',
 	'projets_cours' => 'Projects en cours',

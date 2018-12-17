@@ -1,12 +1,12 @@
 <BOUCLE_gis(GIS){id_gis?}>
-	<article class="article" id="content">
-		<div class='article-info flx f-col f-act f-jct'>
-		<h1 class="article__title heading-a #EDIT{titre}">#TITRE</h1>
-		</div>
-		<p>
-			[(#ADRESSE|textebrut)]<br />
-			[(#CODE_POSTAL) ]#VILLE
-		</p>
-		[(#INCLURE{fond=modeles/carte_gis, autocenterandzoom=oui,centrer_auto = non,id_gis,zoom=17})]
-	</article>
+  <article class="article">
+    <div class='article-info flx f-col f-act f-jct'>
+    <h1 class="article__title heading-a #EDIT{titre}">#TITRE</h1>
+    </div>
+    <p>
+      [(#ADRESSE|textebrut)]<br />
+      [(#CODE_POSTAL) ]#VILLE
+    </p>
+    [(#INCLURE{fond=modeles/carte_gis, autocenterandzoom=oui,centrer_auto = non,id_gis,zoom=17})]
+  </article>
 </BOUCLE_gis>

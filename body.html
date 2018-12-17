@@ -1,21 +1,21 @@
 <body>
-	<main class="page flx f-col f-act page--workshops">
-		<header id="header" class='page__header'>
-			<INCLURE{fond=header/#ENV{type-page},env} />
-			<nav class="nav nav--main" id="nav">
-				<INCLURE{fond=inclure/nav,env} />
-			</nav>
-		</header>
-		[(#ENV{composition}|=={home}|oui)
-			<INCLURE{fond=inclure/banner,id_rubrique=#LISTE{4,5}} />
-		]
-		<INCLURE{fond=content/#ENV{type-page},env} />
-		[(#REM)<aside class="extra1 col" id="extra1"><INCLURE{fond=extra1/#ENV{type-page},env} /></aside>
-			<aside class="extra2 col" id="extra2"><INCLURE{fond=extra2/#ENV{type-page},env} /></aside>]
+  <main class="page flx f-col f-act page--workshops">
+    <header id="header" class='page__header'>
+      <INCLURE{fond=header/#ENV{type-page},env} />
+      <nav class="nav nav--main" id="nav">
+        <INCLURE{fond=inclure/nav,env} />
+      </nav>
+    </header>
+    [(#ENV{composition}|=={home}|oui)
+      <INCLURE{fond=inclure/banner,id_rubrique=#LISTE{4,5}} />
+    ]
+    <INCLURE{fond=content/#ENV{type-page},env} />
+    [(#REM)<aside class="extra1 col" id="extra1"><INCLURE{fond=extra1/#ENV{type-page},env} /></aside>
+      <aside class="extra2 col" id="extra2"><INCLURE{fond=extra2/#ENV{type-page},env} /></aside>]
 
-		<footer id="footer" class='page__footer'>
-			<INCLURE{fond=footer/#ENV{type-page},env} />
-		</footer>
-	</main>
-	<script src='#CHEMIN{scripts/min/scripts-min.js}'></script>
+    <footer id="footer" class='page__footer'>
+      <INCLURE{fond=footer/#ENV{type-page},env} />
+    </footer>
+  </main>
+  <script src='#CHEMIN{scripts/min/scripts-min.js}'></script>
 </body>
