@@ -33,10 +33,10 @@
 
 		[(#REM)Toutes les résérvations]
 		<hr class='hr mrgn-b--s'>
+		[(#INSCRIPTION|et{#DATE_DEBUT|>{#ENV{date}}}|oui)
 		<div class='flx f-jbt f-ast'>
 			[(#PLACES|>{0}|oui)
-			#SET{total,#INCLURE{fond=inclure/compteur_reservations,env}}
-
+			#SET{total,#INCLURE{fond=inclure/compteur_reservations,id_evenement=#ID_EVENEMENT,statut=#VAL|statuts_complet},multiple=''}
 			[(#REM)Les disponibilités]
 			#SET{disponibles,#PLACES|moins{#GET{total}}}
 			<div class='card__actions'>
@@ -45,11 +45,10 @@
 					<:transformatheque:places:>
 				</p>
 			</div>]
-			[(#INSCRIPTION|et{#DATE_DEBUT|>{#ENV{date}}}|oui)
 			<a class='btn card__cta' href='[(#URL_PAGE{inscription}|parametre_url{id_evenement,#ID_EVENEMENT})]'>
 				<span class='fas small fa-check'></span>
 				<span><:transformatheque:inscription:></span>
-			</a>]
-		</div>
+			</a>
+		</div>]
 	</div>
 </article>

@@ -4,15 +4,19 @@
 	#SET{logo,''}
 	#SET{id_evenement,''}
 	#SET{id_rubrique,#ID_OBJET}
+	#SET{inscription,''}
+	#SET{inscription,0}
 	<BOUCLE_condition(CONDITION){si #OBJET|=={article}}>
 		#SET{id_rubrique,#INFO_ID_RUBRIQUE{article,#ID_OBJET}}
-		<BOUCLE_evenement(EVENEMENTS){par date_debut}{id_article=#ID_OBJET}>
+		<BOUCLE_evenement(EVENEMENTS){id_evenement_source=0}{par date_debut}{id_article=#ID_OBJET}{date_debut>#ENV{date}}>
 		#SET{id_evenement,#ID_EVENEMENT}
 		#SET{date_debut,#DATE_DEBUT}
 		#SET{date_fin,#DATE_FIN}
+		[(#INSCRIPTION|oui)
+		#SET{inscription,#INSCRIPTION}
+		#SET{places,#PLACES}]
 		</BOUCLE_evenement>
 	</BOUCLE_condition>
-
 	#SET{url_rubrique,#URL_RUBRIQUE{#GET{id_rubrique}}}
 	[
 		(#ID_OBJET|generer_modele{#OBJET,inclure/detail_complet,#ARRAY{
@@ -26,7 +30,8 @@
 			logo,#GET{logo},
 			id_evenement,#GET{id_evenement},
 			url_rubrique,#GET{url_rubrique},
-
+			inscription,#GET{inscription},
+			places,#GET{places}
 			}})]
 </BOUCLE_selection>
 </div>

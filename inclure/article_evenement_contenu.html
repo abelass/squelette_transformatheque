@@ -1,93 +1,92 @@
 <BOUCLE_content(ARTICLES){id_article}>
 
 <article class='article article--workshop'>
-	<figure class='hero-image'>
-			<img
-			src="[(#LOGO_ARTICLE|image_reduire{1920}|extraire_attribut{src})]"
-			srcset="[(#LOGO_ARTICLE|image_reduire{300}|extraire_attribut{src})] 300w,
-				[(#LOGO_ARTICLE|image_reduire{600}|extraire_attribut{src})] 600w,
-				[(#LOGO_ARTICLE|image_reduire{1000}|extraire_attribut{src})] 1000w"
-			alt="#TITLE"/>
-		<div class='article-info article-info--fullscreen flx f-col f-act f-jct'>
-			<h1 class="article__title heading-a #EDIT{titre}">#TITRE</h1>
-				<p class='workshop__price heading-d x-large mrgn-b--0'>
-					<strong>
-					<BOUCLE_prix_article(PRIX_OBJETS){id_prix_objet_source=0}{id_objet=#ID_ARTICLE}{objet=article}{par prix}>
-						[(#COMPTEUR_BOUCLE|=={1}|oui)#PRIX]
-						[(#TOTAL_BOUCLE|>{1}|et{#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}}|oui)-#PRIX]
-					</BOUCLE_prix_article>
-				</strong>
-				</p>
-				<BOUCLE_evenement(EVENEMENTS){id_article}{date_fin>#DATE}{par date_debut}{0,1}>
-				<div class='workshop-info__next'>
-					<h4 class='card__tag card__tag--light mrgn-b--0'>
-						<span><:transformatheque:prochaine_date:></span>
-					</h4>
-					<p>
-						<span class='fas fa-clock mrgn-r--xs small'></span>
-						<span class='heading-e small'>[(#DATE_DEBUT|affdate{H:m})], [(#DATE_DEBUT|nom_jour)]</span>
-						<br>
-						<span class='far fa-calendar mrgn-r--xs small'></span>
-						<span class='heading-e small'>[(#DATE_DEBUT|affdate_court)]</span>
-						<BOUCLE_gis(GIS){id_article}>
-						<br>
-						<span class='fas fa-map-marker-alt mrgn-r--xs small'></span>
-						<span class='heading-e small'><a href="[(#URL_GIS)]#content" onclick="window.open(this.href,
-						'gis',
-						'height=400, width=450, top=100, left=100, toolbar=no, menubar=no, location=no, resizable=yes, scrollbars=no, status=no'); return false;">#ADRESSE* - #VILLE</a></span>
-						</BOUCLE_gis>
-					</p>
-				</div>
-				</BOUCLE_evenement>
-				<a class='btn article__cta btn--outline' href='#inscription'>
-					<span><:transformatheque:inscription:></span>
-				</a>
-		</div>
-	</figure>
-	[<section class='article__body #EDIT{texte}'>
-	<h3 class='heading-e small mrgn-b--m'>
-		<a href='#URL_RUBRIQUE'>
-			<span class='fas fa-chevron-left mrgn-r--xs'></span>
-			<span><:transformatheque:retour{type=#COMPOSITION}:></span>
-		</a>
-	</h3>
-	<h2 class='heading-b'><:transformatheque:detail{type=#COMPOSITION}:></h2>
-	(#TEXTE|image_reduire{500,0})</section>]
+  <figure class='hero-image'>
+      <img
+      src="[(#LOGO_ARTICLE|image_reduire{1920}|extraire_attribut{src})]"
+      srcset="[(#LOGO_ARTICLE|image_reduire{300}|extraire_attribut{src})] 300w,
+        [(#LOGO_ARTICLE|image_reduire{600}|extraire_attribut{src})] 600w,
+        [(#LOGO_ARTICLE|image_reduire{1000}|extraire_attribut{src})] 1000w"
+      alt="#TITLE"/>
+    <div class='article-info article-info--fullscreen flx f-col f-act f-jct'>
+      <h1 class="article__title heading-a #EDIT{titre}">#TITRE</h1>
+        <p class='workshop__price heading-d x-large mrgn-b--0'>
+          <strong>
+          <BOUCLE_prix_article(PRIX_OBJETS){id_prix_objet_source=0}{id_objet=#ID_ARTICLE}{objet=article}{par prix}>
+            [(#COMPTEUR_BOUCLE|=={1}|oui)#PRIX]
+            [(#TOTAL_BOUCLE|>{1}|et{#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}}|oui)-#PRIX]
+          </BOUCLE_prix_article>
+        </strong>
+        </p>
+        <BOUCLE_evenement(EVENEMENTS){id_article}{date_fin>#DATE}{par date_debut}{0,1}>
+        <div class='workshop-info__next'>
+          <h4 class='card__tag card__tag--light mrgn-b--0'>
+            <span><:transformatheque:prochaine_date:></span>
+          </h4>
+          <p>
+            <span class='fas fa-clock mrgn-r--xs small'></span>
+            <span class='heading-e small'>[(#DATE_DEBUT|affdate{H:m})], [(#DATE_DEBUT|nom_jour)]</span>
+            <br>
+            <span class='far fa-calendar mrgn-r--xs small'></span>
+            <span class='heading-e small'>[(#DATE_DEBUT|affdate_court)]</span>
+            <BOUCLE_gis(GIS){id_article}>
+            <br>
+            <span class='fas fa-map-marker-alt mrgn-r--xs small'></span>
+            <span class='heading-e small'><a href="[(#URL_GIS)]#content" onclick="window.open(this.href,
+            'gis',
+            'height=400, width=450, top=100, left=100, toolbar=no, menubar=no, location=no, resizable=yes, scrollbars=no, status=no'); return false;">#ADRESSE* - #VILLE</a></span>
+            </BOUCLE_gis>
+          </p>
+        </div>
+        </BOUCLE_evenement>
+        <a class='btn article__cta btn--outline' href='#inscription'>
+          <span><:transformatheque:inscription:></span>
+        </a>
+    </div>
+  </figure>
+  [<section class='article__body #EDIT{texte}'>
+  <h3 class='heading-e small mrgn-b--m'>
+    <a href='#URL_RUBRIQUE'>
+      <span class='fas fa-chevron-left mrgn-r--xs'></span>
+      <span><:transformatheque:retour{type=#COMPOSITION}:></span>
+    </a>
+  </h3>
+  <h2 class='heading-b'><:transformatheque:detail{type=#COMPOSITION}:></h2>
+  (#TEXTE|image_reduire{500,0})</section>]
 
-		<!-- %span.hidden-marker#details -->
-	<section class='article__sidebar'>
-	<BOUCLE_cheques(ARTICLES){composition=cheques}{tout}{lang}>
-		<a class='btn' href='#URL_ARTICLE'><:transformatheque:offrez_cheque_cadeau:></a>
-	</BOUCLE_cheques>
-	
-		<B_materiel>
-		<section class='equipment-info mrgn-b--m'>
-			<h2 class='heading-e'>
-				<span class='fas fa-cut mrgn-r--xs'></span>
-				<span><:transformatheque:equipement:></span>
-			</h2>
-			<ul>
-			<BOUCLE_materiel(OBJETS_INFORMATIONS){id_article}>
-				<li>#TITRE</li>
-			</BOUCLE_materiel>
-			</ul>
-		</section>
-		</B_materiel>
-		<INCLURE{fond=inclure/seances_liste,
-			texte_seance=#TEXTE_SEANCE,
-			objet=article,
-			id_objet=#ID_ARTICLE,
-			type_lien=seance,
-			env}	/>	
-		</section>
-	</section>
-	<section class='article__footer'>
-		<INCLURE{fond=inclure/contenus_lies_liste,
-			objet_dest=article,
-			id_objet_dest=#ID_ARTICLE,
-			type_lien=lie,
-			env}	/>	
-		<INCLURE{fond=inclure/inscription,id_article,options=#ARRAY{type,#COMPOSITION},env} />
-	</section>
+  <section class='article__sidebar'>
+  <BOUCLE_cheques(ARTICLES){composition=cheques}{tout}{lang}>
+    <a class='btn' href='#URL_ARTICLE'><:transformatheque:offrez_cheque_cadeau:></a>
+  </BOUCLE_cheques>
+  
+    <B_materiel>
+    <section class='equipment-info mrgn-b--m'>
+      <h2 class='heading-e'>
+        <span class='fas fa-cut mrgn-r--xs'></span>
+        <span><:transformatheque:equipement:></span>
+      </h2>
+      <ul>
+      <BOUCLE_materiel(OBJETS_INFORMATIONS){id_article}>
+        <li>#TITRE</li>
+      </BOUCLE_materiel>
+      </ul>
+    </section>
+    </B_materiel>
+    <INCLURE{fond=inclure/seances_liste,
+      texte_seance=#TEXTE_SEANCE,
+      objet=article,
+      id_objet=#ID_ARTICLE,
+      type_lien=seance,
+      env}  />  
+    </section>
+  </section>
+  <section class='article__footer'>
+    <INCLURE{fond=inclure/contenus_lies_liste,
+      objet_dest=article,
+      id_objet_dest=#ID_ARTICLE,
+      type_lien=lie,
+      env}  />  
+    <INCLURE{fond=inclure/inscription,id_article,options=#ARRAY{type,#COMPOSITION},env} />
+  </section>
 </article>
 </BOUCLE_content>

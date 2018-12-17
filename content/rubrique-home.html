@@ -1,31 +1,31 @@
 <section class='section grid grid--col--2-1 optional'>
-  <section class='section mrgn-b--xl'>
-    [(#REM)les projets]
-    [<h2 class='section__title heading-b mrgn-b--m'>(#ENV{titre})</h2>]
-    <INCLURE{fond=inclure/nouveautes,objet_dest=rubrique,id_objet_dest=#ID_RUBRIQUE,type_lien=actualites} />
+	<section class='section mrgn-b--xl'>
+		[(#REM)les projets]
+		[<h2 class='section__title heading-b mrgn-b--m'>(#ENV{titre})</h2>]
+		<INCLURE{fond=inclure/nouveautes,objet_dest=rubrique,id_objet_dest=#ID_RUBRIQUE,type_lien=actualites} />
 
-  </section>
-  <section class='section section--calendar mrgn-b--xl'>
-    <h2 class='section__title heading-b mrgn-b--l'><:transformatheque:ateliers_futurs:></h2>
-    <INCLURE{fond=inclure/articles_evenements_liste,env,composition=ateliers,limite=5} />
-    <section class='section'>
-    <B_cheques>
-    <hr class='hr'>
-    <BOUCLE_cheques(ARTICLES){composition=cheques}{tout}{lang}>
-      <div class='card card--article'>
-        <div class='mrgn-b--m'>
-          <h2 class='section__title heading-b'>#TITRE</h2>
-          <div>#DESCRIPTIF</div>
-        </div>
-        <a class='btn btn--large btn--highlight w--fw' href='#URL_ARTICLE'>Offrez un chèque cadeau</a>
-      </div>
-      </BOUCLE_cheques>
-      <hr class='hr'>
-      <h2 class='section__title heading-b'>Newsletter</h2>
-      <p class='mrgn-b--xl'><:transformatheque:texte_newsletter:></p>
-      <div class="ajax">
-          #FORMULAIRE_NEWSLETTER_SUBSCRIBE
-      </div>
-    </section>
-  </section>
+	</section>
+	<section class='section section--calendar mrgn-b--xl'>
+		<h2 class='section__title heading-b mrgn-b--l'><:transformatheque:ateliers_futurs:></h2>
+		<INCLURE{fond=inclure/articles_evenements_liste,env,composition=ateliers,limite=5} />
+		<section class='section'>
+		<B_cheques>
+		<hr class='hr'>
+		<BOUCLE_cheques(ARTICLES){composition=cheques}{tout}{lang}>
+			<div class='card card--article'>
+				<div class='mrgn-b--m'>
+					<h2 class='section__title heading-b'>#TITRE</h2>
+					<div>#DESCRIPTIF</div>
+				</div>
+				<a class='btn btn--large btn--highlight w--fw' href='#URL_ARTICLE'>Offrez un chèque cadeau</a>
+			</div>
+			</BOUCLE_cheques>
+			<hr class='hr'>
+			<h2 class='section__title heading-b'>Newsletter</h2>
+			<p class='mrgn-b--xl'><:transformatheque:texte_newsletter:></p>
+			<div class="ajax">
+					#FORMULAIRE_NEWSLETTER_SUBSCRIBE
+			</div>
+		</section>
+	</section>
 </section>
