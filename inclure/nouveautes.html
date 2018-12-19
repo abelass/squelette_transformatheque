@@ -1,40 +1,40 @@
 <h2 class='section__title heading-b mrgn-b--m'><:transformatheque:nouveautes:></h2>
 <div class='card__roll mrgn-b--l'>
 <BOUCLE_selection(LIAISON_OBJETS){type_lien}{par ordre}{statut ?}{id_objet_dest ?}{objet_dest ?}>
-  #SET{logo,''}
-  #SET{id_evenement,''}
-  #SET{id_rubrique,#ID_OBJET}
-  #SET{inscription,''}
-  <BOUCLE_condition(CONDITION){si #OBJET|=={article}}>
-    #SET{id_rubrique,#INFO_ID_RUBRIQUE{article,#ID_OBJET}}
-    #SET{date_debut,''}
-    #SET{date_fin,''}
-    #SET{inscription,''}
-    #SET{places,0}
-    <BOUCLE_evenement(EVENEMENTS){id_evenement_source=0}{par date_debut}{id_article=#ID_OBJET}{date_debut>#ENV{date}}>
-    #SET{id_evenement,#ID_EVENEMENT}
-    #SET{date_debut,#DATE_DEBUT}
-    #SET{date_fin,#DATE_FIN}
-    [(#INSCRIPTION|oui)
-    #SET{inscription,#INSCRIPTION}
-    #SET{places,#PLACES}]
-    </BOUCLE_evenement>
-  </BOUCLE_condition>
-  #SET{url_rubrique,#URL_RUBRIQUE{#GET{id_rubrique}}}
-  [
-    (#ID_OBJET|generer_modele{#OBJET,inclure/detail_complet,#ARRAY{
-      ordre,#ORDRE,
-      total_boucle,#TOTAL_BOUCLE,
-      id_liaison_objet,#ID_LIAISON_OBJET,
-      titre,#TITRE,
-      date,#DATE,
-      date_debut,#GET{date_debut},
-      date_fin,#GET{date_fin},
-      logo,#GET{logo},
-      id_evenement,#GET{id_evenement},
-      url_rubrique,#GET{url_rubrique},
-      inscription,#GET{inscription},
-      places,#GET{places}
-      }})]
+	#SET{logo,''}
+	#SET{id_evenement,''}
+	#SET{id_rubrique,#ID_OBJET}
+	#SET{inscription,''}
+	<BOUCLE_condition(CONDITION){si #OBJET|=={article}}>
+		#SET{id_rubrique,#INFO_ID_RUBRIQUE{article,#ID_OBJET}}
+		#SET{date_debut,''}
+		#SET{date_fin,''}
+		#SET{inscription,''}
+		#SET{places,0}
+		<BOUCLE_evenement(EVENEMENTS){id_evenement_source=0}{par date_debut}{id_article=#ID_OBJET}{date_debut>#ENV{date}}>
+		#SET{id_evenement,#ID_EVENEMENT}
+		#SET{date_debut,#DATE_DEBUT}
+		#SET{date_fin,#DATE_FIN}
+		[(#INSCRIPTION|oui)
+		#SET{inscription,#INSCRIPTION}
+		#SET{places,#PLACES}]
+		</BOUCLE_evenement>
+	</BOUCLE_condition>
+	#SET{url_rubrique,#URL_RUBRIQUE{#GET{id_rubrique}}}
+	[
+		(#ID_OBJET|generer_modele{#OBJET,inclure/detail_complet,#ARRAY{
+			ordre,#ORDRE,
+			total_boucle,#TOTAL_BOUCLE,
+			id_liaison_objet,#ID_LIAISON_OBJET,
+			titre,#TITRE,
+			date,#DATE,
+			date_debut,#GET{date_debut},
+			date_fin,#GET{date_fin},
+			logo,#GET{logo},
+			id_evenement,#GET{id_evenement},
+			url_rubrique,#GET{url_rubrique},
+			inscription,#GET{inscription},
+			places,#GET{places}
+			}})]
 </BOUCLE_selection>
 </div>
