@@ -18,7 +18,7 @@
 					</BOUCLE_prix_article>
 				</strong>
 				</p>
-				<BOUCLE_evenement(EVENEMENTS){id_article}{date_fin>#DATE}{!par date_debut}{0,1}>
+				<BOUCLE_evenement(EVENEMENTS){id_article}{date_debut>#ENV{date}}{par date_debut}{0,1}>
 				<div class='workshop-info__next'>
 					<h4 class='card__tag card__tag--light mrgn-b--0'>
 						<span><:transformatheque:prochaine_date:></span>
