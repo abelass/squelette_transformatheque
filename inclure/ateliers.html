@@ -1,0 +1,75 @@
+<section class='section--workshops'>
+	<BOUCLE_criteres(MOTS){id_groupe=6}>
+	#SET{id_article,#ARRAY}
+	<B_ateliers>
+	<section class='card__grid is-closed section--type-b js-card__section'>
+		<div class='section__cover'>
+			<span class='btn fas fa-times p-abs js-card__section--close mrgn-b--0'></span>
+			<img alt='This is an image' class='section__cover-img' src='#CHEMIN{images/img.jpg}' title='This is an imagesss'>
+			<div class='section__info'>
+				<h2 class='heading-b large mrgn-b--s'>#TITRE</h2>
+				<p class='section__description'>#DESCRIPTIF</p>
+			</div>
+		</div>
+		<div class='card__roll'>
+
+		<BOUCLE_ateliers(ARTICLES){id_rubrique}{id_mot}>
+			#SET{id_article,#GET{id_article}|push{#ID_ARTICLE}}
+		</BOUCLE_ateliers>
+			<BOUCLE_evenement(EVENEMENTS)
+				{id_article IN #GET{id_article}}
+				{id_evenement_source=0}
+				{date_debut>#ENV{date}}
+				{par date_debut}>
+			<article class='card'>
+				<a class='card__link' href='#URL_ARTICLE'></a>
+				<div class='card__image'>
+					<img
+						src="[(#LOGO_ARTICLE|image_reduire{1920}|extraire_attribut{src})]"
+						srcset="[(#LOGO_ARTICLE|image_reduire{300}|extraire_attribut{src})] 300w,
+							[(#LOGO_ARTICLE|image_reduire{600}|extraire_attribut{src})] 600w,
+							[(#LOGO_ARTICLE|image_reduire{1000}|extraire_attribut{src})] 1000w"
+						alt="#TITLE"/>
+				</div>
+				<div class='card__info'>
+					<p class='card__label'>
+						<span class='far fa-clock'></span>
+						<span>[(#DATE_DEBUT|affdate_court)]</span>
+					</p>
+					<h3 class='card__title heading-b small'>#TITRE</h3>
+					<p class='card__description mrgn-b--s'>[(#INFO_TEXTE{article,#ID_ARTICLE}|couper{100})]</p>
+					<B_mots>
+					<div class='tag__wrp'>
+						<BOUCLE_mots(MOTS){id_article}{', '}>
+						<a class='card__tag mrgn-b--0 card__tag--faded' href='https://apple.com/'>
+							#TITRE
+						</a>
+						</BOUCLE_mots>
+					</div>
+					</B_mots>
+					<hr class='hr mrgn-b--s'>
+					<div class='flx f-jbt f-ast'>
+						[(#PLACES|>{0}|oui)
+						#SET{total,#INCLURE{fond=inclure/compteur_reservations,id_evenement=#ID_EVENEMENT,statut=#VAL|statuts_complet},multiple=''}
+						[(#REM)Les disponibilités]
+						#SET{disponibles,#PLACES|moins{#GET{total}}}
+						<div class='card__actions'>
+							<p class='card__count mrgn-b--0'>
+								<span class='link__number'>#GET{disponibles}</span>
+								<:transformatheque:places:>
+							</p>
+						</div>]
+						[(#INSCRIPTION|et{#DATE_DEBUT|>{#ENV{date}}}|oui)
+							<a class='btn card__cta' href='[(#URL_PAGE{inscription}|parametre_url{id_evenement,#ID_EVENEMENT})]'>
+								<span class='fas small fa-check'></span>
+								<span><:transformatheque:inscription:></span>
+						</a>]
+					</div>
+				</div>
+			</article>
+			</BOUCLE_evenement>
+		</div>
+	</section>
+	</B_ateliers>
+	</BOUCLE_criteres>
+</section>
