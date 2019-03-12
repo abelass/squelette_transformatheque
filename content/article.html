@@ -1,17 +1,17 @@
 <BOUCLE_content(ARTICLES){id_article}>
 
 <article class='article [article--(#COMPOSITION)]'>
-  <figure class='hero-image'>
-    <img
-      src="[(#LOGO_ARTICLE|image_reduire{1920}|extraire_attribut{src})]"
-      srcset="[(#LOGO_ARTICLE|image_reduire{300}|extraire_attribut{src})] 300w,
-        [(#LOGO_ARTICLE|image_reduire{600}|extraire_attribut{src})] 600w,
-        [(#LOGO_ARTICLE|image_reduire{1000}|extraire_attribut{src})] 1000w"
-      alt="#TITLE"/>
-    <div class='article-info flx f-col f-act f-jct'>
-    <h1 class="article__title heading-a #EDIT{titre}">#TITRE</h1>
-    </div>
-  </figure>
-  [<section class='article__body #EDIT{texte}'>(#TEXTE|image_reduire{500,0})</section>]
+	<figure class='hero-image'>
+		<img
+			src="[(#LOGO_ARTICLE|image_reduire{1920}|extraire_attribut{src})]"
+			srcset="[(#LOGO_ARTICLE|image_reduire{300}|extraire_attribut{src})] 300w,
+				[(#LOGO_ARTICLE|image_reduire{600}|extraire_attribut{src})] 600w,
+				[(#LOGO_ARTICLE|image_reduire{1000}|extraire_attribut{src})] 1000w"
+			alt="#TITLE"/>
+		<div class='article-info flx f-col f-act f-jct'>
+		<h1 class="article__title heading-a #EDIT{titre}">#TITRE</h1>
+		</div>
+	</figure>
+	[<section class='article__body #EDIT{texte}'>(#TEXTE|image_reduire{500,0})</section>]
 </article>
 </BOUCLE_content>
