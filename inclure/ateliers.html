@@ -9,7 +9,7 @@
 	<section class='card__grid is-closed section--type-[(#GET{type}|table_valeur{#COMPTEUR_BOUCLE})] js-card__section'>
 		<div class='section__cover'>
 			<span class='btn fas fa-times p-abs js-card__section--close mrgn-b--0'></span>
-			[(#LOGO_MOT
+			[(#LOGO_MOT|image_reduire{1000}
 				|inserer_attribut{class,section__cover-img}
 				|inserer_attribut{alt,#TITRE}
 				)]
