@@ -1,18 +1,25 @@
+#SET{type,#ARRAY{
+	1,a,
+	2,b,
+	3,c
+}}
+
 <section class='section--workshops'>
 	<BOUCLE_criteres(MOTS){id_groupe=6}>
-	#SET{id_article,#ARRAY}
-	<B_ateliers>
-	<section class='card__grid is-closed section--type-b js-card__section'>
+	<section class='card__grid is-closed section--type-[(#GET{type}|table_valeur{#COMPTEUR_BOUCLE})] js-card__section'>
 		<div class='section__cover'>
 			<span class='btn fas fa-times p-abs js-card__section--close mrgn-b--0'></span>
-			<img alt='This is an image' class='section__cover-img' src='#CHEMIN{images/img.jpg}' title='This is an imagesss'>
+			[(#LOGO_MOT
+				|inserer_attribut{class,section__cover-img}
+				|inserer_attribut{alt,#TITRE}
+				)]
 			<div class='section__info'>
 				<h2 class='heading-b large mrgn-b--s'>#TITRE</h2>
 				<p class='section__description'>#DESCRIPTIF</p>
 			</div>
 		</div>
 		<div class='card__roll'>
-
+		#SET{id_article,#ARRAY}
 		<BOUCLE_ateliers(ARTICLES){id_rubrique}{id_mot}>
 			#SET{id_article,#GET{id_article}|push{#ID_ARTICLE}}
 		</BOUCLE_ateliers>
@@ -70,6 +77,5 @@
 			</BOUCLE_evenement>
 		</div>
 	</section>
-	</B_ateliers>
 	</BOUCLE_criteres>
 </section>
