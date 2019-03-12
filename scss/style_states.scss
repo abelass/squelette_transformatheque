@@ -33,6 +33,26 @@ input[type='button'] {
 	// inactive
 }
 
+.btn--highlight {
+	html.no-touchevents & {
+		&:hover {
+			--button-bg:		#{$green-40};
+		}
+	}
+
+	html.no-touchevents &,
+	html.touchevents & {
+		&:focus {
+			--button-bg:		#{$green-40};
+		}
+
+		&:active {
+			--button-bg:		#{$green-80};
+		}
+	}
+
+}
+
 .btn--outline {
 	html.no-touchevents & {
 		&:hover {
@@ -208,7 +228,7 @@ input[type='button'] {
 }
 
 a {
-	html.no-touchevents & {
+	html.no-touchevents &:not(.btn.solid) {
 		&:hover {
 			color:			$orange-60;
 		}

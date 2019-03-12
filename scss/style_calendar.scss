@@ -1,5 +1,6 @@
 
-.calendar {
+.calendar,
+.fc table {
 	width:					200%;
 	width:					100%;
 	border-collapse:		collapse;
@@ -27,11 +28,13 @@
 	border-bottom:			none;
 }
 
-.calendar__week {
+.calendar__week,
+.fc-head tr {
 	height:					100%;
 }
 
-.calendar__day {
+.calendar__day,
+.fc-day-header {
 	text-align:				center;
 	font-size:				u($s, em);
 	border:					1px solid $grey-60;
@@ -123,11 +126,18 @@
 	text-align:			center;
 }
 
-.calendar__event {
+.fc {
+	table, thead, tbody {
+		max-width:			initial;
+	}
+}
+
+.calendar__event,
+.fc-day-grid-event {
 	z-index:	z(9);
-	font-size:				u($xxs, em);
+	// font-size:				u($xxs, em);
 	height:					u($s * 2, em);
-	width:					u($s * 2, em);
+	// width:					u($s * 2, em);
 	white-space:			nowrap;
 	display:				inline-block;
 	position:				relative;

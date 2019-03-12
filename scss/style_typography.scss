@@ -161,7 +161,8 @@ html{
 	}
 }
 
-.heading-a {
+.heading-a,
+h1 {
 	@extend				%max-width;
 	font-family:		$displayType;
 	--fontSize:			#{u($xl, em)};
@@ -186,11 +187,12 @@ html{
     }
 }
 
-.heading-b {
+.heading-b,
+h2 {
 	@extend				%max-width;
 	--fontSize:			#{u($l, em)};
 	font-size:			var(--fontSize);
-	font-weight: 		$bold;
+	font-weight: 		$semibold;
 	
 	$lock: (property:	line-height,
 		minValue:		30,
@@ -238,6 +240,7 @@ html{
 }
 
 .heading-c,
+h3,
 h3:not([class]) {
 	width: 			100%;
 	@extend			%max-width;
@@ -254,7 +257,7 @@ h3:not([class]) {
 
 	&.vibe {
 		line-height:1.25;
-		font-weight:$bold;
+		font-weight:$semibold;
 		font-style:	italic;
 	}
 
@@ -288,7 +291,7 @@ h3:not([class]) {
 	}
 
 	&.x-large {
-		font-weight:	$bold;
+		font-weight:	$semibold;
 
 		$lock: (property:		font-size,
 			minValue:			81,
@@ -305,7 +308,7 @@ h3:not([class]) {
 	width:			100%;
 	font-size:		u($m, em);
 	line-height: 	$l;
-	font-weight:	$bold;
+	font-weight:	$semibold;
 
 	&.small {
 		color:			$white;
@@ -375,7 +378,7 @@ p {
 	
 	strong {
 
-		font-weight:	$bold;
+		font-weight:	$semibold;
 	}
 
 	&.x-large {
@@ -415,7 +418,7 @@ blockquote {
 		padding:	0;
 		margin:		0;
 		border:		initial;
-		font-weight:$bold;
+		font-weight:$semibold;
 	}
 
 	cite {
@@ -423,12 +426,12 @@ blockquote {
 		color:				$grey-60;
 
 		p {
-			font-weight:	$bold;
+			font-weight:	$semibold;
 		}
 
 		a {
 			color:	$orange-a;
-			font-weight:	$bold;
+			font-weight:	$semibold;
 			text-decoration:underline;
 			text-decoration-skip:	ink; 
 		}
@@ -594,7 +597,7 @@ figcaption {
 
 .citation {
 	font-style:			italic;
-	font-weight:		$bold;
+	font-weight:		$semibold;
 	font-size:			#{u($s, em)};
 	color:				$grey-60;
 }
@@ -625,4 +628,13 @@ sup {
 
 * {
 	quotes: '“' '”' '‘' '’';
+}
+
+.info-publi {
+	@extend			.heading-e;
+	@extend			.heading-e.small;
+}
+
+.cartouche {
+	margin-bottom:	var(--margin--l);
 }

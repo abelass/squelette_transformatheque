@@ -1,13 +1,16 @@
 .nav__item {
 	font-weight:			$medium;
-	font-size:				u($s, em);
+	font-size:				u($m, em);
 	text-align:				center;	
 	line-height:			$l;
 	margin-bottom:			0;
 	@extend					.heading-e;
 	position:				relative;
 	padding:				0 0.5rem;
-	white-space:			nowrap;
+	// white-space:			nowrap;
+	// overflow:				hidden;
+	// text-overflow:			ellipsis;
+	// hyphens:				none;
 
 	a {
 		text-decoration: 	none;
@@ -35,9 +38,10 @@
 	border-top:				2px solid $grey-40;
 	border-bottom:			2px solid $grey-40;
 	padding:				0;
-	width:					auto;
+	width:					100%;
 	display:				flex;
 	justify-content:		center;
+	max-width:				initial;
 }
 
 .nav--footer {
@@ -92,9 +96,11 @@
 	// display:				flex;
 	justify-content:		center;
 	display:				grid;
-	grid-template-columns:	repeat(auto-fit, minmax(96px, 100px));
-	grid-gap:				var(--margin--xs);
+	// grid-template-columns:	repeat(auto-fit, minmax(96px, 100px));
+	grid-template-columns:	repeat( auto-fit, minmax(120px, 1fr) );
+	grid-gap:				var(--margin--s);
 	padding:				0.25rem;
+	max-width:				initial;
 
 	&--nested {
 		display:			none;
@@ -137,6 +143,7 @@
 .logo {
 	img {
 		display:			block;
-		height:				2.25rem;
+		height:				3em;
+		width:				auto;
 	}
 }

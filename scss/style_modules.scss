@@ -3,7 +3,7 @@
 	position:				relative;
 	top:					0;
 	width:					100%;	
-	max-width:				var(--line-length);
+	max-width:				var(--pageWidth);
 	z-index:				z(9);
 	// top:					0.5rem;
 	display:				flex;
@@ -49,6 +49,7 @@
 
 .hero-image {
 	width:					var(--pageWidth);
+	width:					100vw;
 	height:					calc( var(--pageHeight) - var(--page-margin--vertical) * 1);
 	position:				relative;
 	top:					0;
@@ -57,7 +58,8 @@
 	overflow:				hidden;
 
 	.article--workshop & {
-		width:				100%;
+		// width:				100%;
+		margin-left:		calc(var(--page-margin--horizontal) * -1);
 
 		@include mq(min-width, 768px) {
 			grid-column:	1 / span 2;
@@ -71,6 +73,7 @@
 		max-width:			initial;
 		object-fit:			cover;
 		margin-left:		calc(var(--margin--m) * -1);
+		z-index: 			z(0);
 		
 
 		.page--home & {
@@ -327,7 +330,7 @@ output.price {
 
 .equipment-info {
 	max-width:			var(--line-length);
-	padding:			0 0.5rem 0.5rem;
+	padding:			0.5rem 0.5rem 0.5rem;
 	border-radius:		0.5rem;
 	box-shadow:			inset 0 0 0 1px $grey-40;
 	// grid-area:			equipment;
@@ -422,22 +425,6 @@ output.price {
 	}
 }
 
-.sect-reg {
-	// grid-area:			registration;
-	@extend				.equipment-info;
-
-	@include mq(min-width, 768px) {
-		margin-top:		0 !important;
-		margin-bottom:	0 !important;
-		grid-column:	1 / span 1;
-		grid-row:		1 / 2;
-	}
-
-	.heading-e {
-		width:			calc( 100% + 1rem );
-	}
-}
-
 .tab {
 
 }
@@ -447,32 +434,32 @@ output.price {
 	display: 				block;
 	position:				relative;
 	line-height: 			1.5em;
-	@extend					%u-pseudo;
-	padding-left:			2em;
+	// @extend					%u-pseudo;
+	// padding-left:			2em;
 	text-transform: 		uppercase;
 	white-space: 			nowrap;
 
 	&:hover {
 		&:after {
-			box-shadow:			0 0 0 2px $green-40,
+			// box-shadow:			0 0 0 2px $green-40,
 		}
 	}
 
 	&:active {
 		&:after {
-			box-shadow:			0 0 0 2px $green-60,
-								inset 0 0 0 4px $white;
+			// box-shadow:			0 0 0 2px $green-60,
+								// inset 0 0 0 4px $white;
 		}
 	}
 
 	&:after {
-		background-color:	$white;
-		box-shadow:			0 0 0 2px $grey-60;
-		position:			absolute;
-		width:				1em;
-		height:				1em;
-		border-radius:		0.25em;
-		margin:				0.25em;
+		// background-color:	$white;
+		// box-shadow:			0 0 0 2px $grey-60;
+		// position:			absolute;
+		// width:				1em;
+		// height:				1em;
+		// border-radius:		0.25em;
+		// margin:				0.25em;
 	}
 
 	& + * + .tab__label {
@@ -480,17 +467,17 @@ output.price {
 	}
 }
 
-.tab__item {
-	display:			none;
+// .tab__item {
+	// display:			none;
 	
-	&:checked {
-		& + .tab__label {
+	// &:checked {
+		.tab__label {
 			font-weight:	$bold;
 
 			&:after {
-				background-color:	$green-60;
-				box-shadow:			0 0 0 2px $green-60,
-									inset 0 0 0 4px $white;
+				// background-color:	$green-60;
+				// box-shadow:			0 0 0 2px $green-60,
+									// inset 0 0 0 4px $white;
 			}
 
 			.week__day.is-selected {
@@ -498,8 +485,8 @@ output.price {
 				color:				$white;
 			}
 		}
-	}
-}
+	// }
+// }
 
 .week__strip {
 	width: 					100%;

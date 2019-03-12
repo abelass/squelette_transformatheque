@@ -88,7 +88,7 @@
 }
 
 input[type='checkbox'] {
-	display:		none;
+	// display:		none;
 }
 
 form {
@@ -117,14 +117,19 @@ textarea {
 
 }
 
+input[type="submit"] {
+	@extend		.btn;
+}
+
 input,
 textarea {
-	&:not([type="button"]):not([type="submit"]):not([type="checkbox"]):not([type="radio"]) {
+	&:not([type="button"]):not([type="submit"]):not([type="checkbox"]):not([type="radio"]):not([type="image"]) {
 		max-width:			100%;
 		line-height:		$xl;
 		box-sizing:			content-box;
 		padding:			0 var(--margin--xs);
 		border:				1px solid $grey-40;
+		box-sizing:			border-box;
 	}
 
 	&[type="checkbox"] {
@@ -146,7 +151,8 @@ input {
 	}
 }
 
-.form-section__heading {
+.form-section__heading,
+.formulaire_reservation legend {
 	@extend				.heading-b;
 	@extend				.heading-b.small;
 	@extend				.flx;
@@ -187,4 +193,173 @@ input {
 
 		}
 	}
+}
+
+form legend {
+	@extend				.heading-b;
+	@extend				.form-section__heading;
+}
+
+.explication {
+	@extend				p;
+	@extend				.mrgn-b--m;
+}
+
+.editer {
+	@extend .flx;
+	@extend .f-act;
+	@extend .f-jbt;
+
+	&:not(:last-child) {
+		@extend			.mrgn-b--m;
+	}
+}
+
+.editer_id_objet_prix {
+	flex-direction:		column;
+	align-items: 		flex-start;
+
+	.choix {
+		align-self:		flex-end;
+		// position:		absolute;
+		font-size:		u($l, em);
+	}
+}
+
+.identifiants {
+	.login {
+		margin-bottom:	var(--margin--l);
+	}
+}
+
+.editer-groupe {
+
+	&:not(:last-child) + * {
+		margin-top:		var(--margin--l);
+	}
+
+
+	&.donnees_auteur {
+		@extend			.mrgn-b--l;
+	}
+}
+
+.editer {
+	label {
+		font-weight:	$bold;
+
+		.obligatoire {
+			font-weight:	$medium;
+			font-size: 		0.75em;
+		}
+	}
+}
+
+fieldset {
+	.identifiants {
+		label,
+		input[type="text"] {
+			width: 50%;
+		}
+	}
+}
+
+.formulaire_reservation {
+	.editer label {
+		width:			50%;
+		font-weight:	$bold;
+	}
+
+	.editer input[type="text"],
+	.editer input[type="email"],
+	.editer input[type="password"], {
+		width:			50%;
+		box-sizing:		border-box;
+	}
+
+	.obligatoire {
+		font-weight:	$medium;
+		font-size:		0.75em;
+	}
+
+	.editer-groupe.block_mp {
+		.editer_new_pass,
+		.editer_new_pass2 {
+			display:	grid;
+			grid-template-columns: 1fr 1fr;
+
+			label {
+
+			}
+
+			.explication {
+				grid-column-start: 	1;
+				grid-column-end: 	2;
+			}
+
+			.password {
+				grid-column-start: 	2;
+				grid-column-end: 	3;
+				margin:				0 !important;
+				grid-row-start:		1;
+				width:				100%;
+			}
+		}
+	}
+}
+
+.editer_enregistrer {
+	label {
+		&:first-child {
+			font-weight:	$medium;
+		}
+	}
+
+	.enregistrer {
+
+	}
+}
+
+.auteurs_multiples {
+	.editer.label label {
+		width:				100%;
+	}
+}
+
+.editer.multiples_personnes {
+	flex-wrap:				wrap;
+	flex-direction: 		column;
+	align-items: 			flex-start;
+
+	& > div:not(.editer) {
+		width:				100%;
+
+		&:not(:last-of-type) + * {
+			margin-top:		var(--margin--l);
+		}
+	}
+
+	& > div:first-child {
+
+	}
+}
+
+.editer.action {
+	input[type="image"] {
+		margin-bottom:	0 !important;
+	}
+
+	label,
+	input {
+		width:		auto;
+	}
+}
+
+.editer.editer_destinataires_supplementaires {
+	flex-direction:	column;
+	align-items:	flex-start;
+}
+
+fieldset + .boutons {
+	margin-top:		var(--margin--l);
 }

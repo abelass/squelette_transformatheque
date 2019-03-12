@@ -67,8 +67,23 @@ section {
 
 }
 
-.sect-reg {
+.sect-reg,
+.formulaire_reservation {
+	justify-self:		center;
+	// grid-area:			registration;
+	@extend				.equipment-info;
+	align-self:			flex-start;
 
+	@include mq(min-width, 768px) {
+		margin-top:		0 !important;
+		margin-bottom:	0 !important;
+		grid-column:	1 / span 1;
+		grid-row:		1 / 2;
+	}
+
+	.heading-e {
+		width:			calc( 100% + 1rem );
+	}
 }
 
 .section--splash {
