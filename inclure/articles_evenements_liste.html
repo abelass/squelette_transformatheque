@@ -1,30 +1,31 @@
 <section class='section date__3details mrgn-b--l'>
 <BOUCLE_projets(RUBRIQUES){composition}{lang}>
-  <BOUCLE_evenements(EVENEMENTS)
-    {date_debut>#DATE}
-    {id_rubrique}
-    {id_evenement_source=0}
-    {par date_debut}
-    {0, #ENV{limite,1000}}
-    {pagination #ENV{pagination,10}}>
-  <article class='calendar-listing'>
-    <div class='listing__info'>
-      <h3 class='heading-b small'>#TITRE</h3>
-      <p>
-        <a href='#URL_ARTICLE{#ID_ARTICLE}'><:transformatheque:plus_info:></a>
-      </p>
-    </div>
-    <div class='listing__actions'>
-      <p class='mrgn-b--m'>[(#DATE_DEBUT|affdate_court)]</p>
+#SET{id_rubrique,#ID_RUBRIQUE}
+	<BOUCLE_evenements(EVENEMENTS)
+		{date_debut>#DATE}
+		{id_rubrique}
+		{id_evenement_source=0}
+		{par date_debut}
+		{0, #ENV{limite,1000}}
+		{pagination #ENV{pagination,10}}>
+	<article class='calendar-listing'>
+		<div class='listing__info'>
+			<h3 class='heading-b small'>#TITRE</h3>
+			<p>
+				<a href='#URL_ARTICLE{#ID_ARTICLE}'><:transformatheque:plus_info:></a>
+			</p>
+		</div>
+		<div class='listing__actions'>
+			<p class='mrgn-b--m'>[(#DATE_DEBUT|affdate_court)]</p>
 
-      [(#INSCRIPTION|et{#DATE_DEBUT|>{#ENV{date}}}|oui)
-      <a class='btn btn--outline' href='[(#URL_PAGE{inscription}|parametre_url{id_evenement,#ID_EVENEMENT})]'>
-        <:transformatheque:inscription:>
-      </a>]
-    </div>
-  </article>
-  </BOUCLE_evenements>
+			[(#INSCRIPTION|et{#DATE_DEBUT|>{#ENV{date}}}|oui)
+			<a class='btn btn--outline' href='[(#URL_PAGE{inscription}|parametre_url{id_evenement,#ID_EVENEMENT})]'>
+				<:transformatheque:inscription:>
+			</a>]
+		</div>
+	</article>
+	</BOUCLE_evenements>
 </BOUCLE_projets>
-  <a class='btn f-aSnd' href='#URL_RUBRIQUE'><:transformatheque:voir_tous_ateliers:></a>
+	<a class='btn f-aSnd' href='#URL_RUBRIQUE{#GET{id_rubrique}}'><:transformatheque:voir_tous_ateliers:></a>
 </B_projets>
 </section>
