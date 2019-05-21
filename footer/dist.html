@@ -1,6 +1,8 @@
 <p class="partners">
 	<BOUCLE_partenaires(PARTENAIRES)>
-		<a href="#URL_SITE" alt="#TITRE">[(#LOGO_PARTENAIRE|image_reduire{75})]</a>
+		<a href="#URL_SITE" title="#NOM">[(#LOGO_PARTENAIRE
+			|image_reduire{75}
+			|inserer_attribut{alt,Logo #NOM})]</a>
 	</BOUCLE_partenaires>
 </p>
 <div class="text">
@@ -11,7 +13,7 @@
 	[(#VAL{<a href="mailto:contact@transformatheque.be">contact@transformatheque.be</a>}|mailcrypt)]
 	</p>
 	<p>
-	<a href="http://www.spip.net/" title="<:site_realise_avec_spip:>"><:site_realise_avec_spip:></a>  <:par_auteur:> <a href="http://web-simple.eu">Web Simple</a><br>
+	<a href="https://www.spip.net/" title="<:site_realise_avec_spip:>"><:site_realise_avec_spip:></a>  <:par_auteur:> <a href="https://web-simple.eu">Web Simple</a><br>
 	Design : <a href="https://astral.space/">Astral space</a>
 	</p>
 </div>
