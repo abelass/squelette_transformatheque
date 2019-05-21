@@ -1,0 +1,6 @@
+.page__footer {
+  border-top: 2px solid #a1a1a1;
+  max-width: var(--pageWidth);
+  text-align: left;
+  padding-top: 0.5rem;
+}

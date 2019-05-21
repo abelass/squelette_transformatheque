@@ -1,3 +1,18 @@
-<nav class='nav nav--main nav--footer'>
-	<INCLURE{fond=barre_nav/menu_deroulant,env} />
-</nav>
+<p class="partners">
+	<BOUCLE_partenaires(PARTENAIRES)>
+		<a href="#URL_SITE" alt="#TITRE">[(#LOGO_PARTENAIRE|image_reduire{75})]</a>
+	</BOUCLE_partenaires>
+</p>
+<div class="text">
+	<p>
+		Transformathèque asbl<br>
+	Siège social : Rue du Dublin 17, 1050 Bruxelles	<br>
+	Numéro d'entreprise : 0631.926.096	<br>
+	[(#VAL{<a href="mailto:contact@transformatheque.be">contact@transformatheque.be</a>}|mailcrypt)]
+	</p>
+	<p>
+	<a href="http://www.spip.net/" title="<:site_realise_avec_spip:>"><:site_realise_avec_spip:></a>  <:par_auteur:> <a href="http://web-simple.eu">Web Simple</a><br>
+	Design : <a href="https://astral.space/">Astral space</a>
+	</p>
+</div>
+

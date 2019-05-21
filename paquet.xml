@@ -1,7 +1,7 @@
 <paquet
 	prefix="transformatheque"
 	categorie="squelette"
-	version="1.0.19"
+	version="1.0.20"
 	etat="dev"
 	compatibilite="[3.2.0;3.2.*]"
 	logo="prive/themes/spip/images/transformatheque-64.png"
@@ -33,5 +33,6 @@
 	<necessite nom="cheques_cadeau" compatibilite="[1.0.6;]" />
 	<necessite nom="iextras" compatibilite="[3.5.3;]" />
 	<necessite nom="gis" compatibilite="[4.44.23;]" />
+	<necessite nom="mailcrypt" compatibilite="[2.4.5;]" />
 
 </paquet>
