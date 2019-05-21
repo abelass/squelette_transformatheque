@@ -1,19 +1,19 @@
 <body>
-  <main class="page flx f-col f-act page--workshops">
-    <header id="header" class='page__header'>
-      <INCLURE{fond=header/#ENV{type-page},env} />
-      <nav class="nav nav--main" id="nav">
-        <INCLURE{fond=inclure/nav,env} />
-      </nav>
-    </header>
-    [(#ENV{composition}|=={home}|oui)
-      <INCLURE{fond=inclure/banner,id_rubrique=#LISTE{4,5}} />
-    ]
-    <INCLURE{fond=content/#ENV{type-page},env} />
+	<main class="page flx f-col f-act page--workshops">
+		<header id="header" class='page__header'>
+			<INCLURE{fond=header/#ENV{type-page},env} />
+			<nav class="nav nav--main" id="nav">
+				<INCLURE{fond=inclure/nav,env} />
+			</nav>
+		</header>
+		[(#ENV{composition}|=={home}|oui)
+			<INCLURE{fond=inclure/banner,id_rubrique=#LISTE{4,5}} />
+		]
+		<INCLURE{fond=content/#ENV{type-page},env} />
 
-    <footer id="footer" class='page__footer'>
-      <INCLURE{fond=footer/#ENV{type-page},env} />
-    </footer>
-      <script src='#CHEMIN{scripts/min/scripts-min.js}'></script>
-  </main>
+		<footer id="footer" class='page__footer'>
+			<INCLURE{fond=footer/#ENV{type-page},env} />
+		</footer>
+		<script src='#CHEMIN{scripts/min/scripts-min.js}'></script>
+	</main>
 </body>
