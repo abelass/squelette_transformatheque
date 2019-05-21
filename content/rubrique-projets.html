@@ -1,7 +1,25 @@
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}>
-[<div class='large mrgn-b--xl #EDIT{descriptif}'>
-		(#TEXTE)
-</div>]
+	<div class='article__body large mrgn-b--xl'>
+		<div class='article-info flx f-col f-act f-jct'>
+			<h1 class='heading-b mrgn-b--s #EDIT{titre}'>#TITRE</h1>
+			[<p class='large #EDIT{descriptif}'>
+					(#DESCRIPTIF*)
+			</p>]
+			<hr class='hr mrgn-b--0'>
+
+			<B_mots>
+			<ul>
+			<BOUCLE_mots(MOTS){id_rubrique}>
+				<li class='taxonomy-list__item'>
+					<a>#TITRE</a>
+				</li>
+			</BOUCLE_mots>
+			</ul>
+			</B_mots>
+		</div>
+		[<div class="#EDIT{texte}">(#TEXTE)</div>]
+	</div>
+</article>
 
 <section class='section mrgn-b--xl'>
 	<h2 class='section__title heading-b'>Nos projets</h2>
