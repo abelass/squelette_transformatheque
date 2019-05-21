@@ -39,9 +39,10 @@
 					</p>
 				</div>
 				</BOUCLE_evenement>
+				[(#REM) pas utilisé pour le moment
 				<a class='btn article__cta btn--outline' href='#inscription'>
 					<span><:transformatheque:inscription:></span>
-				</a>
+				</a>]
 		</div>
 	</figure>
 	[<section class='article__body #EDIT{texte}'>
@@ -58,7 +59,7 @@
 	<BOUCLE_cheques(ARTICLES){composition=cheques}{tout}{lang}>
 		<a class='btn' href='#URL_ARTICLE'><:transformatheque:offrez_cheque_cadeau:></a>
 	</BOUCLE_cheques>
-	
+
 		<B_materiel>
 		<section class='equipment-info mrgn-b--m'>
 			<h2 class='heading-e'>
@@ -77,7 +78,7 @@
 			objet=article,
 			id_objet=#ID_ARTICLE,
 			type_lien=seance,
-			env}  />  
+			env}  />
 		</section>
 	</section>
 	<section class='article__footer'>
@@ -85,8 +86,9 @@
 			objet_dest=article,
 			id_objet_dest=#ID_ARTICLE,
 			type_lien=lie,
-			env}  />  
-		<INCLURE{fond=inclure/inscription,id_article,options=#ARRAY{type,#COMPOSITION},env} />
+			env}  />
+			[[(#REM) pas utilisé pour le moment]
+		<INCLURE{fond=inclure/inscription,id_article,options=#ARRAY{type,#COMPOSITION},env} />]
 	</section>
 </article>
 </BOUCLE_content>
