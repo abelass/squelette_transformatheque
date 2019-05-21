@@ -1,55 +1,38 @@
 <article class='card'>
-  <a class='card__link' href='[(#URL)]'></a>
-  <div class='card__image'>
-  [(#LOGO|sinon{#ENV{logo_objet}}|image_reduire{400}
-    |inserer_attribut{alt,#TITRE}
-    |inserer_attribut{title,#TITRE})]
-  </div>
-  <div class='card__info'>
-    [(#ENV{date_debut}|!={0000-00-00 00:00:00}|oui)<p class='card__label'>
-      <span class='far fa-clock'></span><span>[(#DATE_DEBUT|affdate_court)]]
-      <BOUCLE_ev_rep(EVENEMENTS){id_evenement_source=#ENV{id_evenement,-1}}{par date_debut}{0,1}>
-      [(#DATE_DEBUT|affdate{Y-m-d}|!={#DATE_FIN|affdate{Y-m-d}}|oui) - [(#DATE_FIN|affdate_court)]]</span>
-      </BOUCLE_ev_rep>
-      </p>
-      </B_ev_rep>
-      [(#DATE_DEBUT|affdate_court|!={#DATE_FIN|affdate_court}|oui)[- (#DATE_FIN|affdate_court)]</span>
-      </p>]
-      <//B_ev_rep>
+	<a class='card__link' href='[(#URL)]'></a>
+	<div class='card__image'>
+	[(#LOGO|sinon{#ENV{logo_objet}}|image_reduire{400}
+		|inserer_attribut{alt,#TITRE}
+		|inserer_attribut{title,#TITRE})]
+	</div>
+	<div class='card__info'>
+		[(#ENV{date_debut}|!={0000-00-00 00:00:00}|oui)<p class='card__label'>
+			<span class='far fa-clock'></span><span>[(#DATE_DEBUT|affdate_court)]]
+			<BOUCLE_ev_rep(EVENEMENTS){id_evenement_source=#ENV{id_evenement,-1}}{par date_debut}{0,1}>
+			[(#DATE_DEBUT|affdate{Y-m-d}|!={#DATE_FIN|affdate{Y-m-d}}|oui) - [(#DATE_FIN|affdate_court)]]</span>
+			</BOUCLE_ev_rep>
+			</p>
+			</B_ev_rep>
+			[(#DATE_DEBUT|affdate_court|!={#DATE_FIN|affdate_court}|oui)[- (#DATE_FIN|affdate_court)]</span>
+			</p>]
+			<//B_ev_rep>
 
 
-    <h3 class='card__title heading-b small'>#TITRE</h3>
-    <p class='card__description mrgn-b--s'>[(#DESCRIPTIF|sinon{#INFO_DESCRIPTIF{article,#ID_ARTICLE}})]</p>
-    <B_mots>
-    <div class='tag__wrp'>
-      <BOUCLE_mots(MOTS){id_article}>
-      <a class='card__tag mrgn-b--0 card__tag--faded' href='[(#ENV{url_rubrique}|parametre_url{id_mot,#ID_MOT})]'>
-        #TITRE
-      </a>
-      </BOUCLE_mots>
-    </div>
-    </B_mots>
+		<h3 class='card__title heading-b small'>#TITRE</h3>
+		<p class='card__description mrgn-b--s'>[(#DESCRIPTIF|sinon{#INFO_DESCRIPTIF{article,#ID_ARTICLE}})]</p>
+		<B_mots>
+		<div class='tag__wrp'>
+			<BOUCLE_mots(MOTS){id_article}>
+			<a class='card__tag mrgn-b--0 card__tag--faded' href='[(#ENV{url_rubrique}|parametre_url{id_mot,#ID_MOT})]'>
+				#TITRE
+			</a>
+			</BOUCLE_mots>
+		</div>
+		</B_mots>
 
-    [(#REM)Toutes les résérvations]
-    <hr class='hr mrgn-b--s'
-    [(#REM) pas utilisé pour ler moment
-    [(#INSCRIPTION|et{#DATE_DEBUT|>{#ENV{date}}}|oui)
-    <div class='flx f-jbt f-ast'>
-      [(#PLACES|>{0}|oui)
-      #SET{total,#INCLURE{fond=inclure/compteur_reservations,id_evenement=#ID_EVENEMENT,statut=#VAL|statuts_complet},multiple=''}
-      [(#REM)Les disponibilités]
-      #SET{disponibles,#PLACES|moins{#GET{total}}}
-      <div class='card__actions'>
-        <p class='card__count mrgn-b--0'>
-          <span class='link__number'>#GET{disponibles}</span>
-          <:transformatheque:places:>
-        </p>
-      </div>]
-      <a class='btn card__cta' href='[(#URL_PAGE{inscription}|parametre_url{id_evenement,#ID_EVENEMENT})]'>
-        <span class='fas small fa-check'></span>
-        <span><:transformatheque:inscription:></span>
-      </a>
-    </div>]]
+		[(#REM)Toutes les résérvations]
+		<hr class='hr mrgn-b--s'>
 
-  </div>
+
+	</div>
 </article>
