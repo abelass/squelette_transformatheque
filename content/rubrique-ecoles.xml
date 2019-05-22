@@ -1,0 +1,5 @@
+<composition>
+	<nom>Rubrique Écoles</nom>
+	<description>Affichage de la rubrique Écoles</description>
+	<branche type="article" composition="projet" />
+</composition>
