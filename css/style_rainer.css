@@ -14,4 +14,16 @@ body {
 	font-size: 0.8em;line-height: normal;
 }
 
-.logos img, spip_logos {vertical-align: middle;}
+.logos img, .spip_logos {vertical-align: middle;}
+
+.liste-items .item {
+	border-bottom: none;
+}
+
+.liste-items .item:hover {
+	background-color: transparent;
+}
+
+p.publication {display: inline-block;}
+
+.hide, .spip_doc .icon-calendar {display:none;}
