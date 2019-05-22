@@ -60,7 +60,6 @@
 	<BOUCLE_cheques(ARTICLES){composition=cheques}{tout}{lang}>
 		<a class='btn' href='#URL_ARTICLE'><:transformatheque:offrez_cheque_cadeau:></a>
 	</BOUCLE_cheques>
-
 		<B_materiel>
 		<section class='equipment-info mrgn-b--m'>
 			<h2 class='heading-e'>
@@ -80,6 +79,9 @@
 			id_objet=#ID_ARTICLE,
 			type_lien=seance,
 			env}  />
+		<INCLURE{fond=inclure/partenaires,
+			id_article,
+			titre=#ENV{titre_partenaires,<:transformatheque:titre_avec_soutien:>}} />
 		</section>
 	</section>
 	<section class='article__footer'>
@@ -89,5 +91,6 @@
 			type_lien=lie,
 			env}  />
 	</section>
+
 </article>
 </BOUCLE_content>

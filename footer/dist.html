@@ -1,11 +1,10 @@
-<p class="partners">
-	<BOUCLE_partenaires(PARTENAIRES)>
-		<a href="#URL_SITE" title="#NOM">[(#LOGO_PARTENAIRE
-			|image_reduire{75}
-			|inserer_attribut{alt,Logo #NOM})]</a>
-	</BOUCLE_partenaires>
-</p>
-<div class="text">
+#SET{partenaires,#ARRAY}
+<BOUCLE_partenaires_types(partenaires_types_liens){id_type=2}{objet=partenaire}>
+	#SET{partenaires,#GET{partenaires}|push{#ID_OBJET}}
+</BOUCLE_partenaires_types>
+
+<INCLURE{fond=inclure/partenaires, id_partenaire=#GET{partenaires}} />
+<section class="text">
 	<p>
 		Transformathèque asbl<br>
 		Siège social : Rue du Dublin 17, 1050 Bruxelles	<br>
@@ -18,5 +17,5 @@
 		</a><br>
 		Design : <a href="https://astral.space/">Astral space</a>
 	</p>
-</div>
+</section>
 
