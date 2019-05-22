@@ -50,6 +50,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// T
 	'texte_newsletter' => 'Sign up to our newsletter to receive various informations that can be of use for you and your family in times of urgent need.',
+	'titre_actites' => 'Activités',
 	'titre_nos_projets' => 'Nos projets',
 	'transformatheque_titre' => 'Squelette transformathèque',
 	'voir_tous_ateliers' => 'Voir tous les ateliers',
