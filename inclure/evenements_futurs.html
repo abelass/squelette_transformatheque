@@ -1,0 +1,26 @@
+<B_evenements>
+	[<h2 class='section__title heading-b mrgn-b--m'>(#ENV{titre})</h2>]
+	<div class='card__roll mrgn-b--l'>
+	<BOUCLE_evenements(EVENEMENTS)
+		{id_evenement_source=0}
+		{date_fin>#ENV{date}}
+		{par date_debut}
+		{0, #ENV{limite,1000}}
+		{pagination #ENV{pagination,10}}>
+		<INCLURE{fond=inclure/detail_complet,
+			logo=(#LOGO_EVENEMENT|sinon{#LOGO_ARTICLE}|image_reduire{400}
+				|inserer_attribut{alt,#TITRE}
+				|inserer_attribut{title,#TITRE}),
+			url=#URL_ARTICLE{#ID_ARTICLE},
+			date_debut,
+			date_fin,
+			titre,
+			descriptif=(#DESCRIPTIF|sinon{#INFO_DESCRIPTIF{article,#ID_ARTICLE}}),
+			id_article,
+			places,
+			inscription,
+			url_rubrique=#GET{url_rubrique},
+			env} />
+	</BOUCLE_evenements>
+	<div class="pagination">#PAGINATION</div>
+</B_evenements>

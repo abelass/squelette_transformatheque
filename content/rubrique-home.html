@@ -5,13 +5,11 @@
 <section class='section grid grid--col--2-1 optional'>
 	<section class='section mrgn-b--xl'>
 		[(#REM)les projets]
-		[<h2 class='section__title heading-b mrgn-b--m'>(#ENV{titre})</h2>]
-		<INCLURE{fond=inclure/nouveautes,objet_dest=rubrique,id_objet_dest=#ID_RUBRIQUE,type_lien=actualites} />
+		<INCLURE{fond=inclure/evenements_futurs,
+			limite=5,titre=<:transformatheque:titre_en_ce_moment:>} />
 
 	</section>
 	<section class='section section--calendar mrgn-b--xl'>
-		<h2 class='section__title heading-b mrgn-b--l'><:transformatheque:ateliers_futurs:></h2>
-		<INCLURE{fond=inclure/articles_evenements_liste,env,composition=ateliers,limite=5} />
 		<section class='section'>
 		<B_cheques>
 		<hr class='hr'>
