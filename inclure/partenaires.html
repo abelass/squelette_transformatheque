@@ -3,7 +3,7 @@
 	[<h2 class='heading-e'>(#ENV{titre})</h2>]
 	<BOUCLE_partenaires(PARTENAIRES){id_article ?}{id_partenaire ?IN #ENV{id_partenaire}}{id_rubrique ?}>
 		<a href="#URL_SITE" title="#NOM">[(#LOGO_PARTENAIRE
-			|image_reduire{75}
+			|image_reduire{100}
 			|inserer_attribut{alt,Logo #NOM}
 		)]</a>
 	</BOUCLE_partenaires>
