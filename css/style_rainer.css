@@ -31,3 +31,7 @@ p.publication {display: inline-block;}
 .formulaire_spip input.text {
 	width: auto;
 }
+
+.formulaire_spip .editer {
+	padding: 0 0.75em;
+}
