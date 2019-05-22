@@ -52,6 +52,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'texte_newsletter' => 'Sign up to our newsletter to receive various informations that can be of use for you and your family in times of urgent need.',
 	'titre_actites' => 'Activités',
 	'titre_avec_soutien' => 'Avec le soutien de : ',
+	'titre_dernier_projets' => 'Nos derniers projets : ',
 	'titre_en_ce_moment' => 'En ce moment',
 	'titre_nos_projets' => 'Nos projets',
 	'transformatheque_titre' => 'Squelette transformathèque',

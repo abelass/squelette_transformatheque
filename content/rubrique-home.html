@@ -5,8 +5,8 @@
 <section class='section grid grid--col--2-1 optional'>
 	<section class='section mrgn-b--xl'>
 		[(#REM)les projets]
-		<INCLURE{fond=inclure/evenements_futurs,
-			limite=5,titre=<:transformatheque:titre_en_ce_moment:>} />
+		<INCLURE{fond=inclure/evenements_tous,
+			limite=2,titre=<:transformatheque:titre_dernier_projets:>} />
 
 	</section>
 	<section class='section section--calendar mrgn-b--xl'>
@@ -23,7 +23,6 @@
 			</BOUCLE_cheques>
 			<hr class='hr'>
 			<h2 class='section__title heading-b'>Newsletter</h2>
-			<p class='mrgn-b--xl'><:transformatheque:texte_newsletter:></p>
 			<div class="ajax">
 					#FORMULAIRE_NEWSLETTER_SUBSCRIBE
 			</div>

@@ -3,7 +3,6 @@
 	<div class='card__roll mrgn-b--l'>
 	<BOUCLE_evenements(EVENEMENTS)
 		{id_evenement_source=0}
-		{date_fin>#ENV{date}}
 		{par date_debut}
 		{0, #ENV{limite,1000}}
 		{pagination #ENV{pagination,10}}>
