@@ -18,17 +18,18 @@
 					</BOUCLE_prix_article>
 				</strong>
 				</p>
-				<BOUCLE_evenement(EVENEMENTS){id_article}{date_debut>#ENV{date}}{par date_debut}{0,1}>
+				<BOUCLE_evenement(EVENEMENTS){id_article}{par date_debut}{0,1}>
 				<div class='workshop-info__next'>
-					<h4 class='card__tag card__tag--light mrgn-b--0'>
-						<span><:transformatheque:prochaine_date:></span>
-					</h4>
+					[<h4 class='card__tag card__tag--light mrgn-b--0'>
+						<span>(#DATE_DEBUT|>{#ENV{date}}|oui)<:transformatheque:prochaine_date:></span>
+					</h4>]
 					<p>
+						[(#HORAIRE=={oui}|oui)
 						<span class='fas fa-clock mrgn-r--xs small'></span>
 						<span class='heading-e small'>[(#DATE_DEBUT|affdate{H:i})], [(#DATE_DEBUT|nom_jour)]</span>
-						<br>
+						<br>]
 						<span class='far fa-calendar mrgn-r--xs small'></span>
-						<span class='heading-e small'>[(#DATE_DEBUT|affdate{jour})] [(#DATE_DEBUT|affdate{nom_mois})] [(#DATE_DEBUT|affdate{annee})]</span>
+						<span class='heading-e small'>[(#DATE_DEBUT|affdate_court)][(#DATE_DEBUT|affdate_court|!={#DATE_FIN|affdate_court}|oui)[ - (#DATE_FIN|affdate_court)]]</span>
 						<BOUCLE_gis(GIS){id_article}>
 						<br>
 						<span class='fas fa-map-marker-alt mrgn-r--xs small'></span>
