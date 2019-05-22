@@ -1,5 +1,14 @@
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}>
-	<div class='article__body large mrgn-b--xl'>
+ <article class='article'>
+	<figure class='hero-image'>
+		<img
+			src="[(#LOGO_RUBRIQUE|image_reduire{1920}|extraire_attribut{src})]"
+			srcset="[(#LOGO_RUBRIQUE||image_reduire{300}|extraire_attribut{src})] 300w,
+				[(#LOGO_RUBRIQUE||image_reduire{600}|extraire_attribut{src})] 600w,
+				[(#LOGO_RUBRIQUE||image_reduire{1000}|extraire_attribut{src})] 1000w"
+			alt="#TITLE"/>
+	</figure>
+	<div class='article__body'>
 		<div class='article-info flx f-col f-act f-jct'>
 			<h1 class='heading-b mrgn-b--s #EDIT{titre}'>#TITRE</h1>
 			[<p class='large #EDIT{descriptif}'>
