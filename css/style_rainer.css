@@ -27,3 +27,7 @@ body {
 p.publication {display: inline-block;}
 
 .hide, .spip_doc .icon-calendar {display:none;}
+
+.formulaire_spip input.text {
+	width: auto;
+}
