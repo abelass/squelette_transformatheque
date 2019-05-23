@@ -35,3 +35,10 @@ p.publication {display: inline-block;}
 .formulaire_spip .editer {
 	padding: 0 0.75em;
 }
+
+@media screen and (max-width: 450px) {
+	.logo img{
+		transform: scale(0.7, 0.7);
+		-ms-transform: scale(0.7, 0.7);
+		-webkit-transform: scale(0.7, 0.7);
+}
