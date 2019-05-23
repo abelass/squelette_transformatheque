@@ -33,6 +33,6 @@
 	<necessite nom="cheques_cadeau" compatibilite="[1.0.6;]" />
 	<necessite nom="iextras" compatibilite="[3.5.3;]" />
 	<necessite nom="gis" compatibilite="[4.44.23;]" />
-	<necessite nom="mailcrypt" compatibilite="[2.4.5;]" />
+	<necessite nom="prive_fluide_plus" compatibilite="[0.1.0;]" />
 
 </paquet>
