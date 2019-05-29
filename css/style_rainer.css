@@ -2,6 +2,11 @@ body {
 	overflow-x: hidden;
 }
 
+.page {
+	margin-top:  0;
+	margin-bottom: 0;
+}
+
 .heading-e{
 	text-transform: none;
 }
