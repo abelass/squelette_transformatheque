@@ -32,15 +32,8 @@ p.large, .large.explication, .large.card__tag {
 .logos img, .spip_logos {vertical-align: middle;}
 
 
-
 .hero-image {
-
-}
-
-
-.hero-image img {
   max-height: 500px;
-
 }
 
 .liste-items .item {
