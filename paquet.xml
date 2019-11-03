@@ -1,7 +1,7 @@
 <paquet
 	prefix="transformatheque"
 	categorie="squelette"
-	version="1.0.30"
+	version="1.0.31"
 	etat="test"
 	compatibilite="[3.2.0;3.2.*]"
 	logo="prive/themes/spip/images/transformatheque-64.png"
@@ -15,7 +15,7 @@
 
 	<licence>GNU/GPL</licence>
 
-	<necessite nom="wsps_html5" compatibilite="[3.0.0;]" />
+	<necessite nom="wsps_html5" compatibilite="[3.0.0;3.*]" />
 	<necessite nom="wsp_ml" compatibilite="[0.2.11;]" />
 	<necessite nom="liaison_objet" compatibilite="[2.0.1;]" />
 	<necessite nom="newsletters" compatibilite="[1.5.3;]" />
