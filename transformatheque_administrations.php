@@ -3,8 +3,8 @@
  * Fichier gérant l'installation et désinstallation du plugin Squelette transformathèque
  *
  * @plugin     Squelette transformathèque
- * @copyright  2017
- * @author     Rainer
+ * @copyright  2017 - 2020
+ * @author     Rainer Müller
  * @licence    GNU/GPL
  * @package    SPIP\Transformatheque\Installation
  */
@@ -22,7 +22,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  * - créer la structure SQL,
  * - insérer du pre-contenu,
  * - installer des valeurs de configuration,
- * - mettre à jour la structure SQL 
+ * - mettre à jour la structure SQL
  *
  * @param string $nom_meta_base_version
  *     Nom de la meta informant de la version du schéma de données du plugin installé dans SPIP
@@ -34,7 +34,7 @@ function transformatheque_upgrade($nom_meta_base_version, $version_cible) {
 	$maj = array();
 	# quelques exemples
 	# (que vous pouvez supprimer !)
-	# 
+	#
 	# $maj['create'] = array(array('creer_base'));
 	#
 	# include_spip('inc/config')
@@ -58,11 +58,11 @@ function transformatheque_upgrade($nom_meta_base_version, $version_cible) {
 
 /**
  * Fonction de désinstallation du plugin Squelette transformathèque.
- * 
+ *
  * Vous devez :
  *
  * - nettoyer toutes les données ajoutées par le plugin et son utilisation
- * - supprimer les tables et les champs créés par le plugin. 
+ * - supprimer les tables et les champs créés par le plugin.
  *
  * @param string $nom_meta_base_version
  *     Nom de la meta informant de la version du schéma de données du plugin installé dans SPIP

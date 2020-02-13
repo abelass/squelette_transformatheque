@@ -3,8 +3,8 @@
  * Utilisations de pipelines par Squelette transformathèque
  *
  * @plugin     Squelette transformathèque
- * @copyright  2017
- * @author     Rainer
+ * @copyright  2017 - 2020
+ * @author     Rainer Müller
  * @licence    GNU/GPL
  * @package    SPIP\Transformatheque\Pipelines
  */
