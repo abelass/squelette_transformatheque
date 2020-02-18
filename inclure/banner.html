@@ -1,3 +1,4 @@
+
 <BOUCLE-rubrique(RUBRIQUES){id_rubrique IN #ENV{id_rubrique}}{lang}{tout}>
 <section class='section section--full section--splash mrgn-b--xl'>
 	<div class='hero-image'>
@@ -9,8 +10,64 @@
 				[(#FICHIER|image_reduire{1000}|extraire_attribut{src})] 1000w"
 			alt="#TITLE"/>
 	</BOUCLE_images>
+	#SET{total,#GRAND_TOTAL}
+	</B_images>
 	</div>
 		<p class='large #EDIT{descriptif}'>#DESCRIPTIF*</p>
 		<hr class='hr'>
 </section>
 </BOUCLE-rubrique>
+#SET{interval,4}
+#SET{duree,#GET{total}|mult{#GET{interval}}}
+#SET{index_max,#GET{total}|mult{100}}
+#SET{index,#GET{index_max}}
+<B_enumere>
+<style>
+	.page--home .hero-image img {
+		-webkit-animation: hero-slideshow #GET{duree}s cubic-bezier(0.69, -0.01, 0, 1) infinite both;
+		animation: hero-slideshow #GET{duree}s cubic-bezier(0.69, -0.01, 0, 1) infinite both;
+	}
+<BOUCLE_enumere(DATA){enum 1,#GET{total}}>#SET{delay,#COMPTEUR_BOUCLE|moins{1}|mult{#GET{interval}}}
+	.page--home .hero-image img:nth-of-type(#COMPTEUR_BOUCLE) {
+		z-index: #GET{index};
+		-webkit-animation-delay: #GET{delay}s;
+		animation-delay: #GET{delay}s;
+	}#SET{index,#GET{index}|moins{100}}
+</BOUCLE_enumere>
+#SET{index_moitie,#GET{index_max}|div{2}}
+
+@-webkit-keyframes hero-slideshow {
+	0% {
+		opacity: 1;
+		z-index: #GET{index_max}; }
+	25% {
+		opacity: 0;
+		z-index: #GET{index_max}; }
+	50% {
+		opacity: 0;
+		z-index: #GET{index_moitie}; }
+	75% {
+		opacity: 1; }
+	100% {
+		z-index: #GET{index_max};
+		opacity: 1; } }
+
+@keyframes hero-slideshow {
+	0% {
+		opacity: 1;
+		z-index: #GET{index_max}; }
+	25% {
+		opacity: 0;
+		z-index: #GET{index_max}; }
+	50% {
+		opacity: 0;
+		z-index: #GET{index_moitie}; }
+	75% {
+		opacity: 1; }
+	100% {
+		z-index: #GET{index_max};
+		opacity: 1; } }
+</style>
+</B_enumere>
+
+

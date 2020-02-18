@@ -1,8 +1,8 @@
 <paquet
 	prefix="transformatheque"
 	categorie="squelette"
-	version="1.0.32"
-	etat="test"
+	version="1.1.0"
+	etat="stable"
 	compatibilite="[3.2.0;3.2.*]"
 	logo="prive/themes/spip/images/transformatheque-64.png"
 	documentation=""
