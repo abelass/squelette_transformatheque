@@ -3,7 +3,7 @@
  * Fonctions utiles au plugin Squelette transformathèque
  *
  * @plugin     Squelette transformathèque
- * @copyright  2017 - 2020
+ * @copyright  2017 - 2021
  * @author     Rainer Müller
  * @licence    GNU/GPL
  * @package    SPIP\Transformatheque\Fonctions
