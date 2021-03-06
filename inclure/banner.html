@@ -1,5 +1,5 @@
 
-<BOUCLE-rubrique(RUBRIQUES){id_rubrique IN #ENV{id_rubrique}}{lang}{tout}>
+<BOUCLE_rubrique(RUBRIQUES){id_rubrique IN #ENV{id_rubrique}}{lang}{tout}>
 <section class='section section--full section--splash mrgn-b--xl'>
 	<div class='hero-image'>
 	<BOUCLE_images(DOCUMENTS){id_rubrique}{extension IN jpg,png}{par rang_lien, num titre, titre}>
@@ -16,7 +16,7 @@
 		<p class='large #EDIT{descriptif}'>#DESCRIPTIF*</p>
 		<hr class='hr'>
 </section>
-</BOUCLE-rubrique>
+</BOUCLE_rubrique>
 #SET{interval,4}
 #SET{duree,#GET{total}|mult{#GET{interval}}}
 #SET{index_max,#GET{total}|mult{100}}
