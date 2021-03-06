@@ -3,20 +3,18 @@
 	categorie="squelette"
 	version="1.1.2"
 	etat="stable"
-	compatibilite="[3.2.0;3.2.*]"
+	compatibilite="[3.2.0;3.3.*]"
 	logo="prive/themes/spip/images/transformatheque-64.png"
 	documentation=""
-	schema="1.0.0"
+	schema="1.1.0"
 >
 
-	<nom>Squelette transformathèque</nom>
-
+	<nom>Squelette de la transformathèque</nom>
 	<auteur lien='https://web-simple.eu'>Rainer Müller</auteur>
-
 	<licence>GNU/GPL</licence>
 
 	<necessite nom="wsps_html5" compatibilite="[3.0.0;3.*]" />
-	<necessite nom="wsp_ml" compatibilite="[0.2.11;]" />
+	<necessite nom="wsp_ml" compatibilite="[1.0.2;]" />
 	<necessite nom="liaison_objet" compatibilite="[2.0.1;]" />
 	<necessite nom="newsletters" compatibilite="[1.5.3;]" />
 	<necessite nom="agenda" compatibilite="[3.18.6;]" />
@@ -33,5 +31,4 @@
 	<necessite nom="cheques_cadeau" compatibilite="[1.0.6;]" />
 	<necessite nom="iextras" compatibilite="[3.5.3;]" />
 	<necessite nom="gis" compatibilite="[4.44.23;]" />
-
 </paquet>
