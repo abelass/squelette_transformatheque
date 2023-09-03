@@ -1,9 +1,9 @@
 <paquet
 	prefix="transformatheque"
 	categorie="squelette"
-	version="1.1.3"
+	version="1.2.0"
 	etat="stable"
-	compatibilite="[3.2.0;4.0.*]"
+	compatibilite="[3.2.0;4.1.*]"
 	logo="prive/themes/spip/images/transformatheque-64.png"
 	documentation=""
 	schema="1.1.0"
@@ -21,14 +21,10 @@
 	<necessite nom="fullcalendar_facile" compatibilite="[2.3.1;]" />
 	<necessite nom="declinaisons" compatibilite="[1.0.3;]" />
 	<necessite nom="partenaires" compatibilite="[1.5.0;]" />
-	<necessite nom="notifications_archive" compatibilite="[1.0.1;]" />
-	<necessite nom="comptes_bancaires" compatibilite="[1.0.0;]" />
-	<necessite nom="message_personnalise" compatibilite="[1.0.0;]" />
 	<necessite nom="rang" compatibilite="[1.0.3;]" />
 	<necessite nom="numero" compatibilite="[2.1.1;]" />
 	<necessite nom="objets_infos_extras" compatibilite="[1.0.3;]" />
 	<necessite nom="pages" compatibilite="[1.3.7;]" />
-	<necessite nom="cheques_cadeau" compatibilite="[1.0.6;]" />
 	<necessite nom="iextras" compatibilite="[3.5.3;]" />
 	<necessite nom="gis" compatibilite="[4.44.23;]" />
 </paquet>
